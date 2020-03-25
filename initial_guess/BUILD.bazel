@@ -1,8 +1,0 @@
-package(default_visibility = ["//visibility:public"])
-
-cc_binary(
-    name = "set_initial_guess",
-    srcs = ["set_initial_guess.cc"],
-    deps = [
-    ],
-)
