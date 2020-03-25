@@ -7,13 +7,13 @@ import sys
 plt.rcParams.update({'font.size': 18})
 
 only_plot_average_cost = True
-normalize_by_nominal_cost = True
+normalize_by_nominal_cost = False
 only_add_successful_samples_to_average_cost = False
 
 iter_start = 1
 iter_end = 11
 is_iter_end = 0
-robot_option = 1;  # 0 is five-link robot. 1 is cassie_fixed_spring
+robot_option = 0;  # 0 is five-link robot. 1 is cassie_fixed_spring
 if len(sys.argv) >= 2:
     iter_start = int(sys.argv[1])
 if len(sys.argv) >= 3:
@@ -23,19 +23,21 @@ if len(sys.argv) >= 4:
     robot_option = int(sys.argv[3])
 
 
-n_sampel_sl = 13  # should be > 0
-n_sampel_gi = 3  # should be > 0
+n_sampel_sl = 1  # should be > 0
+n_sampel_gi = 1  # should be > 0
 N_sample = n_sampel_sl * n_sampel_gi
 print('n_sampel_sl = ' + str(n_sampel_sl))
 print('n_sampel_gi = ' + str(n_sampel_gi))
 
-dist_0 = 0.2
+dist_0 = 0.3
 delta_dist = 0.015 #0.1
 incline_0 = 0.0
 delta_incline = 0.05 #0.08
 
 # directory = 'data/robot_' + str(robot_option) + '/'
-directory = '../dairlib_data/goldilocks_models/find_models/robot_' + str(robot_option) + '/'
+# directory = '../dairlib_data/goldilocks_models/find_models/robot_' + str(robot_option) + '/'
+directory = '/Users/jason-hu/git_workspace/dairlab/dairlib_data/fixed_task/robot_' + str(robot_option) + \
+'_with_original_initial_guess/'
 
 # file_name = 'c.csv'
 file_name = 'c_without_tau.csv'
@@ -68,7 +70,7 @@ if normalize_by_nominal_cost:
         nominal_cost += cost[0] / N_sample;
 else:
     nominal_cost = 1.0;
-print('nominal_cost = '+str(nominal_cost))
+# print('nominal_cost = '+str(nominal_cost))
 
 # plot
 while 1:
