@@ -11,7 +11,7 @@ normalize_by_nominal_cost = False
 only_add_successful_samples_to_average_cost = False
 
 iter_start = 1
-iter_end = 11
+iter_end = 60
 is_iter_end = 0
 robot_option = 0;  # 0 is five-link robot. 1 is cassie_fixed_spring
 if len(sys.argv) >= 2:
