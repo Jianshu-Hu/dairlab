@@ -6,8 +6,7 @@
 #include <queue>  // First in first out
 #include <deque>  // queue with feature of finding elements
 #include <utility>  // std::pair, std::make_pair
-#include <sys/stat.h>  // Check the existence of a file/folder
-#include <cstdlib>  // System call to create folder (and also parent directory)
+#include <bits/stdc++.h>  // system call
 
 #include "drake/multibody/parsing/parser.h"
 #include "drake/solvers/mathematical_program.h"
@@ -18,6 +17,7 @@
 #include "examples/goldilocks_models/find_models/traj_opt_given_weigths.h"
 #include "examples/goldilocks_models/kinematics_expression.h"
 #include "examples/goldilocks_models/goldilocks_utils.h"
+#include "examples/goldilocks_models/initial_guess.h"
 #include "systems/goldilocks_models/file_utils.h"
 
 using std::cin;
@@ -45,7 +45,7 @@ using dairlib::FindResourceOrThrow;
 namespace dairlib::goldilocks_models {
 
 // Robot models
-DEFINE_int32(robot_option, 1, "0: plannar robot. 1: cassie_fixed_spring");
+DEFINE_int32(robot_option, 0, "0: plannar robot. 1: cassie_fixed_spring");
 // Reduced order models
 DEFINE_int32(rom_option, -1, "");
 
@@ -57,7 +57,9 @@ DEFINE_bool(is_zero_touchdown_impact, false,
 DEFINE_bool(is_add_tau_in_cost, true, "Add RoM input in the cost function");
 
 // inner loop
-DEFINE_string(init_file, "w0.csv", "Initial Guess for Trajectory Optimization");
+DEFINE_string(init_file, "", "Initial Guess for Trajectory Optimization");
+DEFINE_bool(is_use_interpolated_initial_guess,false,"Use interpolated initial guess"
+                                            " for Trajectory Optimization");
 DEFINE_double(major_feasibility_tol, 1e-4,
               "nonlinear constraint violation tol");
 DEFINE_int32(
@@ -69,11 +71,12 @@ DEFINE_int32(n_node, -1, "# of nodes for traj opt");
 DEFINE_double(eps_regularization, 1e-8, "Weight of regularization term"); //1e-4
 
 // outer loop
-DEFINE_int32(iter_start, 1, "The starting iteration #. 0 is nominal traj.");
-DEFINE_bool(is_stochastic, false, "Random tasks or fixed tasks");
+DEFINE_int32(iter_start, 0, "The starting iteration #. 0 is nominal traj.");
+DEFINE_bool(is_stochastic, true, "Random tasks or fixed tasks");
 DEFINE_bool(is_newton, false, "Newton method or gradient descent");
 DEFINE_double(h_step, -1, "The step size for outer loop");
 DEFINE_int32(max_outer_iter, 10000, "Max iteration # for theta update");
+DEFINE_double(beta_momentum, 0.8, "The weight on the previous step direction");
 
 // How to update the model iterations
 DEFINE_bool(start_current_iter_as_rerun, false,
@@ -147,6 +150,8 @@ void createMBP(MultibodyPlant<double>* plant, int robot_option) {
     plant->mutable_gravity_field().set_gravity_vector(
       -9.81 * Eigen::Vector3d::UnitZ());
     plant->Finalize();
+  } else {
+    throw std::runtime_error("Should not reach here");
   }
 }
 void setCostWeight(double* Q, double* R, double* all_cost_scale,
@@ -232,69 +237,9 @@ void setInitialTheta(VectorXd& theta_s, VectorXd& theta_sDDot,
   }
 }
 
-//edited by Jianshu to try a new way of setting initial guess
-string set_initial_guess(const string directory, int iter, int sample,int total_sample_num=1)
-{
-/* define some parameters used in interpolation
-* theta_range :decide the range of theta to use in interpolation
-* theta_sclae,gamma_scale :used to scale the theta and gamma in interpolation
-*/
-    double theta_range = 0.2;
-    double theta_scale = 1;
-    double gamma_scale = 1;
-    int gamma_dimension = 2;
-//    initialize variables used for setting initial guess
-    VectorXd initial_guess;
-    VectorXd weight;
-    MatrixXd w_near;
-    int past_iter;
-    int sample_num;
-//    get theta of current iteration and task of current sample
-    VectorXd current_theta = readCSV(directory+to_string(iter)+string("_theta_s.csv"));
-    MatrixXd current_ground_incline = readCSV(directory+to_string(iter)+string("_")+to_string(sample)
-            +string("_ground_incline.csv"));
-    MatrixXd current_stride_length = readCSV(directory+to_string(iter)+string("_")+to_string(sample)
-            +string("_stride_length.csv"));
-    VectorXd current_gamma(gamma_dimension);
-    current_gamma << current_ground_incline(0,0),current_stride_length(0,0);
-    for(past_iter=iter-1;past_iter>=0;past_iter--) {
-//        find useful theta according to the difference between previous theta and new theta
-        VectorXd past_theta = readCSV(directory+to_string(past_iter)+string("_theta_s.csv"));
-        double theta_diff = (past_theta - current_theta).norm() / current_theta.norm();
-        if (theta_diff < theta_range) {
-//            take out corresponding w and calculate the weight for interpolation
-            for (sample_num = 0; sample_num < total_sample_num; sample_num++) {
-                MatrixXd past_ground_incline = readCSV(directory+to_string(past_iter)+string("_")
-                        +to_string(sample_num)+string("_ground_incline.csv"));
-                MatrixXd past_stride_length = readCSV(directory+to_string(past_iter)+string("_")
-                        +to_string(sample_num)+string("_stride_length.csv"));
-                VectorXd past_gamma(gamma_dimension);
-                past_gamma << past_ground_incline(0,0),past_stride_length(0,0);
-                double distance = ((past_theta - current_theta)/theta_scale).squaredNorm()
-                                  + ((past_gamma - current_gamma)/gamma_scale).squaredNorm();
-                weight.conservativeResize(weight.rows()+1);
-                weight(weight.rows()-1) = 1 / sqrt(distance);
-                w_near.conservativeResize(w_near.rows(),w_near.cols()+1);
-                w_near.rightCols(1) = readCSV(directory+to_string(past_iter)+string("_")
-                        +to_string(sample_num)+string("_w.csv"));
-            }
-        }
-        else {
-            break;
-        }
-    }
-//    normalize weight
-    weight = weight/weight.sum();
-    initial_guess = w_near*weight;
-//    save initial guess and set init file
-    string initial_file_name = to_string(iter)+"_"+to_string(sample)+string("_initial_guess.csv");
-    writeCSV(directory+initial_file_name,initial_guess);
-
-    return initial_file_name;
-}
-
-void getInitFileName(const string dir, string * init_file, const string & nominal_traj_init_file,
-                     int iter, int sample, bool is_get_nominal,
+void getInitFileName(const string dir,int total_sample_num, string * init_file, const string & nominal_traj_init_file,
+                     int iter, int sample,double min_sl, double max_sl, double min_gi, double max_gi,
+                     bool is_get_nominal,bool is_use_interpolated_initial_guess,
                      bool rerun_current_iteration, bool has_been_all_success,
                      bool step_size_shrinked_last_loop, int n_rerun,
                      int sample_idx_to_help, bool is_debug) {
@@ -303,18 +248,24 @@ void getInitFileName(const string dir, string * init_file, const string & nomina
   } else if (step_size_shrinked_last_loop && n_rerun == 0) {
     // the step size was shrink in previous iter and it's not a local rerun
     // (n_rerun == 0)
-    *init_file = to_string(iter-1) + "_" + to_string(sample) + string("_w.csv");
+    if (is_use_interpolated_initial_guess){
+        //      modified by Jianshu to test new initial guess
+        *init_file = set_initial_guess(dir, iter, sample, total_sample_num, min_sl, max_sl, min_gi, max_gi);
+    }
+    else{
+        *init_file = to_string(iter-1) + "_" + to_string(sample) + string("_w.csv");
+    }
   } else if (sample_idx_to_help >= 0) {
     *init_file = to_string(iter) + "_" + to_string(sample_idx_to_help) +
                  string("_w.csv");
   } else if (rerun_current_iteration) {
     *init_file = to_string(iter) + "_" + to_string(sample) + string("_w.csv");
-  } else {
-    *init_file = to_string(iter - 1) +  "_" +
-                 to_string(sample) + string("_w.csv");
-
-//      modified by Jianshu
-//    *init_file = set_initial_guess(dir, iter, sample);
+  }else if(is_use_interpolated_initial_guess){
+//      modified by Jianshu to test new initial guess
+      *init_file = set_initial_guess(dir, iter, sample, total_sample_num, min_sl, max_sl, min_gi, max_gi);
+  } else{
+      *init_file = to_string(iter - 1) +  "_" +
+                   to_string(sample) + string("_w.csv");
   }
 
   // Testing:
@@ -331,12 +282,6 @@ void getInitFileName(const string dir, string * init_file, const string & nomina
 
     *init_file = to_string(iter) + "_" + to_string(sample) + string("_w.csv");
   }
-}
-
-inline bool file_exist (const std::string & name) {
-  struct stat buffer;
-  // cout << name << " exist? " << (stat (name.c_str(), &buffer) == 0) << endl;
-  return (stat (name.c_str(), &buffer) == 0);
 }
 
 void remove_old_multithreading_files(const string& dir, int iter, int N_sample) {
@@ -583,6 +528,10 @@ void extractActiveAndIndependentRows(int sample, double indpt_row_tol,
 
   bool is_testing = true;
   if (is_testing) {
+    // Run a quadprog to check if the solution to the following problem is 0
+    // Theoratically, it should be 0. Otherwise, something is wrong
+    // min 0.5*w^T Q w + c^T w
+    // st  A w = 0
     if (sample == 0) {
       cout << "\n (After extracting active constraints) Run traj opt to "
            "check if your quadratic approximation is correct\n";
@@ -643,7 +592,7 @@ void extractActiveAndIndependentRows(int sample, double indpt_row_tol,
           full_row_rank_idx.push_back(i);
         }
 
-        if (full_row_rank_idx.size() == nw_i) {
+        if ((int)full_row_rank_idx.size() == nw_i) {
           cout << "# of A's row is the same as the # of col. So stop adding rows.\n";
           break;
         }
@@ -1011,9 +960,9 @@ void RecordSolutionQualityAndQueueList(
     double max_cost_increase_rate_before_ask_for_help,
     double max_adj_cost_diff_rate_before_ask_for_help,
     bool is_limit_difference_of_two_adjacent_costs, int sample_success,
-    bool current_sample_is_queued, vector<double>& each_min_cost_so_far,
-    vector<int>& is_good_solution, MatrixXi& sample_idx_waiting_to_help,
-    MatrixXi& sample_idx_that_helped,
+    bool current_sample_is_queued, const vector<int>& n_rerun, int N_rerun,
+    vector<double>& each_min_cost_so_far, vector<int>& is_good_solution,
+    MatrixXi& sample_idx_waiting_to_help, MatrixXi& sample_idx_that_helped,
     std::deque<int>& awaiting_sample_idx) {
   double sample_cost = (readCSV(dir + prefix + string("c.csv")))(0, 0);
 
@@ -1035,23 +984,39 @@ void RecordSolutionQualityAndQueueList(
 
       double cost_diff =
           sample_cost - each_min_cost_so_far[adj_idx];
+      // if the current sample cost is much higher than the adjacent cost
       if (cost_diff > max_adj_cost_diff_rate_before_ask_for_help *
                           each_min_cost_so_far[sample_idx]) {
-        // if the current sample cost is much higher than the adjacent cost
-        if (is_good_solution[adj_idx] == 1) {
+        // If the adjacent sample has a good solution and has finished basic reruns
+        if ((is_good_solution[adj_idx] == 1) &&
+            (n_rerun[adj_idx] >= N_rerun)) {
           low_adjacent_cost_idx.push_back(adj_idx);
         }
-      } else if (cost_diff < -max_adj_cost_diff_rate_before_ask_for_help *
+      }
+      // if the current sample cost is much lower than the adjacent cost
+      else if (cost_diff < -max_adj_cost_diff_rate_before_ask_for_help *
                                  each_min_cost_so_far[sample_idx]) {
-        // if the current sample cost is much lower than the adjacent cost
-        if (is_good_solution[adj_idx] == 1) {
+        // If the adjacent sample has a good solution and has finished basic reruns
+        if ((is_good_solution[adj_idx] == 1) &&
+            (n_rerun[adj_idx] >= N_rerun)) {
           high_adjacent_cost_idx.push_back(adj_idx);
         }
       }
     }
   }
   bool too_high_above_adjacent_cost = !low_adjacent_cost_idx.empty();
-  bool too_low_below_adjacent_cost = !high_adjacent_cost_idx.empty();
+  //bool too_low_below_adjacent_cost = !high_adjacent_cost_idx.empty();
+
+  // Printing
+  /*cout << "low_adjacent_cost_idx = ";
+  for(auto mem : low_adjacent_cost_idx) {
+    cout << mem << ", ";
+  } cout << endl;
+  cout << "high_adjacent_cost_idx = ";
+  for(auto mem : high_adjacent_cost_idx) {
+    cout << mem << ", ";
+  } cout << endl;*/
+
 
   // Record whether or not the current sample got a good solution. A good
   // solution (of the current sample) means:
@@ -1178,7 +1143,8 @@ void RecordSolutionQualityAndQueueList(
         if (revert_good_adj_sol_to_bad_sol) {
           cout << "idx #" << sample_idx
                << " cost is too low below that of adjacent idx #" << adj_idx
-               << ", so add #"<< adj_idx <<" to queue (revert it to bad sol)\n";
+               << ", so add #" << adj_idx
+               << " to queue (revert the flag to bad sol)\n";
         } else {
           cout << "idx #" << sample_idx << " got good sol, and idx #" << adj_idx
                << " needs help, so add #"<< adj_idx <<" to queue\n";
@@ -1295,6 +1261,134 @@ void RecordSolutionQualityAndQueueList(
   }    // end if current sample has good solution
 }
 
+// Calculate the cost gradient and its norm
+void CalcCostGradientAndNorm(int n_succ_sample, const vector<MatrixXd>& P_vec,
+                             const vector<VectorXd>& q_vec,
+                             const vector<VectorXd>& b_vec, const string& dir,
+                             const string& prefix, VectorXd* gradient_cost,
+                             double* norm_grad_cost) {
+  cout << "Calculating gradient\n";
+  gradient_cost->setZero();
+  for (int sample = 0; sample < n_succ_sample; sample++) {
+    (*gradient_cost) += P_vec[sample].transpose() * b_vec[sample];
+  }
+  (*gradient_cost) /= n_succ_sample;
+
+  // Calculate gradient norm
+  (*norm_grad_cost) = gradient_cost->norm();
+  writeCSV(dir + prefix + string("norm_grad_cost.csv"),
+           (*norm_grad_cost) * VectorXd::Ones(1));
+  cout << "gradient_cost norm: " << (*norm_grad_cost) << endl << endl;
+}
+
+// Newton's method (not exactly the same, cause Q_theta is not pd but psd)
+// See your IOE611 lecture notes on page 7-17 to page 7-20
+void CalcNewtonStepAndNewtonDecrement(int n_theta, int n_succ_sample,
+                                      const vector<MatrixXd>& P_vec,
+                                      const vector<MatrixXd>& H_vec,
+                                      const VectorXd& gradient_cost,
+                                      const string& dir, const string& prefix,
+                                      VectorXd* newton_step,
+                                      double* lambda_square) {
+  /*// Check if Q_theta is pd
+  cout << "Checking if Q_theta is psd...\n";
+  MatrixXd Q_theta = MatrixXd::Zero(n_theta, n_theta);
+  for (int sample = 0; sample < n_succ_sample; sample++)
+    Q_theta += P_vec[sample].transpose()*H_vec[sample]*P_vec[sample];
+  VectorXd eivals_real = Q_theta.eigenvalues().real();
+  for (int i = 0; i < eivals_real.size(); i++) {
+    if (eivals_real(i) <= 0)
+      cout << "Q_theta is not positive definite (with e-value = "
+           << eivals_real(i) << ")\n";
+  }
+  cout << endl;*/
+
+  // cout << "Getting Newton step\n";
+  MatrixXd Q_theta = MatrixXd::Zero(n_theta, n_theta);
+  for (int sample = 0; sample < n_succ_sample; sample++) {
+    Q_theta += P_vec[sample].transpose() * H_vec[sample] * P_vec[sample] /
+               n_succ_sample;
+  }
+  double mu = 1e-4;  // 1e-6 caused unstable and might diverge
+  MatrixXd inv_Q_theta =
+      (Q_theta + mu * MatrixXd::Identity(n_theta, n_theta)).inverse();
+  (*newton_step) = -inv_Q_theta * gradient_cost;
+
+  // Testing
+  /*Eigen::BDCSVD<MatrixXd> svd(inv_Q_theta);
+  cout << "inv_Q_theta's smallest and biggest singular value " <<
+       svd.singularValues().tail(1) << ", " <<
+       svd.singularValues()(0) << endl;*/
+
+  // Newton decrement (can be a criterion to terminate your newton steps)
+  (*lambda_square) = -gradient_cost.transpose() * (*newton_step);
+  cout << "lambda_square = " << (*lambda_square) << endl;
+
+  // Store Newton decrement in a file
+  writeCSV(dir + prefix + string("lambda_square.csv"),
+           (*lambda_square) * VectorXd::Ones(1));
+}
+
+// Calculate the step direction and its norm
+void GetStepDirectionAndNorm(bool is_newton, const VectorXd& newton_step,
+                             const VectorXd& gradient_cost,
+                             double beta_momentum, const string& dir,
+                             const string& prefix,
+                             VectorXd* prev_step_direction,
+                             VectorXd* step_direction,
+                             double* step_direction_norm) {
+  if (is_newton) {
+    (*step_direction) = newton_step;
+  } else {
+    // gradient descent with momentum term
+    (*step_direction) = -gradient_cost + beta_momentum * (*prev_step_direction);
+  }
+  writeCSV(dir + prefix + string("step_direction.csv"), (*step_direction));
+  (*prev_step_direction) = (*step_direction);
+
+  // Calculate ans store the step direction norm
+  (*step_direction_norm) = step_direction->norm();
+  cout << "step_direction norm: " << (*step_direction_norm) << endl << endl;
+  writeCSV(dir + prefix + string("step_direction_norm.csv"),
+           (*step_direction_norm) * VectorXd::Ones(1));
+}
+
+// Get the step size (heuristically tuned)
+void GetHeuristicStepSize(double h_step, double step_direction_norm,
+                          const string& dir, const string& prefix,
+                          double* current_iter_step_size) {
+  // (*current_iter_step_size) = h_step;
+  if (step_direction_norm > 1) {
+    // (*current_iter_step_size) = h_step / sqrt(norm_grad_cost);  // Heuristic
+    // (*current_iter_step_size) = h_step / norm_grad_cost;  // Heuristic
+    (*current_iter_step_size) = h_step / step_direction_norm;  // Heuristic
+  } else {
+    (*current_iter_step_size) = h_step;
+  }
+
+  // Store the step size in a file
+  writeCSV(dir + prefix + string("step_size.csv"),
+           (*current_iter_step_size) * VectorXd::Ones(1));
+  cout << "step size = " << (*current_iter_step_size) << "\n\n";
+}
+
+// Check if the model has achieved an optimum
+bool HasAchievedOptimum(bool is_newton, double stopping_threshold,
+                        double lambda_square, double norm_grad_cost) {
+  if (is_newton) {
+    if (lambda_square < stopping_threshold) {
+      cout << "Found optimal theta.\n\n";
+      return true;
+    }
+  } else {
+    if (norm_grad_cost < stopping_threshold) {
+      cout << "Found optimal theta.\n\n";
+      return true;
+    }
+  }
+  return false;
+}
+
 int findGoldilocksModels(int argc, char* argv[]) {
   gflags::ParseCommandLineFlags(&argc, &argv, true);
 
@@ -1406,6 +1500,7 @@ int findGoldilocksModels(int argc, char* argv[]) {
           ? ground_incline_0 +
                 delta_ground_incline * ((N_sample_gi - 1) / 2 + 0.5)
           : ground_incline_0 + delta_ground_incline * ((N_sample_gi - 1) / 2);
+  DRAKE_DEMAND(min_stride_length >= 0);
   cout << "stride length ranges from " << min_stride_length << " to "
        << max_stride_length << endl;
   cout << "ground incline ranges from " << min_ground_incline << " to "
@@ -1442,7 +1537,16 @@ int findGoldilocksModels(int argc, char* argv[]) {
   // Momentum can give you faster convergence. And get out of a local minimum
   // caused by step size. See: https://distill.pub/2017/momentum/ WARNING:
   // beta_momentum is not used in newton's method
-  double beta_momentum = 0.8;
+
+//  original momentum term in the code
+//  double beta_momentum = 0.8;
+  double beta_momentum;
+  if(FLAGS_beta_momentum >= 0)
+  {
+      beta_momentum = FLAGS_beta_momentum;
+  }else{
+      beta_momentum = 0.8;
+  }
   double h_step;
   if (FLAGS_h_step > 0) {
     h_step = FLAGS_h_step;
@@ -1457,6 +1561,10 @@ int findGoldilocksModels(int argc, char* argv[]) {
       // 1e-2 is a good compromise on both speed and gittering
       // 1e-1 caused divergence when close to optimal sol
       h_step = 1e-4;
+      /*if (beta_momentum != 0) {
+        // haven't tried or tuned this yet.
+        h_step = 1e-5;
+      }*/
     } else if (FLAGS_robot_option == 1) {
       // Without tau: (This is with  h_step / sqrt(norm_grad_cost(0));)
       //  1e-4: doesn't always decrease with a fixed task
@@ -1496,7 +1604,14 @@ int findGoldilocksModels(int argc, char* argv[]) {
     }
   }
   const int method_to_solve_system_of_equations = 3;
-  double max_cost_increase_rate = FLAGS_is_stochastic? 0.15: 0.01;
+  double max_cost_increase_rate = 0;
+  if (FLAGS_robot_option == 0) {
+    max_cost_increase_rate = FLAGS_is_stochastic? 0.2: 0.01;
+  } else if (FLAGS_robot_option== 1) {
+    max_cost_increase_rate = FLAGS_is_stochastic? 0.15: 0.01;
+  } else {
+    throw std::runtime_error("Should not reach here");
+  }
   double max_cost_increase_rate_before_ask_for_help = 0.1;
   double max_adj_cost_diff_rate_before_ask_for_help = 0.1;
   bool is_limit_difference_of_two_adjacent_costs =
@@ -1819,12 +1934,14 @@ int findGoldilocksModels(int argc, char* argv[]) {
     }
 
     // Print info about iteration # and current time
-    auto end = std::chrono::system_clock::now();
-    std::time_t end_time = std::chrono::system_clock::to_time_t(end);
-    cout << "Current time: " << std::ctime(&end_time);
-    cout << "************ Iteration " << iter << " *************" << endl;
-    if (iter != 0) {
-      cout << "theta_sDDot.head(6) = " << theta_sDDot.head(6).transpose() << endl;
+    if (!start_iterations_with_shrinking_stepsize) {
+      auto end = std::chrono::system_clock::now();
+      std::time_t end_time = std::chrono::system_clock::to_time_t(end);
+      cout << "Current time: " << std::ctime(&end_time);
+      cout << "************ Iteration " << iter << " *************" << endl;
+      if (iter != 0) {
+        cout << "theta_sDDot.head(6) = " << theta_sDDot.head(6).transpose() << endl;
+      }
     }
 
     // store initial parameter values
@@ -1913,6 +2030,10 @@ int findGoldilocksModels(int argc, char* argv[]) {
           cout << mem.second << ", ";
         } cout << endl;*/
 
+        //std::system("lscpu | grep CPU\\ MHz"); // print the current cpu clock speed
+        //std::system("top -bn2 | grep \"Cpu(s)\" | sed \"s/.*, *\\([0-9.]*\\)%* id.*/\1/\" | awk '{print 100 - $1\"%\"}'"); // print the CPU usage
+        //std::system("free -m"); // print memory usage
+
         // Evaluate a sample when there is an available thread. Otherwise, wait.
         if (!awaiting_sample_idx.empty() && !available_thread_idx.empty()) {
           // Pick a sample to evaluate
@@ -1968,8 +2089,11 @@ int findGoldilocksModels(int argc, char* argv[]) {
 
           // Get file name of initial seed
           string init_file_pass_in;
-          getInitFileName(dir, &init_file_pass_in, init_file, iter, sample_idx,
-                          is_get_nominal,
+          int total_sample_num = N_sample_sl*N_sample_gi;
+          bool is_use_interpolated_initial_guess = FLAGS_is_use_interpolated_initial_guess;
+          getInitFileName(dir, total_sample_num, &init_file_pass_in, init_file, iter, sample_idx,
+                          min_stride_length, max_stride_length, min_ground_incline, max_ground_incline,
+                          is_get_nominal, is_use_interpolated_initial_guess,
                           current_sample_is_a_rerun, has_been_all_success,
                           step_size_shrinked_last_loop, n_rerun[sample_idx],
                           sample_idx_to_help,
@@ -2061,9 +2185,10 @@ int findGoldilocksModels(int argc, char* argv[]) {
               max_cost_increase_rate_before_ask_for_help,
               max_adj_cost_diff_rate_before_ask_for_help,
               is_limit_difference_of_two_adjacent_costs, sample_success,
-              current_sample_is_queued, local_each_min_cost_so_far,
-              is_good_solution, sample_idx_waiting_to_help,
-              sample_idx_that_helped, awaiting_sample_idx);
+              current_sample_is_queued, n_rerun, N_rerun,
+              local_each_min_cost_so_far, is_good_solution,
+              sample_idx_waiting_to_help, sample_idx_that_helped,
+              awaiting_sample_idx);
 
           // If the current sample is queued again because it could be helped by
           // adjacent samples, then don't conclude that it's a failure yet
@@ -2206,9 +2331,21 @@ int findGoldilocksModels(int argc, char* argv[]) {
 
       // Read in the following files of the successful samples:
       // w_sol_vec, A_vec, H_vec, y_vec, lb_vec, ub_vec, b_vec, c_vec, B_vec;
+      auto start_time_read_file = std::chrono::high_resolution_clock::now();
+
       readApproxQpFiles(&w_sol_vec, &A_vec, &H_vec, &y_vec, &lb_vec, &ub_vec,
                         &b_vec, &c_vec, &B_vec,
                         N_sample, iter, dir);
+
+      // Print out elapsed time
+      auto finish_time_read_file = std::chrono::high_resolution_clock::now();
+      std::chrono::duration<double> elapsed_read_file =
+          finish_time_read_file - start_time_read_file;
+      cout << "\nTime spent on reading files of sample evaluation: "
+           << to_string(int(elapsed_read_file.count())) << " seconds\n";
+      cout << endl;
+
+      // number of successful sample
       int n_succ_sample = c_vec.size();
 
       // Calculate the total cost of the successful samples
@@ -2382,138 +2519,37 @@ int findGoldilocksModels(int argc, char* argv[]) {
            << to_string(int(elapsed_calc_w.count())) << " seconds\n";
       cout << endl;
 
+      prefix = to_string(iter) + "_";
 
+      // Get gradient of the cost wrt theta and the norm of the gradient
+      // Assumption: H_vec[sample] are symmetric
+      VectorXd gradient_cost(n_theta);
+      double norm_grad_cost;
+      CalcCostGradientAndNorm(n_succ_sample, P_vec, q_vec, b_vec, dir, prefix,
+                              &gradient_cost, &norm_grad_cost);
 
+      // Calculate Newton step and the decrement
+      VectorXd newton_step(n_theta);
+      double lambda_square;
+      CalcNewtonStepAndNewtonDecrement(n_theta, n_succ_sample, P_vec, H_vec,
+                                       gradient_cost, dir, prefix, &newton_step,
+                                       &lambda_square);
 
-      // // Testing
-      // MatrixXd invH = H_vec[0].inverse();
-      // Eigen::BDCSVD<MatrixXd> svd_4(invH);
-      // cout << "invH:\n";
-      // cout << "  biggest singular value is " << svd_4.singularValues()(0) << endl;
-      // cout << "  smallest singular value is "
-      //         << svd_4.singularValues().tail(1) << endl;
-      // // Testing
-      // Eigen::BDCSVD<MatrixXd> svd_2(A_active_vec[0]);
-      // cout << "A:\n";
-      // cout << "  biggest singular value is " << svd_2.singularValues()(0) << endl;
-      // cout << "  smallest singular value is "
-      //         << svd_2.singularValues().tail(1) << endl;
-      // // cout << "singular values are \n" << svd_2.singularValues() << endl;
-
-
-      // Run a quadprog to check if the solution to the following problem is 0
-      // Theoratically, it should be 0. Otherwise, something is wrong
-      // min 0.5*w^T Q w + c^T w
-      // st  A w = 0
-      /*cout << "Run traj opt to check if your quadratic approximation is correct\n";
-      int nl_i = nl_vec[0];
-      int nw_i = nw_vec[0];
-      MathematicalProgram quadprog;
-      auto w = quadprog.NewContinuousVariables(nw_i, "w");
-      quadprog.AddLinearConstraint( A_active_vec[0],
-                                VectorXd::Zero(nl_i),
-                                VectorXd::Zero(nl_i),
-                                w);
-      quadprog.AddQuadraticCost(H_vec[0],b_vec[0],w);
-      const auto result = Solve(quadprog);
-      auto solution_result = result.get_solution_result();
-      cout << solution_result << endl;
-      cout << "Cost:" << result.get_optimal_cost() << endl;
-      VectorXd w_sol = result.GetSolution(quadprog.decision_variables());
-      cout << "w_sol norm:" << w_sol.norm() << endl;
-      cout << "Finished traj opt\n\n";*/
-
-
-      /*// Check if Q_theta is pd
-      cout << "Checking if Q_theta is psd...\n";
-      MatrixXd Q_theta = MatrixXd::Zero(n_theta, n_theta);
-      for (int sample = 0; sample < n_succ_sample; sample++)
-        Q_theta += P_vec[sample].transpose()*H_vec[sample]*P_vec[sample];
-      VectorXd eivals_real = Q_theta.eigenvalues().real();
-      for (int i = 0; i < eivals_real.size(); i++) {
-        if (eivals_real(i) <= 0)
-          cout << "Q_theta is not positive definite (with e-value = "
-               << eivals_real(i) << ")\n";
+      // Check optimality
+      if (HasAchievedOptimum(is_newton, stopping_threshold, lambda_square,
+                      norm_grad_cost)) {
+        break;
       }
-      cout << endl;*/
-
-
-
-
-
-
-
-      // Get gradient of the cost wrt theta (assume H_vec[sample] symmetric)
-      cout << "Calculating gradient\n";
-      VectorXd gradient_cost = VectorXd::Zero(theta.size());
-      for (sample = 0; sample < n_succ_sample; sample++) {
-        gradient_cost += P_vec[sample].transpose() * b_vec[sample] / n_succ_sample;
-        // gradient_cost +=
-        // P_vec[sample].transpose() * (b_vec[sample] + H_vec[sample] * q_vec[sample]);
-      }
-      // cout << "gradient_cost = \n" << gradient_cost;
-
-      // Newton's method (not exactly the same, cause Q_theta is not pd but psd)
-      // See your IOE611 lecture notes on page 7-17 to page 7-20
-      // cout << "Getting Newton step\n";
-      MatrixXd Q_theta = MatrixXd::Zero(n_theta, n_theta);
-      for (sample = 0; sample < n_succ_sample; sample++) {
-        Q_theta +=
-            P_vec[sample].transpose() * H_vec[sample] * P_vec[sample] / n_succ_sample;
-      }
-      double mu = 1e-4; // 1e-6 caused unstable and might diverge
-      MatrixXd inv_Q_theta = (Q_theta + mu * MatrixXd::Identity(n_theta,
-                                                                n_theta)).inverse();
-      VectorXd newton_step = -inv_Q_theta * gradient_cost;
-      // Testing
-      /*Eigen::BDCSVD<MatrixXd> svd(inv_Q_theta);
-      cout << "inv_Q_theta's smallest and biggest singular value " <<
-           svd.singularValues().tail(1) << ", " <<
-           svd.singularValues()(0) << endl;*/
-
-      // Newton decrement (can be a criterion to terminate your newton steps)
-      double lambda_square = -gradient_cost.transpose() * newton_step;
-      VectorXd lambda_square_vecXd(1); lambda_square_vecXd << lambda_square;
-      writeCSV(dir + prefix + string("lambda_square.csv"), lambda_square_vecXd);
-      cout << "lambda_square = " << lambda_square << endl;
-
-      // Calculate gradient norm
-      VectorXd norm_grad_cost(1); norm_grad_cost << gradient_cost.norm();
-      writeCSV(dir + prefix + string("norm_grad_cost.csv"), norm_grad_cost);
-      cout << "gradient_cost norm: " << norm_grad_cost << endl << endl;
 
       // Calculate step_direction
-      if (is_newton) {
-        step_direction = newton_step;
-      } else {
-        // gradient descent with momentum term
-        step_direction = -gradient_cost + beta_momentum * prev_step_direction;
-      }
-      prefix = to_string(iter) +  "_";
-      writeCSV(dir + prefix + string("step_direction.csv"), step_direction);
-      prev_step_direction = step_direction;
-
-      // Testing
-      writeCSV(dir + prefix + string("neg_gradient_cost.csv"), -gradient_cost);
-
-      // Calculate gradient norm
-      VectorXd step_direction_norm(1);
-      step_direction_norm << step_direction.norm();
-      writeCSV(dir + prefix + string("step_direction_norm.csv"), step_direction_norm);
-      cout << "step_direction norm: " << step_direction_norm << endl << endl;
+      double step_direction_norm;
+      GetStepDirectionAndNorm(
+          is_newton, newton_step, gradient_cost, beta_momentum, dir, prefix,
+          &prev_step_direction, &step_direction, &step_direction_norm);
 
       // Calculate step size
-      // current_iter_step_size = h_step;
-      if (step_direction_norm(0) > 1) {
-        // current_iter_step_size = h_step / sqrt(norm_grad_cost(0));  // Heuristic
-        // current_iter_step_size = h_step / norm_grad_cost(0);  // Heuristic
-        current_iter_step_size = h_step / step_direction_norm(0);  // Heuristic
-      } else {
-        current_iter_step_size = h_step;
-      }
-      VectorXd step_size(1); step_size << current_iter_step_size;
-      writeCSV(dir + prefix + string("step_size.csv"), step_size);
-      cout << "step size = " << current_iter_step_size << "\n\n";
+      GetHeuristicStepSize(h_step, step_direction_norm, dir, prefix,
+                           &current_iter_step_size);
 
       // Gradient descent
       prev_theta = theta;
@@ -2523,20 +2559,7 @@ int findGoldilocksModels(int argc, char* argv[]) {
       theta_s = theta.head(n_theta_s);
       theta_sDDot = theta.tail(n_theta_sDDot);
 
-      // Check optimality
-      if (is_newton) {
-        if (lambda_square < stopping_threshold) {
-          cout << "Found optimal theta.\n\n";
-          break;
-        }
-      } else {
-        if (norm_grad_cost(0) < stopping_threshold) {
-          cout << "Found optimal theta.\n\n";
-          break;
-        }
-      }
-
-      cout << '\a';  // making noise to notify
+      cout << '\a';  // making noise to notify the user the end of an iteration
     }  // end if(!is_get_nominal)
   }  // end for
 
@@ -2553,5 +2576,5 @@ int findGoldilocksModels(int argc, char* argv[]) {
 }  // namespace dairlib::goldilocks_models
 
 int main(int argc, char* argv[]) {
-  return dairlib::goldilocks_models::findGoldilocksModels(argc, argv);
+    return dairlib::goldilocks_models::findGoldilocksModels(argc, argv);
 }
