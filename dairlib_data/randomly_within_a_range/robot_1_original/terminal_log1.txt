@@ -1,0 +1,1034 @@
+Trail name: robot1_test_with_momentum
+Make sure that you turned off snopt log and constraint jacobian writing.
+Proceed? (Y/N)
+Continue constructing the problem...
+../dairlib_data/goldilocks_models/find_models/robot_1/ is a directory
+
+Tasks settings:
+duration = 0.4
+N_sample_sl = 3
+N_sample_gi = 3
+delta_stride_length = 0.015
+stride_length_0 = 0.2
+delta_ground_incline = 0.05
+ground_incline_0 = 0
+stride length ranges from 0.1775 to 0.2225
+ground incline ranges from -0.075 to 0.075
+
+Optimization setting (outer loop):
+Gradient descent method
+Stochastic
+Step size = 0.001
+beta_momentum = 0.8
+eps_regularization = 1e-08
+is_add_tau_in_cost = 1
+Non-zero touchdown impact
+# of re-run in each iteration = 1
+Failure rate threshold before seeing a all-success iteration = 0.2
+method_to_solve_system_of_equations = 3
+The maximum rate the cost can increase before shrinking step size = 0.15
+The maximum rate the cost can increase before asking adjacent samples for help = 0.1
+The maximum cost difference rate between two adjacent samples = 0.1
+
+Optimization setting (inner loop):
+max_inner_iter = 150
+major_optimality_tolerance = 0.0001
+major_feasibility_tolerance = 0.0001
+n_node = 20
+
+Reduced-order model setting:
+Warning: Need to make sure that the implementation in DynamicsExpression agrees with n_s and n_tau.
+n_s = 1, n_tau = 0
+B_tau = 
+
+rom_option = 2 (1D -- fix com vertical acceleration)
+Make sure that n_s and B_tau are correct.
+Proceed? (Y/N)
+Continue constructing the problem...
+n_feature_s = 70
+n_feature_sDDot = 6
+
+Multithreading settings:
+is multithread? 1
+# of threads to be used 4
+
+Removing old thread_finished.csv files... Done.
+
+Other settings:
+is_debug? 0
+is_manual_initial_theta = 0
+ave_min_cost_so_far = 2.53511
+has_been_all_success? 1
+iteration #10 is a rerun? 0
+Reading previous step direction... (will get memory issue if the file doesn't exist)
+Reading previous step size... (will get memory issue if the file doesn't exist)
+adjacent_sample_indices = 
+ 1  0  1  0  1  2  3  4  5
+ 3  2  5  4  3  4  7  6  7
+-1  4 -1  6  5  8 -1  8 -1
+-1 -1 -1 -1  7 -1 -1 -1 -1
+
+Start iterating...
+Current time: Thu Apr  9 10:17:31 2020
+************ Iteration 10 *************
+theta_sDDot.head(6) = -1.84482e-05 -1.84862e-05 -4.05883e-07 -1.84632e-05 -3.75941e-07  -1.6484e-08
+sample# (rerun #) | stride | incline | init_file | Status | Solve time | Cost (tau cost)
+  3 (0) | 0.186605 | 0.012022 | 9_3_w.csv | SolutionFound | 44.374892 | 2.490705 (0.000000)
+  2 (0) | 0.210251 | -0.056589 | 9_2_w.csv | SolutionFound | 50.600567 | 2.539398 (0.000000)
+  0 (0) | 0.182431 | -0.055931 | 9_0_w.csv | SolutionFound | 52.606979 | 2.564002 (0.000000)
+  1 (0) | 0.202164 | -0.033792 | 9_1_w.csv | SolutionFound | 73.993602 | 2.551174 (0.000000)
+
+w_Q = 0.1
+w_Q_swing_toe = 0.02
+w_R = 0.0002
+w_R_swing_toe = 4e-05
+w_lambda = 4e-06
+w_lambda_diff = 2e-08
+w_v_diff = 0.001
+w_u_diff = 2e-07
+w_q_hip_roll = 10
+w_q_hip_yaw = 1
+w_q_quat_xyz = 10
+cost_x = 1.50294
+cost_u = 0.410568
+cost_lambda = 0.000214464
+cost_lambda_diff = 0.0689165
+cost_vel_diff = 0.0548795
+cost_u_diff = 0.00829315
+cost_q_hip_roll = 0.242512
+cost_q_hip_yaw = 0.00209488
+cost_q_quat_xyz = 0.0185357
+total_cost (only the nominal traj cost terms) = 2.30895
+  5 (0) | 0.209929 | -0.003390 | 9_5_w.csv | SolutionFound | 43.554914 | 2.500349 (0.000000)
+  4 (0) | 0.207111 | -0.010843 | 9_4_w.csv | SolutionFound | 51.175661 | 2.494034 (0.000000)
+  6 (0) | 0.185385 | 0.064378 | 9_6_w.csv | SolutionFound | 52.002274 | 2.607197 (0.000000)
+  7 (0) | 0.201726 | 0.025454 | 9_7_w.csv | SolutionFound | 59.781346 | 2.473085 (0.000000)
+  3 (1) | 0.186605 | 0.012022 | 10_3_w.csv | SolutionFound | 23.437565 | 2.490707 (0.000000)
+  2 (1) | 0.210251 | -0.056589 | 10_2_w.csv | SolutionFound | 24.486748 | 2.539399 (0.000000)
+  8 (0) | 0.216860 | 0.034171 | 9_8_w.csv | SolutionFound | 47.559820 | 2.505874 (0.000000)
+  0 (1) | 0.182431 | -0.055931 | 10_0_w.csv | SolutionFound | 25.123338 | 2.564003 (0.000000)
+  1 (1) | 0.202164 | -0.033792 | 10_1_w.csv | SolutionFound | 23.599636 | 2.551175 (0.000000)
+
+w_Q = 0.1
+w_Q_swing_toe = 0.02
+w_R = 0.0002
+w_R_swing_toe = 4e-05
+w_lambda = 4e-06
+w_lambda_diff = 2e-08
+w_v_diff = 0.001
+w_u_diff = 2e-07
+w_q_hip_roll = 10
+w_q_hip_yaw = 1
+w_q_quat_xyz = 10
+cost_x = 1.50294
+cost_u = 0.410569
+cost_lambda = 0.000214464
+cost_lambda_diff = 0.0689165
+cost_vel_diff = 0.0548796
+cost_u_diff = 0.00829315
+cost_q_hip_roll = 0.242512
+cost_q_hip_yaw = 0.00209488
+cost_q_quat_xyz = 0.0185357
+total_cost (only the nominal traj cost terms) = 2.30895
+  4 (1) | 0.207111 | -0.010843 | 10_4_w.csv | SolutionFound | 32.264156 | 2.493149 (0.000000)
+  5 (1) | 0.209929 | -0.003390 | 10_5_w.csv | SolutionFound | 31.344923 | 2.498910 (0.000000)
+  6 (1) | 0.185385 | 0.064378 | 10_6_w.csv | SolutionFound | 32.328489 | 2.605782 (0.000000)
+  7 (1) | 0.201726 | 0.025454 | 10_7_w.csv | SolutionFound | 23.904578 | 2.473085 (0.000000)
+  8 (1) | 0.216860 | 0.034171 | 10_8_w.csv | SolutionFound | 23.177813 | 2.505872 (0.000000)
+
+Time spent on reading files of sample evaluation: 3 seconds
+
+total_cost = 2.52468 (min so far: 2.52468)
+
+Cost #1 went up by 0.392333%.
+Cost #2 went up by 1.24957%.
+Cost #5 went up by 0.155108%.
+Cost #6 went up by 1.30274%.
+
+Extracting active (and independent rows) of A...
+
+ (After extracting active constraints) Run traj opt to check if your quadratic approximation is correct
+sample# | Solve Status | Cost | w_sol norm | (this should be 0 if w=0 is optimal)
+0 | SolutionFound | -0.0883344 | 424.018 | -0.146851
+1 | SolutionFound | -0.0814184 | 482.22 | -0.138384
+3 | SolutionFound | -0.0754588 | 659.552 | -0.13154
+2 | SolutionFound | -0.0908963 | 472.934 | -0.159405
+6 | SolutionFound | -0.0891481 | 637.957 | -0.155012
+5 | SolutionFound | -0.0921978 | 465.084 | -0.169974
+4 | SolutionFound | -0.065525 | 434.345 | -0.120908
+7 | SolutionFound | -0.0892237 | 462.206 | -0.164585
+8 | SolutionFound | -0.102614 | 481.093 | -0.18679
+Time spent on extracting active (and independent rows) of A: 69 seconds
+
+sample # | max element of abs-Pi | qi norm (this number should be close to 0)
+0 | 50004020.388652 | 173.075685
+1 | 57349193.176994 | 181.918595
+3 | 60402701.698870 | 545.437695
+2 | 53675683.253055 | 207.148050
+6 | 60605937.028976 | 483.057694
+5 | 52716933.612035 | 254.557010
+7 | 52593925.777346 | 237.458768
+4 | 56236169.220352 | 188.978811
+8 | 51836218.888167 | 262.496946
+Time spent on getting w in terms of theta: 271 seconds
+
+Calculating gradient
+gradient_cost norm: 64812.6
+
+lambda_square = 0.0961234
+step_direction norm: 179164
+
+step size = 5.58149e-09
+
+Current time: Thu Apr  9 10:27:55 2020
+************ Iteration 11 *************
+theta_sDDot.head(6) = -8.42804e-06 -9.24829e-06 -4.91517e-07 -9.94814e-06  -4.5448e-07  -1.3266e-08
+sample# (rerun #) | stride | incline | init_file | Status | Solve time | Cost (tau cost)
+  1 (0) | 0.202352 | -0.031455 | 10_1_w.csv | SolutionFound | 39.637653 | 2.535963 (0.000000)
+  2 (0) | 0.216903 | -0.048042 | 10_2_w.csv | SolutionFound | 47.969527 | 2.515523 (0.000000)
+  0 (0) | 0.180752 | -0.072228 | 10_0_w.csv | SolutionFound | 54.981037 | 2.591799 (0.000000)
+  3 (0) | 0.182925 | -0.015792 | 10_3_w.csv | SolutionFound | 69.898048 | 2.483341 (0.000000)
+
+w_Q = 0.1
+w_Q_swing_toe = 0.02
+w_R = 0.0002
+w_R_swing_toe = 4e-05
+w_lambda = 4e-06
+w_lambda_diff = 2e-08
+w_v_diff = 0.001
+w_u_diff = 2e-07
+w_q_hip_roll = 10
+w_q_hip_yaw = 1
+w_q_quat_xyz = 10
+cost_x = 1.52634
+cost_u = 0.413113
+cost_lambda = 0.000214281
+cost_lambda_diff = 0.0683142
+cost_vel_diff = 0.058746
+cost_u_diff = 0.00822599
+cost_q_hip_roll = 0.240582
+cost_q_hip_yaw = 0.00276137
+cost_q_quat_xyz = 0.0185
+total_cost (only the nominal traj cost terms) = 2.3368
+  5 (0) | 0.217681 | -0.002279 | 10_5_w.csv | SolutionFound | 39.885260 | 2.494898 (0.000000)
+  6 (0) | 0.184229 | 0.053135 | 10_6_w.csv | SolutionFound | 47.995233 | 2.567399 (0.000000)
+  4 (0) | 0.202086 | 0.012193 | 10_4_w.csv | SolutionFound | 62.452316 | 2.467096 (0.000000)
+  2 (1) | 0.216903 | -0.048042 | 11_2_w.csv | SolutionFound | 27.377059 | 2.515523 (0.000000)
+  1 (1) | 0.202352 | -0.031455 | 11_1_w.csv | SolutionFound | 28.386961 | 2.535962 (0.000000)
+  7 (0) | 0.205320 | 0.047224 | 10_7_w.csv | SolutionFound | 85.506486 | 2.497383 (0.000000)
+  0 (1) | 0.180752 | -0.072228 | 11_0_w.csv | SolutionFound | 25.077708 | 2.591799 (0.000000)
+  3 (1) | 0.182925 | -0.015792 | 11_3_w.csv | SolutionFound | 34.678722 | 2.482573 (0.000000)
+  5 (1) | 0.217681 | -0.002279 | 11_5_w.csv | SolutionFound | 35.854536 | 2.494543 (0.000000)
+
+w_Q = 0.1
+w_Q_swing_toe = 0.02
+w_R = 0.0002
+w_R_swing_toe = 4e-05
+w_lambda = 4e-06
+w_lambda_diff = 2e-08
+w_v_diff = 0.001
+w_u_diff = 2e-07
+w_q_hip_roll = 10
+w_q_hip_yaw = 1
+w_q_quat_xyz = 10
+cost_x = 1.52634
+cost_u = 0.413114
+cost_lambda = 0.00021428
+cost_lambda_diff = 0.0683141
+cost_vel_diff = 0.0587461
+cost_u_diff = 0.00822598
+cost_q_hip_roll = 0.240582
+cost_q_hip_yaw = 0.00276138
+cost_q_quat_xyz = 0.0185
+total_cost (only the nominal traj cost terms) = 2.3368
+  4 (1) | 0.202086 | 0.012193 | 11_4_w.csv | SolutionFound | 23.298844 | 2.467098 (0.000000)
+  6 (1) | 0.184229 | 0.053135 | 11_6_w.csv | SolutionFound | 24.341741 | 2.567401 (0.000000)
+  7 (1) | 0.205320 | 0.047224 | 11_7_w.csv | SolutionFound | 31.724178 | 2.495967 (0.000000)
+  8 (0) | 0.215665 | 0.065220 | 10_8_w.csv | SolutionFound | 192.403732 | 2.636579 (0.000000)
+  8 (1) | 0.215665 | 0.065220 | 11_8_w.csv | SolutionFound | 12.617017 | 2.636579 (0.000000)
+
+Time spent on reading files of sample evaluation: 3 seconds
+
+total_cost = 2.53194 (min so far: 2.52468)
+
+Cost #0 went up by 1.08424%.
+Cost #2 went up by 0.297441%.
+Cost #7 went up by 0.925158%.
+Cost #8 went up by 5.21615%.
+
+Extracting active (and independent rows) of A...
+
+ (After extracting active constraints) Run traj opt to check if your quadratic approximation is correct
+sample# | Solve Status | Cost | w_sol norm | (this should be 0 if w=0 is optimal)
+3 | SolutionFound | -0.05709 | 620.98 | -0.0965309
+0 | SolutionFound | -0.0797756 | 385.248 | -0.123446
+1 | SolutionFound | -0.0651305 | 458.434 | -0.106933
+2 | SolutionFound | -0.0666934 | 487.591 | -0.119064
+6 | SolutionFound | -0.0690943 | 595.078 | -0.120678
+5 | SolutionFound | -0.071998 | 436.787 | -0.13101
+4 | SolutionFound | -0.048859 | 410.107 | -0.0862201
+7 | SolutionFound | -0.0674058 | 428.52 | -0.117341
+8 | SolutionFound | -0.105222 | 541.643 | -0.180308
+Time spent on extracting active (and independent rows) of A: 69 seconds
+
+sample # | max element of abs-Pi | qi norm (this number should be close to 0)
+0 | 57226325.113420 | 159.463526
+2 | 56167994.488447 | 252.819427
+1 | 61778566.959914 | 191.602667
+3 | 65615185.724684 | 506.666154
+7 | 54163316.151210 | 231.737901
+6 | 63449163.473955 | 468.891825
+4 | 58126518.911806 | 216.503962
+5 | 55399073.055723 | 226.865564
+8 | 60035511.950173 | 362.326846
+Time spent on getting w in terms of theta: 272 seconds
+
+Calculating gradient
+gradient_cost norm: 22765.1
+
+lambda_square = 0.0708945
+step_direction norm: 165723
+
+step size = 6.03416e-09
+
+Current time: Thu Apr  9 10:39:37 2020
+************ Iteration 12 *************
+theta_sDDot.head(6) =  9.28936e-07 -6.15793e-07  -5.6927e-07 -1.98537e-06  -5.2569e-07 -1.00702e-08
+sample# (rerun #) | stride | incline | init_file | Status | Solve time | Cost (tau cost)
+  3 (0) | 0.188008 | -0.017625 | 11_3_w.csv | SolutionFound | 39.132924 | 2.494128 (0.000000)
+  2 (0) | 0.220421 | -0.062227 | 11_2_w.csv | SolutionFound | 47.080470 | 2.564824 (0.000000)
+  0 (0) | 0.181876 | -0.051510 | 11_0_w.csv | SolutionFound | 69.512142 | 2.541499 (0.000000)
+
+w_Q = 0.1
+w_Q_swing_toe = 0.02
+w_R = 0.0002
+w_R_swing_toe = 4e-05
+w_lambda = 4e-06
+w_lambda_diff = 2e-08
+w_v_diff = 0.001
+w_u_diff = 2e-07
+w_q_hip_roll = 10
+w_q_hip_yaw = 1
+w_q_quat_xyz = 10
+cost_x = 1.48758
+cost_u = 0.408945
+cost_lambda = 0.000212585
+cost_lambda_diff = 0.0663895
+cost_vel_diff = 0.0588749
+cost_u_diff = 0.00810989
+cost_q_hip_roll = 0.237609
+cost_q_hip_yaw = 0.00222068
+cost_q_quat_xyz = 0.018528
+total_cost (only the nominal traj cost terms) = 2.28847
+  1 (0) | 0.206555 | -0.048219 | 11_1_w.csv | SolutionFound | 109.436981 | 2.562811 (0.000000)
+  5 (0) | 0.208579 | 0.006951 | 11_5_w.csv | SolutionFound | 58.964735 | 2.478855 (0.000000)
+  6 (0) | 0.188799 | 0.068711 | 11_6_w.csv | SolutionFound | 67.608981 | 2.607287 (0.000000)
+  4 (0) | 0.204192 | -0.018833 | 11_4_w.csv | SolutionFound | 108.869670 | 2.482086 (0.000000)
+  7 (0) | 0.198850 | 0.033019 | 11_7_w.csv | SolutionFound | 52.904804 | 2.457407 (0.000000)
+  8 (0) | 0.210828 | 0.032099 | 11_8_w.csv | SolutionFound | 69.834164 | 2.545175 (0.000000)
+  3 (1) | 0.188008 | -0.017625 | 12_3_w.csv | SolutionFound | 36.205643 | 2.493217 (0.000000)
+  2 (1) | 0.220421 | -0.062227 | 12_2_w.csv | SolutionFound | 27.983291 | 2.564822 (0.000000)
+  0 (1) | 0.181876 | -0.051510 | 12_0_w.csv | SolutionFound | 34.323756 | 2.540932 (0.000000)
+
+w_Q = 0.1
+w_Q_swing_toe = 0.02
+w_R = 0.0002
+w_R_swing_toe = 4e-05
+w_lambda = 4e-06
+w_lambda_diff = 2e-08
+w_v_diff = 0.001
+w_u_diff = 2e-07
+w_q_hip_roll = 10
+w_q_hip_yaw = 1
+w_q_quat_xyz = 10
+cost_x = 1.47862
+cost_u = 0.408799
+cost_lambda = 0.000212539
+cost_lambda_diff = 0.0664005
+cost_vel_diff = 0.0587817
+cost_u_diff = 0.00811161
+cost_q_hip_roll = 0.246268
+cost_q_hip_yaw = 0.00223439
+cost_q_quat_xyz = 0.0185339
+total_cost (only the nominal traj cost terms) = 2.28796
+  1 (1) | 0.206555 | -0.048219 | 12_1_w.csv | SolutionFound | 23.293761 | 2.562811 (0.000000)
+  5 (1) | 0.208579 | 0.006951 | 12_5_w.csv | SolutionFound | 31.755926 | 2.477557 (0.000000)
+  6 (1) | 0.188799 | 0.068711 | 12_6_w.csv | SolutionFound | 32.157607 | 2.606025 (0.000000)
+  4 (1) | 0.204192 | -0.018833 | 12_4_w.csv | SolutionFound | 30.991985 | 2.481589 (0.000000)
+  7 (1) | 0.198850 | 0.033019 | 12_7_w.csv | SolutionFound | 19.403354 | 2.457407 (0.000000)
+  8 (1) | 0.210828 | 0.032099 | 12_8_w.csv | SolutionFound | 22.397365 | 2.545175 (0.000000)
+
+Time spent on reading files of sample evaluation: 3 seconds
+
+total_cost = 2.5255 (min so far: 2.52468)
+
+Cost #1 went up by 1.05877%.
+Cost #2 went up by 2.2631%.
+Cost #3 went up by 0.428991%.
+Cost #4 went up by 0.587329%.
+Cost #6 went up by 1.50425%.
+Cost #8 went up by 1.56832%.
+
+Extracting active (and independent rows) of A...
+
+ (After extracting active constraints) Run traj opt to check if your quadratic approximation is correct
+sample# | Solve Status | Cost | w_sol norm | (this should be 0 if w=0 is optimal)
+1 | SolutionFound | -0.0713297 | 419.651 | -0.114613
+2 | SolutionFound | -0.0643985 | 414.11 | -0.109615
+0 | SolutionFound | -0.0648227 | 374.672 | -0.103239
+3 | SolutionFound | -0.0605539 | 624.36 | -0.103322
+4 | SolutionFound | -0.0542223 | 345.777 | -0.0891175
+5 | SolutionFound | -0.0631074 | 411.409 | -0.113735
+7 | SolutionFound | -0.0669571 | 411.122 | -0.118072
+6 | SolutionFound | -0.0689726 | 609.716 | -0.115468
+8 | SolutionFound | -0.111791 | 589.11 | -0.205155
+Time spent on extracting active (and independent rows) of A: 69 seconds
+
+sample # | max element of abs-Pi | qi norm (this number should be close to 0)
+1 | 63292060.587356 | 147.120536
+2 | 63549129.695763 | 163.980633
+3 | 68054025.805639 | 517.097333
+0 | 61682861.425636 | 170.453439
+7 | 57458782.447236 | 211.581547
+6 | 67152378.086573 | 468.883951
+5 | 57662223.651544 | 225.623471
+4 | 62185989.350989 | 104.501646
+8 | 59830466.240453 | 489.860088
+Time spent on getting w in terms of theta: 273 seconds
+
+Calculating gradient
+gradient_cost norm: 26654.1
+
+lambda_square = 0.0651212
+step_direction norm: 115962
+
+step size = 8.62353e-09
+
+Current time: Thu Apr  9 10:50:51 2020
+************ Iteration 13 *************
+theta_sDDot.head(6) =  8.84686e-06  6.63809e-06 -6.61603e-07  4.65724e-06 -6.10326e-07 -7.67404e-09
+sample# (rerun #) | stride | incline | init_file | Status | Solve time | Cost (tau cost)
+  2 (0) | 0.216794 | -0.061333 | 12_2_w.csv | SolutionFound | 38.942788 | 2.566672 (0.000000)
+  1 (0) | 0.199044 | -0.066876 | 12_1_w.csv | SolutionFound | 54.606956 | 2.616327 (0.000000)
+  0 (0) | 0.190749 | -0.073918 | 12_0_w.csv | SolutionFound | 69.241281 | 2.630738 (0.000000)
+  3 (0) | 0.190028 | 0.014331 | 12_3_w.csv | SolutionFound | 82.587396 | 2.493002 (0.000000)
+
+w_Q = 0.1
+w_Q_swing_toe = 0.02
+w_R = 0.0002
+w_R_swing_toe = 4e-05
+w_lambda = 4e-06
+w_lambda_diff = 2e-08
+w_v_diff = 0.001
+w_u_diff = 2e-07
+w_q_hip_roll = 10
+w_q_hip_yaw = 1
+w_q_quat_xyz = 10
+cost_x = 1.56573
+cost_u = 0.413865
+cost_lambda = 0.000212437
+cost_lambda_diff = 0.0659942
+cost_vel_diff = 0.0631835
+cost_u_diff = 0.00805632
+cost_q_hip_roll = 0.239509
+cost_q_hip_yaw = 0.00246745
+cost_q_quat_xyz = 0.0187155
+total_cost (only the nominal traj cost terms) = 2.37773
+  4 (0) | 0.197664 | -0.015016 | 12_4_w.csv | SolutionFound | 46.085680 | 2.480067 (0.000000)
+  5 (0) | 0.214125 | 0.011611 | 12_5_w.csv | SolutionFound | 47.010473 | 2.498051 (0.000000)
+  7 (0) | 0.207355 | 0.055669 | 12_7_w.csv | SolutionFound | 61.383315 | 2.526631 (0.000000)
+  8 (0) | 0.212658 | 0.040898 | 12_8_w.csv | SolutionFound | 55.021591 | 2.573394 (0.000000)
+  2 (1) | 0.216794 | -0.061333 | 13_2_w.csv | SolutionFound | 39.384987 | 2.565596 (0.000000)
+  1 (1) | 0.199044 | -0.066876 | 13_1_w.csv | SolutionFound | 24.335398 | 2.616325 (0.000000)
+  6 (0) | 0.177520 | 0.034268 | 12_6_w.csv | SolutionFound | 121.723194 | 2.532265 (0.000000)
+  0 (1) | 0.190749 | -0.073918 | 13_0_w.csv | SolutionFound | 24.656993 | 2.630739 (0.000000)
+  3 (1) | 0.190028 | 0.014331 | 13_3_w.csv | SolutionFound | 23.949069 | 2.493000 (0.000000)
+
+w_Q = 0.1
+w_Q_swing_toe = 0.02
+w_R = 0.0002
+w_R_swing_toe = 4e-05
+w_lambda = 4e-06
+w_lambda_diff = 2e-08
+w_v_diff = 0.001
+w_u_diff = 2e-07
+w_q_hip_roll = 10
+w_q_hip_yaw = 1
+w_q_quat_xyz = 10
+cost_x = 1.56573
+cost_u = 0.413865
+cost_lambda = 0.000212436
+cost_lambda_diff = 0.0659942
+cost_vel_diff = 0.0631835
+cost_u_diff = 0.00805633
+cost_q_hip_roll = 0.239509
+cost_q_hip_yaw = 0.00246745
+cost_q_quat_xyz = 0.0187155
+total_cost (only the nominal traj cost terms) = 2.37774
+  4 (1) | 0.197664 | -0.015016 | 13_4_w.csv | SolutionFound | 31.158775 | 2.479696 (0.000000)
+  5 (1) | 0.214125 | 0.011611 | 13_5_w.csv | SolutionFound | 31.491258 | 2.496705 (0.000000)
+  7 (1) | 0.207355 | 0.055669 | 13_7_w.csv | SolutionFound | 33.307747 | 2.525460 (0.000000)
+  8 (1) | 0.212658 | 0.040898 | 13_8_w.csv | SolutionFound | 32.977291 | 2.568872 (0.000000)
+  6 (1) | 0.177520 | 0.034268 | 13_6_w.csv | SolutionFound | 21.089168 | 2.531142 (0.000000)
+
+Time spent on reading files of sample evaluation: 3 seconds
+
+total_cost = 2.54528 (min so far: 2.52468)
+
+Cost #0 went up by 3.53453%.
+Cost #1 went up by 3.16921%.
+Cost #2 went up by 2.2942%.
+Cost #3 went up by 0.420129%.
+Cost #4 went up by 0.510721%.
+Cost #5 went up by 0.772938%.
+Cost #7 went up by 2.76918%.
+Cost #8 went up by 2.5141%.
+
+Extracting active (and independent rows) of A...
+
+ (After extracting active constraints) Run traj opt to check if your quadratic approximation is correct
+sample# | Solve Status | Cost | w_sol norm | (this should be 0 if w=0 is optimal)
+3 | SolutionFound | -0.0695519 | 574.301 | -0.119452
+1 | SolutionFound | -0.0919547 | 418.588 | -0.148792
+2 | SolutionFound | -0.0746894 | 463.187 | -0.133287
+0 | SolutionFound | -0.0898033 | 366.027 | -0.141277
+6 | SolutionFound | -0.07363 | 468.394 | -0.122164
+4 | SolutionFound | -0.0654101 | 376 | -0.11173
+5 | SolutionFound | -0.0683605 | 411.762 | -0.123079
+7 | SolutionFound | -0.0644201 | 393.439 | -0.11192
+8 | SolutionFound | -0.11601 | 608.956 | -0.213785
+Time spent on extracting active (and independent rows) of A: 69 seconds
+
+sample # | max element of abs-Pi | qi norm (this number should be close to 0)
+2 | 62426272.119718 | 281.427124
+3 | 70634778.240044 | 464.105531
+0 | 70940400.329270 | 183.035126
+1 | 68781393.306352 | 173.575715
+7 | 60698628.260913 | 196.000743
+4 | 62860217.899206 | 188.018430
+6 | 69135539.229845 | 340.681144
+5 | 61825406.937766 | 232.149091
+8 | 60841255.534864 | 539.263845
+Time spent on getting w in terms of theta: 272 seconds
+
+Calculating gradient
+gradient_cost norm: 72629.8
+
+lambda_square = 0.0861952
+step_direction norm: 60389
+
+step size = 1.65593e-08
+
+Current time: Thu Apr  9 11:01:50 2020
+************ Iteration 14 *************
+theta_sDDot.head(6) =  7.89069e-06  5.42692e-06 -8.04781e-07  3.22681e-06  -7.4245e-07 -1.09426e-08
+sample# (rerun #) | stride | incline | init_file | Status | Solve time | Cost (tau cost)
+  1 (0) | 0.200688 | -0.065885 | 13_1_w.csv | SolutionFound | 31.558372 | 2.617759 (0.000000)
+  2 (0) | 0.212294 | -0.067897 | 13_2_w.csv | SolutionFound | 46.486089 | 2.579044 (0.000000)
+  0 (0) | 0.190122 | -0.066038 | 13_0_w.csv | SolutionFound | 46.621091 | 2.603427 (0.000000)
+  3 (0) | 0.190186 | 0.002842 | 13_3_w.csv | SolutionFound | 53.851513 | 2.492897 (0.000000)
+
+w_Q = 0.1
+w_Q_swing_toe = 0.02
+w_R = 0.0002
+w_R_swing_toe = 4e-05
+w_lambda = 4e-06
+w_lambda_diff = 2e-08
+w_v_diff = 0.001
+w_u_diff = 2e-07
+w_q_hip_roll = 10
+w_q_hip_yaw = 1
+w_q_quat_xyz = 10
+cost_x = 1.53863
+cost_u = 0.411829
+cost_lambda = 0.000211585
+cost_lambda_diff = 0.0652452
+cost_vel_diff = 0.058793
+cost_u_diff = 0.00792719
+cost_q_hip_roll = 0.247628
+cost_q_hip_yaw = 0.0022096
+cost_q_quat_xyz = 0.0188833
+total_cost (only the nominal traj cost terms) = 2.35135
+  4 (0) | 0.197267 | 0.006152 | 13_4_w.csv | SolutionFound | 54.889953 | 2.468699 (0.000000)
+  6 (0) | 0.187324 | 0.034507 | 13_6_w.csv | SolutionFound | 40.002506 | 2.547404 (0.000000)
+  5 (0) | 0.219599 | 0.020599 | 13_5_w.csv | SolutionFound | 53.822543 | 2.513677 (0.000000)
+  7 (0) | 0.203513 | 0.029578 | 13_7_w.csv | SolutionFound | 54.218087 | 2.470394 (0.000000)
+  1 (1) | 0.200688 | -0.065885 | 14_1_w.csv | SolutionFound | 24.007505 | 2.617758 (0.000000)
+  8 (0) | 0.212459 | 0.035039 | 13_8_w.csv | SolutionFound | 38.721319 | 2.557157 (0.000000)
+  0 (1) | 0.190122 | -0.066038 | 14_0_w.csv | SolutionFound | 31.450993 | 2.602559 (0.000000)
+  2 (1) | 0.212294 | -0.067897 | 14_2_w.csv | SolutionFound | 32.292199 | 2.578022 (0.000000)
+
+w_Q = 0.1
+w_Q_swing_toe = 0.02
+w_R = 0.0002
+w_R_swing_toe = 4e-05
+w_lambda = 4e-06
+w_lambda_diff = 2e-08
+w_v_diff = 0.001
+w_u_diff = 2e-07
+w_q_hip_roll = 10
+w_q_hip_yaw = 1
+w_q_quat_xyz = 10
+cost_x = 1.54606
+cost_u = 0.411815
+cost_lambda = 0.000211517
+cost_lambda_diff = 0.065198
+cost_vel_diff = 0.0584777
+cost_u_diff = 0.00790658
+cost_q_hip_roll = 0.239641
+cost_q_hip_yaw = 0.00223887
+cost_q_quat_xyz = 0.0189986
+total_cost (only the nominal traj cost terms) = 2.35055
+  3 (1) | 0.190186 | 0.002842 | 14_3_w.csv | SolutionFound | 23.286961 | 2.492897 (0.000000)
+  4 (1) | 0.197267 | 0.006152 | 14_4_w.csv | SolutionFound | 23.427575 | 2.468701 (0.000000)
+  6 (1) | 0.187324 | 0.034507 | 14_6_w.csv | SolutionFound | 31.574057 | 2.545890 (0.000000)
+  5 (1) | 0.219599 | 0.020599 | 14_5_w.csv | SolutionFound | 32.231515 | 2.511909 (0.000000)
+  7 (1) | 0.203513 | 0.029578 | 14_7_w.csv | SolutionFound | 24.579343 | 2.470393 (0.000000)
+  8 (1) | 0.212459 | 0.035039 | 14_8_w.csv | SolutionFound | 23.833583 | 2.557158 (0.000000)
+
+Time spent on reading files of sample evaluation: 3 seconds
+
+total_cost = 2.53837 (min so far: 2.52468)
+
+Cost #0 went up by 2.42549%.
+Cost #1 went up by 3.2256%.
+Cost #2 went up by 2.78941%.
+Cost #3 went up by 0.416101%.
+Cost #4 went up by 0.0648535%.
+Cost #5 went up by 1.38644%.
+Cost #6 went up by 0.582741%.
+Cost #7 went up by 0.528198%.
+Cost #8 went up by 2.04679%.
+
+Extracting active (and independent rows) of A...
+
+ (After extracting active constraints) Run traj opt to check if your quadratic approximation is correct
+sample# | Solve Status | Cost | w_sol norm | (this should be 0 if w=0 is optimal)
+2 | SolutionFound | -0.097342 | 397.635 | -0.157125
+3 | SolutionFound | -0.0699191 | 565.757 | -0.121483
+1 | SolutionFound | -0.0812301 | 417.462 | -0.139634
+0 | SolutionFound | -0.0865134 | 368.672 | -0.138895
+4 | SolutionFound | -0.0647448 | 387.557 | -0.110301
+6 | SolutionFound | -0.0767637 | 470.828 | -0.128444
+5 | SolutionFound | -0.068216 | 387.671 | -0.122309
+7 | SolutionFound | -0.0732242 | 390.874 | -0.131823
+8 | SolutionFound | -0.114397 | 598.803 | -0.212061
+Time spent on extracting active (and independent rows) of A: 68 seconds
+
+sample # | max element of abs-Pi | qi norm (this number should be close to 0)
+1 | 63164079.826170 | 280.188227
+3 | 67730036.232936 | 485.619970
+0 | 58686559.090422 | 200.609217
+2 | 62214253.630124 | 209.722065
+4 | 60376611.509943 | 243.164558
+6 | 67266020.484251 | 353.694957
+7 | 58390415.076325 | 259.425021
+5 | 58816135.092179 | 264.458092
+8 | 59716989.600358 | 540.573314
+Time spent on getting w in terms of theta: 271 seconds
+
+Calculating gradient
+gradient_cost norm: 71208.1
+
+lambda_square = 0.0808452
+step_direction norm: 83198.5
+
+step size = 1.20194e-08
+
+Current time: Thu Apr  9 11:11:58 2020
+************ Iteration 15 *************
+theta_sDDot.head(6) = -3.45959e-06 -5.42694e-06 -8.86495e-07 -7.14891e-06  -8.1845e-07 -1.78376e-08
+sample# (rerun #) | stride | incline | init_file | Status | Solve time | Cost (tau cost)
+  3 (0) | 0.182867 | 0.015548 | 14_3_w.csv | SolutionFound | 46.351580 | 2.468690 (0.000000)
+  2 (0) | 0.214803 | -0.060136 | 14_2_w.csv | SolutionFound | 46.956818 | 2.542453 (0.000000)
+  0 (0) | 0.187805 | -0.030074 | 14_0_w.csv | SolutionFound | 76.430236 | 2.502343 (0.000000)
+
+w_Q = 0.1
+w_Q_swing_toe = 0.02
+w_R = 0.0002
+w_R_swing_toe = 4e-05
+w_lambda = 4e-06
+w_lambda_diff = 2e-08
+w_v_diff = 0.001
+w_u_diff = 2e-07
+w_q_hip_roll = 10
+w_q_hip_yaw = 1
+w_q_quat_xyz = 10
+cost_x = 1.46178
+cost_u = 0.404463
+cost_lambda = 0.00021014
+cost_lambda_diff = 0.0648454
+cost_vel_diff = 0.0504173
+cost_u_diff = 0.0077768
+cost_q_hip_roll = 0.241359
+cost_q_hip_yaw = 0.00220564
+cost_q_quat_xyz = 0.0190658
+total_cost (only the nominal traj cost terms) = 2.25213
+  1 (0) | 0.199518 | -0.032517 | 14_1_w.csv | SolutionFound | 113.068324 | 2.462817 (0.000000)
+  5 (0) | 0.218893 | 0.002583 | 14_5_w.csv | SolutionFound | 53.828209 | 2.488073 (0.000000)
+  4 (0) | 0.204023 | -0.003322 | 14_4_w.csv | SolutionFound | 61.766784 | 2.465679 (0.000000)
+  6 (0) | 0.186356 | 0.047882 | 14_6_w.csv | SolutionFound | 53.608570 | 2.548008 (0.000000)
+  3 (1) | 0.182867 | 0.015548 | 15_3_w.csv | SolutionFound | 24.300267 | 2.468691 (0.000000)
+  7 (0) | 0.196626 | 0.040957 | 14_7_w.csv | SolutionFound | 46.660764 | 2.463544 (0.000000)
+  2 (1) | 0.214803 | -0.060136 | 15_2_w.csv | SolutionFound | 31.868241 | 2.541613 (0.000000)
+  0 (1) | 0.187805 | -0.030074 | 15_0_w.csv | SolutionFound | 23.535866 | 2.502344 (0.000000)
+  1 (1) | 0.199518 | -0.032517 | 15_1_w.csv | SolutionFound | 24.774534 | 2.462817 (0.000000)
+
+w_Q = 0.1
+w_Q_swing_toe = 0.02
+w_R = 0.0002
+w_R_swing_toe = 4e-05
+w_lambda = 4e-06
+w_lambda_diff = 2e-08
+w_v_diff = 0.001
+w_u_diff = 2e-07
+w_q_hip_roll = 10
+w_q_hip_yaw = 1
+w_q_quat_xyz = 10
+cost_x = 1.46178
+cost_u = 0.404463
+cost_lambda = 0.00021014
+cost_lambda_diff = 0.0648453
+cost_vel_diff = 0.0504172
+cost_u_diff = 0.0077768
+cost_q_hip_roll = 0.241359
+cost_q_hip_yaw = 0.00220563
+cost_q_quat_xyz = 0.0190659
+total_cost (only the nominal traj cost terms) = 2.25213
+  5 (1) | 0.218893 | 0.002583 | 15_5_w.csv | SolutionFound | 24.045713 | 2.488074 (0.000000)
+  8 (0) | 0.210992 | 0.068185 | 14_8_w.csv | SolutionFound | 112.402163 | 2.614923 (0.000000)
+  4 (1) | 0.204023 | -0.003322 | 15_4_w.csv | SolutionFound | 31.155802 | 2.464867 (0.000000)
+  6 (1) | 0.186356 | 0.047882 | 15_6_w.csv | SolutionFound | 24.185337 | 2.548007 (0.000000)
+  7 (1) | 0.196626 | 0.040957 | 15_7_w.csv | SolutionFound | 27.210992 | 2.461106 (0.000000)
+  8 (1) | 0.210992 | 0.068185 | 15_8_w.csv | SolutionFound | 24.038565 | 2.613319 (0.000000)
+
+Time spent on reading files of sample evaluation: 3 seconds
+
+total_cost = 2.50565 (min so far: 2.50565)
+
+Cost #2 went up by 1.33769%.
+Cost #5 went up by 0.424208%.
+Cost #6 went up by 0.666498%.
+Cost #7 went up by 0.150565%.
+Cost #8 went up by 4.28793%.
+
+Extracting active (and independent rows) of A...
+
+ (After extracting active constraints) Run traj opt to check if your quadratic approximation is correct
+sample# | Solve Status | Cost | w_sol norm | (this should be 0 if w=0 is optimal)
+1 | SolutionFound | -0.0505237 | 330.591 | -0.0796556
+0 | SolutionFound | -0.0477823 | 314.588 | -0.0744981
+3 | SolutionFound | -0.0561361 | 552.443 | -0.0929225
+2 | SolutionFound | -0.0655704 | 377.758 | -0.109224
+4 | SolutionFound | -0.0534956 | 345.633 | -0.0877739
+6 | SolutionFound | -0.0693889 | 451.138 | -0.108753
+5 | SolutionFound | -0.0590168 | 377.001 | -0.10499
+7 | SolutionFound | -0.0546863 | 377.814 | -0.0959501
+8 | SolutionFound | -0.0749705 | 394.346 | -0.120387
+Time spent on extracting active (and independent rows) of A: 68 seconds
+
+sample # | max element of abs-Pi | qi norm (this number should be close to 0)
+2 | 56294239.059622 | 237.534217
+1 | 50093662.422107 | 171.617567
+3 | 63245394.573916 | 473.128085
+0 | 49987158.516634 | 146.042498
+6 | 63347769.798306 | 345.433198
+4 | 56471590.990533 | 204.256394
+7 | 54535045.327093 | 257.292359
+5 | 55618926.015807 | 235.507486
+8 | 58842302.589918 | 327.204296
+Time spent on getting w in terms of theta: 271 seconds
+
+Calculating gradient
+gradient_cost norm: 29346.6
+
+lambda_square = 0.0513425
+step_direction norm: 92785
+
+step size = 1.07776e-08
+
+Current time: Thu Apr  9 11:22:54 2020
+************ Iteration 16 *************
+theta_sDDot.head(6) =   -1.742e-05 -1.86634e-05 -9.04306e-07  -1.9698e-05  -8.3492e-07 -2.53944e-08
+sample# (rerun #) | stride | incline | init_file | Status | Solve time | Cost (tau cost)
+  0 (0) | 0.190172 | -0.037788 | 15_0_w.csv | SolutionFound | 39.874683 | 2.514429 (0.000000)
+  3 (0) | 0.182781 | 0.005663 | 15_3_w.csv | SolutionFound | 40.543365 | 2.461932 (0.000000)
+
+w_Q = 0.1
+w_Q_swing_toe = 0.02
+w_R = 0.0002
+w_R_swing_toe = 4e-05
+w_lambda = 4e-06
+w_lambda_diff = 2e-08
+w_v_diff = 0.001
+w_u_diff = 2e-07
+w_q_hip_roll = 10
+w_q_hip_yaw = 1
+w_q_quat_xyz = 10
+cost_x = 1.48161
+cost_u = 0.406066
+cost_lambda = 0.000211048
+cost_lambda_diff = 0.066046
+cost_vel_diff = 0.0491666
+cost_u_diff = 0.00789042
+cost_q_hip_roll = 0.230646
+cost_q_hip_yaw = 0.00259607
+cost_q_quat_xyz = 0.0190016
+total_cost (only the nominal traj cost terms) = 2.26323
+  1 (0) | 0.195426 | -0.062245 | 15_1_w.csv | SolutionFound | 61.778453 | 2.518574 (0.000000)
+  2 (0) | 0.210775 | -0.029702 | 15_2_w.csv | SolutionFound | 78.154802 | 2.456066 (0.000000)
+  4 (0) | 0.195669 | 0.018172 | 15_4_w.csv | SolutionFound | 53.125154 | 2.453427 (0.000000)
+  5 (0) | 0.210846 | -0.011096 | 15_5_w.csv | SolutionFound | 55.018909 | 2.477917 (0.000000)
+  0 (1) | 0.190172 | -0.037788 | 16_0_w.csv | SolutionFound | 24.516541 | 2.514429 (0.000000)
+  6 (0) | 0.181665 | 0.072240 | 15_6_w.csv | SolutionFound | 84.588162 | 2.582481 (0.000000)
+  8 (0) | 0.219852 | 0.068147 | 15_8_w.csv | SolutionFound | 46.767567 | 2.633562 (0.000000)
+
+w_Q = 0.1
+w_Q_swing_toe = 0.02
+w_R = 0.0002
+w_R_swing_toe = 4e-05
+w_lambda = 4e-06
+w_lambda_diff = 2e-08
+w_v_diff = 0.001
+w_u_diff = 2e-07
+w_q_hip_roll = 10
+w_q_hip_yaw = 1
+w_q_quat_xyz = 10
+cost_x = 1.48161
+cost_u = 0.406066
+cost_lambda = 0.000211048
+cost_lambda_diff = 0.066046
+cost_vel_diff = 0.0491667
+cost_u_diff = 0.00789042
+cost_q_hip_roll = 0.230646
+cost_q_hip_yaw = 0.00259607
+cost_q_quat_xyz = 0.0190015
+total_cost (only the nominal traj cost terms) = 2.26323
+  7 (0) | 0.194054 | 0.071638 | 15_7_w.csv | SolutionFound | 90.882672 | 2.523948 (0.000000)
+  3 (1) | 0.182781 | 0.005663 | 16_3_w.csv | SolutionFound | 23.401899 | 2.461932 (0.000000)
+  1 (1) | 0.195426 | -0.062245 | 16_1_w.csv | SolutionFound | 31.402639 | 2.518068 (0.000000)
+  2 (1) | 0.210775 | -0.029702 | 16_2_w.csv | SolutionFound | 31.547548 | 2.455247 (0.000000)
+  4 (1) | 0.195669 | 0.018172 | 16_4_w.csv | SolutionFound | 32.048328 | 2.450695 (0.000000)
+  5 (1) | 0.210846 | -0.011096 | 16_5_w.csv | SolutionFound | 31.535816 | 2.476744 (0.000000)
+  6 (1) | 0.181665 | 0.072240 | 16_6_w.csv | SolutionFound | 31.963647 | 2.581023 (0.000000)
+  8 (1) | 0.219852 | 0.068147 | 16_8_w.csv | SolutionFound | 29.125381 | 2.631305 (0.000000)
+  7 (1) | 0.194054 | 0.071638 | 16_7_w.csv | SolutionFound | 29.112309 | 2.522568 (0.000000)
+
+Time spent on reading files of sample evaluation: 3 seconds
+
+total_cost = 2.51245 (min so far: 2.50565)
+
+Cost #0 went up by 0.483148%.
+Cost #1 went up by 2.24336%.
+Cost #6 went up by 1.97065%.
+Cost #7 went up by 2.65157%.
+Cost #8 went up by 5.00585%.
+
+Extracting active (and independent rows) of A...
+
+ (After extracting active constraints) Run traj opt to check if your quadratic approximation is correct
+sample# | Solve Status | Cost | w_sol norm | (this should be 0 if w=0 is optimal)
+0 | SolutionFound | -0.0568186 | 321.055 | -0.0864651
+2 | SolutionFound | -0.0438569 | 355.008 | -0.0763133
+1 | SolutionFound | -0.0776748 | 339.918 | -0.114046
+3 | SolutionFound | -0.0498807 | 538.996 | -0.0813366
+5 | SolutionFound | -0.0605629 | 382.661 | -0.107957
+4 | SolutionFound | -0.0370517 | 349.907 | -0.0641866
+6 | SolutionFound | -0.0506417 | 432.819 | -0.080905
+7 | SolutionFound | -0.0527435 | 338.6 | -0.0850097
+8 | SolutionFound | -0.0645003 | 388.827 | -0.105024
+Time spent on extracting active (and independent rows) of A: 69 seconds
+
+sample # | max element of abs-Pi | qi norm (this number should be close to 0)
+0 | 43091534.164244 | 170.357445
+1 | 42883993.383476 | 145.669555
+3 | 60224011.474735 | 463.144638
+2 | 52650628.056864 | 167.727239
+5 | 52507136.662556 | 226.791714
+4 | 52298877.052346 | 227.627624
+7 | 50639265.849267 | 204.179883
+6 | 59444509.600345 | 331.029360
+8 | 54872098.182148 | 356.288626
+Time spent on getting w in terms of theta: 272 seconds
+
+Calculating gradient
+gradient_cost norm: 13018.7
+
+lambda_square = 0.0437819
+step_direction norm: 66616.4
+
+step size = 1.50113e-08
+
+Current time: Thu Apr  9 11:33:43 2020
+************ Iteration 17 *************
+theta_sDDot.head(6) =  -3.5391e-05 -3.56734e-05 -9.11642e-07 -3.57978e-05 -8.41367e-07 -3.49855e-08
+sample# (rerun #) | stride | incline | init_file | Status | Solve time | Cost (tau cost)
+  0 (0) | 0.188965 | -0.042405 | 16_0_w.csv | SolutionFound | 38.819330 | 2.526322 (0.000000)
+  1 (0) | 0.194791 | -0.066668 | 16_1_w.csv | SolutionFound | 46.461900 | 2.534799 (0.000000)
+
+w_Q = 0.1
+w_Q_swing_toe = 0.02
+w_R = 0.0002
+w_R_swing_toe = 4e-05
+w_lambda = 4e-06
+w_lambda_diff = 2e-08
+w_v_diff = 0.001
+w_u_diff = 2e-07
+w_q_hip_roll = 10
+w_q_hip_yaw = 1
+w_q_quat_xyz = 10
+cost_x = 1.48052
+cost_u = 0.406881
+cost_lambda = 0.000211816
+cost_lambda_diff = 0.0670333
+cost_vel_diff = 0.047799
+cost_u_diff = 0.00798182
+cost_q_hip_roll = 0.242002
+cost_q_hip_yaw = 0.00287967
+cost_q_quat_xyz = 0.0189902
+total_cost (only the nominal traj cost terms) = 2.2743
+  2 (0) | 0.213289 | -0.073496 | 16_2_w.csv | SolutionFound | 61.799615 | 2.582576 (0.000000)
+  4 (0) | 0.201857 | 0.004615 | 16_4_w.csv | SolutionFound | 47.616796 | 2.460736 (0.000000)
+  3 (0) | 0.182208 | -0.024234 | 16_3_w.csv | SolutionFound | 107.757857 | 2.467300 (0.000000)
+  5 (0) | 0.214527 | 0.004926 | 16_5_w.csv | SolutionFound | 54.818480 | 2.486097 (0.000000)
+  6 (0) | 0.184130 | 0.033162 | 16_6_w.csv | SolutionFound | 84.917443 | 2.528468 (0.000000)
+  8 (0) | 0.212015 | 0.068156 | 16_8_w.csv | SolutionFound | 39.273184 | 2.619851 (0.000000)
+  0 (1) | 0.188965 | -0.042405 | 17_0_w.csv | SolutionFound | 32.629296 | 2.525298 (0.000000)
+  7 (0) | 0.198449 | 0.045788 | 16_7_w.csv | SolutionFound | 62.292892 | 2.474083 (0.000000)
+
+w_Q = 0.1
+w_Q_swing_toe = 0.02
+w_R = 0.0002
+w_R_swing_toe = 4e-05
+w_lambda = 4e-06
+w_lambda_diff = 2e-08
+w_v_diff = 0.001
+w_u_diff = 2e-07
+w_q_hip_roll = 10
+w_q_hip_yaw = 1
+w_q_quat_xyz = 10
+cost_x = 1.4906
+cost_u = 0.406879
+cost_lambda = 0.000211735
+cost_lambda_diff = 0.0669939
+cost_vel_diff = 0.0477319
+cost_u_diff = 0.00796559
+cost_q_hip_roll = 0.231486
+cost_q_hip_yaw = 0.0028714
+cost_q_quat_xyz = 0.018618
+total_cost (only the nominal traj cost terms) = 2.27336
+  2 (1) | 0.213289 | -0.073496 | 17_2_w.csv | SolutionFound | 23.555268 | 2.582576 (0.000000)
+  1 (1) | 0.194791 | -0.066668 | 17_1_w.csv | SolutionFound | 31.416311 | 2.534208 (0.000000)
+  3 (1) | 0.182208 | -0.024234 | 17_3_w.csv | SolutionFound | 32.357624 | 2.466498 (0.000000)
+  4 (1) | 0.201857 | 0.004615 | 17_4_w.csv | SolutionFound | 23.984818 | 2.460734 (0.000000)
+  6 (1) | 0.184130 | 0.033162 | 17_6_w.csv | SolutionFound | 23.567523 | 2.528470 (0.000000)
+  5 (1) | 0.214527 | 0.004926 | 17_5_w.csv | SolutionFound | 32.365311 | 2.486217 (0.000000)
+  8 (1) | 0.212015 | 0.068156 | 17_8_w.csv | SolutionFound | 24.254147 | 2.619853 (0.000000)
+  7 (1) | 0.198449 | 0.045788 | 17_7_w.csv | SolutionFound | 24.085469 | 2.474083 (0.000000)
+
+Time spent on reading files of sample evaluation: 3 seconds
+
+total_cost = 2.51977 (min so far: 2.50565)
+
+Cost #0 went up by 0.917541%.
+Cost #1 went up by 2.89871%.
+Cost #2 went up by 5.18603%.
+Cost #3 went up by 0.185627%.
+Cost #4 went up by 0.409681%.
+Cost #5 went up by 0.382761%.
+Cost #7 went up by 0.678356%.
+Cost #8 went up by 4.54852%.
+
+Extracting active (and independent rows) of A...
+
+ (After extracting active constraints) Run traj opt to check if your quadratic approximation is correct
+sample# | Solve Status | Cost | w_sol norm | (this should be 0 if w=0 is optimal)
+3 | SolutionFound | -0.0481092 | 486.059 | -0.0772524
+0 | SolutionFound | -0.0655125 | 328.484 | -0.101015
+1 | SolutionFound | -0.0630351 | 350.594 | -0.100951
+2 | SolutionFound | -0.0793257 | 401.728 | -0.12874
+4 | SolutionFound | -0.0544236 | 324.679 | -0.0889104
+5 | SolutionFound | -0.0657465 | 376.745 | -0.117663
+6 | SolutionFound | -0.0479482 | 434.633 | -0.0837624
+7 | SolutionFound | -0.0588847 | 351.706 | -0.102222
+8 | SolutionFound | -0.19514 | 453.746 | -0.346898
+Time spent on extracting active (and independent rows) of A: 69 seconds
+
+sample # | max element of abs-Pi | qi norm (this number should be close to 0)
+0 | 41178111.290018 | 157.551341
+3 | 58337082.290721 | 406.826984
+2 | 51150873.712474 | 180.264278
+1 | 41703574.299645 | 145.115257
+7 | 48481966.762983 | 196.539478
+6 | 56598415.148224 | 296.588905
+5 | 49337076.802579 | 229.721799
+4 | 49836967.798189 | 168.854325
+8 | 29751042.829842 | 367.899142
+Time spent on getting w in terms of theta: 271 seconds
+
+Calculating gradient
+gradient_cost norm: 44641.6
+
+lambda_square = 0.0807077
+step_direction norm: 38639.5
+
+step size = 2.58803e-08
+
+Current time: Thu Apr  9 11:44:20 2020
+************ Iteration 18 *************
+theta_sDDot.head(6) =  -5.6357e-05 -5.56142e-05 -9.92032e-07 -5.47595e-05 -9.14049e-07 -4.46222e-08
+sample# (rerun #) | stride | incline | init_file | Status | Solve time | Cost (tau cost)
+  3 (0) | 0.183271 | -0.016858 | 17_3_w.csv | SolutionFound | 46.459098 | 2.458076 (0.000000)
+  0 (0) | 0.189643 | -0.034142 | 17_0_w.csv | SolutionFound | 47.248832 | 2.509533 (0.000000)
+  2 (0) | 0.213202 | -0.038159 | 17_2_w.csv | SolutionFound | 61.890160 | 2.479160 (0.000000)
+
+w_Q = 0.1
+w_Q_swing_toe = 0.02
+w_R = 0.0002
+w_R_swing_toe = 4e-05
+w_lambda = 4e-06
+w_lambda_diff = 2e-08
+w_v_diff = 0.001
+w_u_diff = 2e-07
+w_q_hip_roll = 10
+w_q_hip_yaw = 1
+w_q_quat_xyz = 10
+cost_x = 1.47112
+cost_u = 0.405155
+cost_lambda = 0.000211136
+cost_lambda_diff = 0.066423
+cost_vel_diff = 0.0460892
+cost_u_diff = 0.00789
+cost_q_hip_roll = 0.240218
+cost_q_hip_yaw = 0.00237793
+cost_q_quat_xyz = 0.0187885
+total_cost (only the nominal traj cost terms) = 2.25827
+  4 (0) | 0.197839 | 0.012366 | 17_4_w.csv | SolutionFound | 47.246036 | 2.454052 (0.000000)
+  5 (0) | 0.215687 | -0.024567 | 17_5_w.csv | SolutionFound | 54.265901 | 2.500453 (0.000000)
+  6 (0) | 0.188314 | 0.053574 | 17_6_w.csv | SolutionFound | 64.059311 | 2.559530 (0.000000)
+  7 (0) | 0.198602 | 0.038486 | 17_7_w.csv | SolutionFound | 39.131688 | 2.458714 (0.000000)
+  3 (1) | 0.183271 | -0.016858 | 18_3_w.csv | SolutionFound | 32.175826 | 2.457246 (0.000000)
+  1 (0) | 0.193386 | -0.034018 | 17_1_w.csv | SolutionFound | 225.186117 | 2.459773 (0.000000)
+  0 (1) | 0.189643 | -0.034142 | 18_0_w.csv | SolutionFound | 31.525263 | 2.508736 (0.000000)
+
+w_Q = 0.1
+w_Q_swing_toe = 0.02
+w_R = 0.0002
+w_R_swing_toe = 4e-05
+w_lambda = 4e-06
+w_lambda_diff = 2e-08
+w_v_diff = 0.001
+w_u_diff = 2e-07
+w_q_hip_roll = 10
+w_q_hip_yaw = 1
+w_q_quat_xyz = 10
+cost_x = 1.47609
+cost_u = 0.405136
+cost_lambda = 0.00021105
+cost_lambda_diff = 0.0663851
+cost_vel_diff = 0.0460243
+cost_u_diff = 0.00787563
+cost_q_hip_roll = 0.234728
+cost_q_hip_yaw = 0.00243446
+cost_q_quat_xyz = 0.0186785
+total_cost (only the nominal traj cost terms) = 2.25757
