@@ -217,12 +217,20 @@ void extractResult(VectorXd& w_sol,
   // Check which solver we are using
   // cout << "Solver: " << result.get_solver_id().name() << endl;
 
-  if ((result.get_optimal_cost() > cost_threshold_for_update) &&
-      (n_rerun > N_rerun)) {
-    cout << "the cost of idx #" << sample_idx
-         << " is higher than before, skip\n";
-    return;
+  cout << "(sample_idx, n_rerun, N_rerun, is_success) = (" << sample_idx << ", "
+       << n_rerun << ", " << N_rerun << ", " << result.is_success() << ")\n";
+  if (n_rerun > N_rerun) {
+    if (!result.is_success()) {
+      cout << "the rerun of idx #" << sample_idx
+           << " was not successful, skip\n";
+      return;
+    } else if (result.get_optimal_cost() > cost_threshold_for_update) {
+      cout << "the cost of idx #" << sample_idx
+           << " is higher than before, skip\n";
+      return;
+    }
   }
+  cout << "storing result...\n";
 
   VectorXd is_success(1);
   if (result.is_success()) is_success << 1;
@@ -376,6 +384,7 @@ void postProcessing(const VectorXd& w_sol,
                     const string& directory,
                     const string& init_file,
                     const string& prefix,
+                    const vector<std::shared_ptr<MatrixXd>> & H_vec,
                     double Q_double, double R_double,
                     double eps_reg,
                     bool is_get_nominal,
@@ -555,13 +564,17 @@ void postProcessing(const VectorXd& w_sol,
 
     // Store the vectors and matrices
     // cout << "\nStoring vectors and matrices into csv.\n";
-    writeCSV(directory + prefix + string("H.csv"), H);
+//    writeCSV(directory + prefix + string("H.csv"), H);
     writeCSV(directory + prefix + string("b.csv"), b);
     writeCSV(directory + prefix + string("A.csv"), A);
     writeCSV(directory + prefix + string("lb.csv"), lb);
     writeCSV(directory + prefix + string("ub.csv"), ub);
     writeCSV(directory + prefix + string("y.csv"), y);
     writeCSV(directory + prefix + string("B.csv"), B);
+
+    H_vec[sample_idx]->resizeLike(H); *(H_vec[sample_idx]) = H;
+
+
 
     // Store s, ds, dds and tau into csv files
     // cout << "\nStoring s, ds and dds into csv.\n";
@@ -1069,6 +1082,7 @@ void fiveLinkRobotTrajOpt(const MultibodyPlant<double> & plant,
                           double duration, int n_node, int max_iter,
                           const string& directory,
                           const string& init_file, const string& prefix,
+                          const vector<std::shared_ptr<MatrixXd>> & H_vec,
                           double Q_double, double R_double,
                           double all_cost_scale,
                           double eps_reg,
@@ -1160,7 +1174,7 @@ void fiveLinkRobotTrajOpt(const MultibodyPlant<double> & plant,
 
     // after adding rom constraint
     // Dynamic constraints
-    options_list[i].setDynConstraintScaling({0, 1, 2, 3}, 1.0 / 40.0);
+    /*options_list[i].setDynConstraintScaling({0, 1, 2, 3}, 1.0 / 40.0);
     options_list[i].setDynConstraintScaling({4, 5}, 1.0 / 60.0);
     options_list[i].setDynConstraintScaling(6, 1.0 / 200.0); // end of pos
     options_list[i].setDynConstraintScaling(7, 1.0 / 180.0);
@@ -1179,7 +1193,7 @@ void fiveLinkRobotTrajOpt(const MultibodyPlant<double> & plant,
     options_list[i].setImpConstraintScaling(3, 1.0 / 3.0);
     options_list[i].setImpConstraintScaling(4, 1.8 / 5.0);
     options_list[i].setImpConstraintScaling(5, 1.8 / 1.0);
-    options_list[i].setImpConstraintScaling(6, 1.8 / 3.0);
+    options_list[i].setImpConstraintScaling(6, 1.8 / 3.0);*/
   }
 
   // Stated in the MultipleShooting class:
@@ -1213,7 +1227,7 @@ void fiveLinkRobotTrajOpt(const MultibodyPlant<double> & plant,
   // However, we need it now, since we add the running cost by hand
   trajopt->AddDurationBounds(duration, duration);
 
-//  cout << "WARNING: you are printing snopt log.\n";
+//  cout << "WARNING: you are printing snopt log.\n for five-link model";
 //  trajopt->SetSolverOption(drake::solvers::SnoptSolver::id(), "Print file",
 //                           "../snopt_sample#"+to_string(sample_idx)+".out");
   trajopt->SetSolverOption(drake::solvers::SnoptSolver::id(),
@@ -1224,10 +1238,10 @@ void fiveLinkRobotTrajOpt(const MultibodyPlant<double> & plant,
                            0);
   trajopt->SetSolverOption(drake::solvers::SnoptSolver::id(), "Scale option",
                            0);  // 0 // snopt doc said try 2 if seeing snopta exit 40
-  // trajopt->SetSolverOption(drake::solvers::SnoptSolver::id(),
-  //                          "Major optimality tolerance", 1e-5);  // target nonlinear constraint violation
-  // trajopt->SetSolverOption(drake::solvers::SnoptSolver::id(),
-  //                          "Major feasibility tolerance", 1e-5);  // target complementarity gap
+  trajopt->SetSolverOption(drake::solvers::SnoptSolver::id(),
+                           "Major optimality tolerance", 1e-4);  // target nonlinear constraint violation
+  trajopt->SetSolverOption(drake::solvers::SnoptSolver::id(),
+                           "Major feasibility tolerance", 1e-4);  // target complementarity gap
 
   // Periodicity constraints
   auto x0 = trajopt->initial_state();
@@ -1391,7 +1405,7 @@ void fiveLinkRobotTrajOpt(const MultibodyPlant<double> & plant,
     n_s, n_sDDot, n_tau, n_feature_s, n_feature_sDDot,
     B_tau, theta_s, theta_sDDot,
     std::move(trajopt), &plant_autoDiff, &plant, num_time_samples,
-    is_get_nominal, is_add_tau_in_cost, rom_option, robot_option);
+    is_get_nominal, is_add_tau_in_cost, rom_option, robot_option, 1/*temporary*/);
 
   addRegularization(is_get_nominal, eps_reg, gm_traj_opt);
 
@@ -1405,8 +1419,8 @@ void fiveLinkRobotTrajOpt(const MultibodyPlant<double> & plant,
   }
 
   // Testing
-  // cout << "Choose the best solver: " <<
-  //      drake::solvers::ChooseBestSolver(*(gm_traj_opt.dircon)).name() << endl;
+//   cout << "Choose the best solver: " <<
+//        drake::solvers::ChooseBestSolver(*(gm_traj_opt.dircon)).name() << endl;
 
   // cout << "Solving DIRCON (based on MultipleShooting)\n";
   auto start = std::chrono::high_resolution_clock::now();
@@ -1440,6 +1454,7 @@ void fiveLinkRobotTrajOpt(const MultibodyPlant<double> & plant,
                  stride_length, ground_incline,
                  duration, max_iter,
                  directory, init_file, prefix,
+                 H_vec,
                  Q_double, R_double, eps_reg,
                  is_get_nominal, is_zero_touchdown_impact,
                  extend_model, is_add_tau_in_cost,
@@ -1462,6 +1477,7 @@ void cassieTrajOpt(const MultibodyPlant<double> & plant,
                    double major_feasibility_tol,
                    const string& directory,
                    const string& init_file, const string& prefix,
+                   const vector<std::shared_ptr<MatrixXd>>& H_vec,
                    double Q_double, double R_double, double all_cost_scale,
                    double eps_reg,
                    bool is_get_nominal,
@@ -1638,9 +1654,9 @@ void cassieTrajOpt(const MultibodyPlant<double> & plant,
     options_list[i].setConstraintRelative(3, true);
   }
   // Constraint scaling
+  double s = 1;//100;  // scale every nonlinear constraint together
   for (int i = 0; i < 2; i++) {
-    double s = 1;  // scale everything together
-
+    options_list[i].setQuatConstraintScaling(s);
     if (is_get_nominal) {
       // old constraint scaling (from traj opt of cassie, without rom
       // constraint) Dynamic constraints
@@ -1733,7 +1749,7 @@ void cassieTrajOpt(const MultibodyPlant<double> & plant,
       plant, num_time_samples, min_dt, max_dt, dataset_list, options_list);
 
   // Snopt settings
-//  cout << "WARNING: you are printing snopt log.\n";
+//  cout << "WARNING: you are printing snopt log.\n for Cassie";
 //  trajopt->SetSolverOption(drake::solvers::SnoptSolver::id(), "Print file",
 //                           "../snopt_sample#"+to_string(sample_idx)+".out");
   trajopt->SetSolverOption(drake::solvers::SnoptSolver::id(),
@@ -1884,10 +1900,10 @@ void cassieTrajOpt(const MultibodyPlant<double> & plant,
           -std::numeric_limits<double>::infinity() * one, -0.05 * one,
           "right_foot_constraint_y");
   // scaling
-  /*std::unordered_map<int, double> odbp_constraint_scale;
-  odbp_constraint_scale.insert(std::pair<int, double>(0, 0.5));
+  std::unordered_map<int, double> odbp_constraint_scale;
+  odbp_constraint_scale.insert(std::pair<int, double>(0, s));
   left_foot_constraint->SetConstraintScaling(odbp_constraint_scale);
-  right_foot_constraint->SetConstraintScaling(odbp_constraint_scale);*/
+  right_foot_constraint->SetConstraintScaling(odbp_constraint_scale);
   for (int index = 0; index < num_time_samples[0]; index++) {
     auto x = trajopt->state(index);
     trajopt->AddConstraint(left_foot_constraint, x.head(n_q));
@@ -1912,6 +1928,8 @@ void cassieTrajOpt(const MultibodyPlant<double> & plant,
       h_min = 0.1;  // 10 centimeter high in the mid point
     }
 
+    auto x_i = trajopt->state(index);
+
     auto right_foot_constraint_z1 =
         std::make_shared<PointPositionConstraint<double>>(
             plant, "toe_right", pt_front_contact, T_ground_incline.row(2),
@@ -1922,7 +1940,10 @@ void cassieTrajOpt(const MultibodyPlant<double> & plant,
             plant, "toe_right", pt_rear_contact, T_ground_incline.row(2),
             h_min * one, std::numeric_limits<double>::infinity() * one);
 
-    auto x_i = trajopt->state(index);
+    // scaling
+    right_foot_constraint_z1->SetConstraintScaling(odbp_constraint_scale);
+    right_foot_constraint_z2->SetConstraintScaling(odbp_constraint_scale);
+
     trajopt->AddConstraint(right_foot_constraint_z1, x_i.head(n_q));
     trajopt->AddConstraint(right_foot_constraint_z2, x_i.head(n_q));
   }
@@ -2105,7 +2126,7 @@ void cassieTrajOpt(const MultibodyPlant<double> & plant,
     n_s, n_sDDot, n_tau, n_feature_s, n_feature_sDDot,
     B_tau, theta_s, theta_sDDot,
     std::move(trajopt), &plant_autoDiff, &plant, num_time_samples,
-    is_get_nominal, is_add_tau_in_cost, rom_option, robot_option);
+    is_get_nominal, is_add_tau_in_cost, rom_option, robot_option, s);
 
   addRegularization(is_get_nominal, eps_reg, gm_traj_opt);
 
@@ -2158,8 +2179,8 @@ void cassieTrajOpt(const MultibodyPlant<double> & plant,
   }*/
 
   // Testing
-  // cout << "Choose the best solver: " <<
-  //      drake::solvers::ChooseBestSolver(*(gm_traj_opt.dircon)).name() << endl;
+//   cout << "Choose the best solver: " <<
+//        drake::solvers::ChooseBestSolver(*(gm_traj_opt.dircon)).name() << endl;
 
   // cout << "Solving DIRCON (based on MultipleShooting)\n";
   auto start = std::chrono::high_resolution_clock::now();
@@ -2193,6 +2214,7 @@ void cassieTrajOpt(const MultibodyPlant<double> & plant,
                  stride_length, ground_incline,
                  duration, max_iter,
                  directory, init_file, prefix,
+                 H_vec,
                  Q_double, R_double, eps_reg,
                  is_get_nominal, is_zero_touchdown_impact,
                  extend_model, is_add_tau_in_cost,
@@ -2332,7 +2354,7 @@ void trajOptGivenWeights(const MultibodyPlant<double> & plant,
                          const string& directory,
                          string init_file, string prefix,
                          /*vector<VectorXd> * w_sol_vec,
-                         vector<MatrixXd> * A_vec, vector<MatrixXd> * H_vec,
+                         vector<MatrixXd> * A_vec, */const vector<std::shared_ptr<MatrixXd>>& H_vec,/*
                          vector<VectorXd> * y_vec,
                          vector<VectorXd> * lb_vec, vector<VectorXd> * ub_vec,
                          vector<VectorXd> * b_vec,
@@ -2355,6 +2377,7 @@ void trajOptGivenWeights(const MultibodyPlant<double> & plant,
                          stride_length, ground_incline,
                          duration, n_node, max_iter,
                          directory, init_file, prefix,
+                         H_vec,
                          Q_double, R_double, all_cost_scale, eps_reg,
                          is_get_nominal, is_zero_touchdown_impact,
                          extend_model, is_add_tau_in_cost,
@@ -2368,6 +2391,7 @@ void trajOptGivenWeights(const MultibodyPlant<double> & plant,
                   duration, n_node, max_iter,
                   major_optimality_tol, major_feasibility_tol,
                   directory, init_file, prefix,
+                  H_vec,
                   Q_double, R_double, all_cost_scale, eps_reg,
                   is_get_nominal, is_zero_touchdown_impact,
                   extend_model, is_add_tau_in_cost,
