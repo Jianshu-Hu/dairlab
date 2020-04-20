@@ -1,0 +1,1235 @@
+Trail name: robot_0_new_initial_guess
+Make sure that you turned off snopt log and constraint jacobian writing.
+Proceed? (Y/N)
+Continue constructing the problem...
+../dairlib_data/goldilocks_models/find_models/robot_0/ is a directory
+
+Tasks settings:
+duration = 0.746
+use_theta_gamma_from_files = 0
+Uniform grid
+N_sample_sl = 3
+N_sample_gi = 3
+delta_stride_length = 0.015
+stride_length_0 = 0.3
+delta_ground_incline = 0.05
+ground_incline_0 = 0
+stride length ranges from 0.2775 to 0.3225
+ground incline ranges from -0.075 to 0.075
+
+Optimization setting (outer loop):
+Gradient descent method
+Stochastic
+New_initial_guess
+Step size = 0.0001
+beta_momentum = 0.8
+eps_regularization = 1e-08
+is_add_tau_in_cost = 1
+Non-zero touchdown impact
+# of re-run in each iteration = 1
+Failure rate threshold before seeing a all-success iteration = 0.2
+method_to_solve_system_of_equations = 3
+The maximum rate the cost of each sample cost can increase before shrinking step size = 2
+The maximum rate the averaged cost can increase before shrinking step size = 0.5
+n_shrink_before_relaxing_tolerance = 6
+Get good sols from adjacent samples to improve solution quality? 0
+
+Optimization setting (inner loop):
+max_inner_iter = 300
+major_optimality_tolerance = 0.0001
+major_feasibility_tolerance = 0.0001
+n_node = 20
+
+Reduced-order model setting:
+Warning: Need to make sure that the implementation in DynamicsExpression agrees with n_s and n_tau.
+n_s = 2, n_tau = 0
+B_tau = 
+
+rom_option = 0 (2D -- lipm)
+Make sure that n_s and B_tau are correct.
+Proceed? (Y/N)
+Continue constructing the problem...
+n_feature_s = 70
+n_feature_sDDot = 16
+Make sure that you use the right initial theta.
+Proceed? (Y/N)
+Continue constructing the problem...
+
+Multithreading settings:
+is multithread? 1
+# of threads to be used 4
+
+Removing old thread_finished.csv files... Done.
+
+Other settings:
+is_debug? 0
+is_manual_initial_theta = 0
+has_been_all_success? 0
+iteration #0 is a rerun? 0
+adjacent_sample_indices = 
+ 1  0  1  0  1  2  3  4  5
+ 3  2  5  4  3  4  7  6  7
+-1  4 -1  6  5  8 -1  8 -1
+-1 -1 -1 -1  7 -1 -1 -1 -1
+
+Start iterating...
+Current time: Sun Apr 19 23:16:05 2020
+************ Iteration 0 (0-time step size shrinking) *************
+sample# (rerun #) | stride | incline | init_file | Status | Solve time | Cost (tau cost)
+  0 (0) | 0.285000 | -0.050000 |  | IterationLimit | 451.505133 | 17.805828 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 1, 0)
+storing result...
+  3 (0) | 0.285000 | 0.000000 |  | IterationLimit | 455.073545 | 59.459401 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (3, 0, 1, 0)
+storing result...
+  1 (0) | 0.300000 | -0.050000 |  | IterationLimit | 459.366853 | 33.397880 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (1, 0, 1, 0)
+storing result...
+  2 (0) | 0.315000 | -0.050000 |  | IterationLimit | 470.256829 | 37.373298 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (2, 0, 1, 0)
+storing result...
+  6 (0) | 0.285000 | 0.050000 |  | IterationLimit | 293.732456 | 83.345996 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (6, 0, 1, 0)
+storing result...
+  5 (0) | 0.315000 | 0.000000 |  | IterationLimit | 401.465161 | 24.368163 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (5, 0, 1, 0)
+storing result...
+  0 (1) | 0.285000 | -0.050000 | 0_0_w.csv | SolutionFound | 21.575436 | 2.222460 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 1, 1, 1)
+storing result...
+  4 (0) | 0.300000 | 0.000000 |  | IterationLimit | 441.443441 | 42.548738 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (4, 0, 1, 0)
+storing result...
+  7 (0) | 0.300000 | 0.050000 |  | IterationLimit | 430.889177 | 17.648753 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (7, 0, 1, 0)
+storing result...
+  3 (1) | 0.285000 | 0.000000 | 0_3_w.csv | SolutionFound | 27.847894 | 0.912078 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (3, 1, 1, 1)
+storing result...
+  1 (1) | 0.300000 | -0.050000 | 0_1_w.csv | SolutionFound | 25.284255 | 2.412168 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (1, 1, 1, 1)
+storing result...
+  2 (1) | 0.315000 | -0.050000 | 0_2_w.csv | SolutionFound | 25.173141 | 2.614895 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (2, 1, 1, 1)
+storing result...
+  6 (1) | 0.285000 | 0.050000 | 0_6_w.csv | SolutionFound | 40.171613 | 1.062151 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (6, 1, 1, 1)
+storing result...
+  5 (1) | 0.315000 | 0.000000 | 0_5_w.csv | SolutionFound | 30.466162 | 1.063162 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (5, 1, 1, 1)
+storing result...
+  7 (1) | 0.300000 | 0.050000 | 0_7_w.csv | SolutionFound | 24.988338 | 1.101978 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (7, 1, 1, 1)
+storing result...
+  8 (0) | 0.315000 | 0.050000 |  | IterationLimit | 357.279236 | 51.141539 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (8, 0, 1, 0)
+storing result...
+  8 (1) | 0.315000 | 0.050000 | 0_8_w.csv | SolutionFound | 21.010834 | 27.161709 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (8, 1, 1, 1)
+storing result...
+  4 (1) | 0.300000 | 0.000000 | 0_4_w.csv | IterationLimit | 256.389122 | 44.000837 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (4, 1, 1, 0)
+storing result...
+1 # of samples failed to find solution. Latest failed sample is sample#4. Wait for all threads to join and stop current iteration.
+Current time: Sun Apr 19 23:35:50 2020
+************ Iteration 0 (0-time step size shrinking) *************
+sample# (rerun #) | stride | incline | init_file | Status | Solve time | Cost (tau cost)
+  1 (0) | 0.300000 | -0.050000 | 0_1_w.csv | SolutionFound | 2.104212 | 2.412167 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (1, 0, 1, 1)
+storing result...
+  0 (0) | 0.285000 | -0.050000 | 0_0_w.csv | SolutionFound | 2.106481 | 2.222460 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 1, 1)
+storing result...
+  3 (0) | 0.285000 | 0.000000 | 0_3_w.csv | SolutionFound | 2.105624 | 0.912078 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (3, 0, 1, 1)
+storing result...
+  2 (0) | 0.315000 | -0.050000 | 0_2_w.csv | SolutionFound | 2.124545 | 2.614895 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (2, 0, 1, 1)
+storing result...
+  5 (0) | 0.315000 | 0.000000 | 0_5_w.csv | SolutionFound | 2.201008 | 1.063163 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (5, 0, 1, 1)
+storing result...
+  6 (0) | 0.285000 | 0.050000 | 0_6_w.csv | SolutionFound | 2.203046 | 1.062150 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (6, 0, 1, 1)
+storing result...
+  7 (0) | 0.300000 | 0.050000 | 0_7_w.csv | SolutionFound | 2.206384 | 1.101978 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (7, 0, 1, 1)
+storing result...
+  8 (0) | 0.315000 | 0.050000 | 0_8_w.csv | SolutionFound | 1.674580 | 27.161686 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (8, 0, 1, 1)
+storing result...
+  1 (1) | 0.300000 | -0.050000 | 0_1_w.csv | SolutionFound | 1.926183 | 2.412167 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (1, 1, 1, 1)
+storing result...
+  0 (1) | 0.285000 | -0.050000 | 0_0_w.csv | SolutionFound | 2.112618 | 2.222460 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 1, 1, 1)
+storing result...
+  2 (1) | 0.315000 | -0.050000 | 0_2_w.csv | SolutionFound | 1.610681 | 2.614895 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (2, 1, 1, 1)
+storing result...
+  3 (1) | 0.285000 | 0.000000 | 0_3_w.csv | SolutionFound | 2.157437 | 0.912078 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (3, 1, 1, 1)
+storing result...
+  5 (1) | 0.315000 | 0.000000 | 0_5_w.csv | SolutionFound | 1.904283 | 1.063163 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (5, 1, 1, 1)
+storing result...
+  6 (1) | 0.285000 | 0.050000 | 0_6_w.csv | SolutionFound | 2.149674 | 1.062150 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (6, 1, 1, 1)
+storing result...
+  8 (1) | 0.315000 | 0.050000 | 0_8_w.csv | SolutionFound | 1.713207 | 27.161686 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (8, 1, 1, 1)
+storing result...
+  7 (1) | 0.300000 | 0.050000 | 0_7_w.csv | SolutionFound | 1.797508 | 1.101978 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (7, 1, 1, 1)
+storing result...
+  4 (0) | 0.300000 | 0.000000 | 0_4_w.csv | SolutionFound | 17.339454 | 0.982114 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (4, 0, 1, 1)
+storing result...
+  4 (1) | 0.300000 | 0.000000 | 0_4_w.csv | SolutionFound | 1.275697 | 0.982114 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (4, 1, 1, 1)
+storing result...
+Current time: Sun Apr 19 23:36:13 2020
+************ Iteration 1 (0-time step size shrinking) *************
+theta_sDDot.head(6) = 1 0 0 0 0 0
+sample# (rerun #) | stride | incline | init_file | Status | Solve time | Cost (tau cost)
+  0 (0) | 0.277627 | -0.039822 | 0_0_w.csv | SolutionFound | 87.209769 | 6.652260 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 1, 1)
+storing result...
+  1 (0) | 0.297924 | -0.035902 | 0_1_w.csv | SolutionFound | 102.344157 | 7.264176 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (1, 0, 1, 1)
+storing result...
+  2 (0) | 0.321465 | -0.051403 | 0_2_w.csv | SolutionFound | 116.467398 | 8.840221 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (2, 0, 1, 1)
+storing result...
+  3 (0) | 0.280292 | 0.018626 | 0_3_w.csv | SolutionFound | 145.503954 | 7.863765 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (3, 0, 1, 1)
+storing result...
+  5 (0) | 0.319607 | 0.021525 | 0_5_w.csv | SolutionFound | 125.365898 | 10.556472 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (5, 0, 1, 1)
+storing result...
+  4 (0) | 0.302938 | 0.002418 | 0_4_w.csv | SolutionFound | 195.322862 | 8.269233 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (4, 0, 1, 1)
+storing result...
+  0 (1) | 0.277627 | -0.039822 | 1_0_w.csv | SolutionFound | 3.241964 | 6.646446 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 1, 1, 1)
+storing result...
+  1 (1) | 0.297924 | -0.035902 | 1_1_w.csv | SolutionFound | 3.228806 | 7.263838 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (1, 1, 1, 1)
+storing result...
+  2 (1) | 0.321465 | -0.051403 | 1_2_w.csv | SolutionFound | 3.300711 | 8.839852 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (2, 1, 1, 1)
+storing result...
+  3 (1) | 0.280292 | 0.018626 | 1_3_w.csv | SolutionFound | 3.205796 | 7.863743 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (3, 1, 1, 1)
+storing result...
+  6 (0) | 0.286743 | 0.040034 | 0_6_w.csv | SolutionFound | 195.079250 | 9.525990 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (6, 0, 1, 1)
+storing result...
+  4 (1) | 0.302938 | 0.002418 | 1_4_w.csv | SolutionFound | 3.124674 | 8.269081 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (4, 1, 1, 1)
+storing result...
+  5 (1) | 0.319607 | 0.021525 | 1_5_w.csv | SolutionFound | 3.275939 | 10.556167 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (5, 1, 1, 1)
+storing result...
+  6 (1) | 0.286743 | 0.040034 | 1_6_w.csv | SolutionFound | 3.130067 | 9.525244 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (6, 1, 1, 1)
+storing result...
+  7 (0) | 0.295939 | 0.035196 | 0_7_w.csv | SolutionFound | 207.892824 | 9.721812 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (7, 0, 1, 1)
+storing result...
+  7 (1) | 0.295939 | 0.035196 | 1_7_w.csv | SolutionFound | 1.789360 | 9.721643 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (7, 1, 1, 1)
+storing result...
+  8 (0) | 0.322365 | 0.035765 | 0_8_w.csv | SolutionFound | 312.415345 | 12.356261 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (8, 0, 1, 1)
+storing result...
+  8 (1) | 0.322365 | 0.035765 | 1_8_w.csv | SolutionFound | 1.670782 | 12.344887 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (8, 1, 1, 1)
+storing result...
+
+Time spent on reading files of sample evaluation: 0 seconds
+
+total_cost = 9.00344 (min so far: 9.00344)
+
+
+Extracting active (and independent rows) of A...
+
+ (After extracting active constraints) Run traj opt to check if your quadratic approximation is correct
+sample# | Solve Status | Cost | w_sol norm | (this should be 0 if w=0 is optimal)
+1 | SolutionFound | -0.669756 | 21.9136 | -0.866445
+3 | SolutionFound | -1.8032 | 48.0169 | -2.61521
+0 | SolutionFound | -1.26662 | 38.0188 | -2.01797
+2 | SolutionFound | -0.19701 | 9.36224 | -0.223167
+6 | SolutionFound | -0.711333 | 29.2586 | -0.921977
+7 | SolutionFound | -0.884954 | 31.8113 | -1.13123
+5 | SolutionFound | -2.21257 | 53.009 | -3.30874
+4 | SolutionFound | -1.34078 | 35.406 | -1.88727
+8 | SolutionFound | -2.87348 | 59.3973 | -4.57064
+Time spent on extracting active (and independent rows) of A: 6 seconds
+
+sample # | max element of abs-Pi | qi norm (this number should be close to 0)
+2 | 12430.095412 | 0.239861
+3 | 17927.507168 | 0.143140
+0 | 13761.851894 | 32.503375
+1 | 12709.753264 | 0.376577
+6 | 21579.391469 | 0.542392
+4 | 9472.709782 | 0.208162
+5 | 8417.958929 | 1.086427
+7 | 21728.141854 | 0.610326
+8 | 21118.558799 | 49.415898
+Time spent on getting w in terms of theta: 12 seconds
+
+Calculating gradient
+gradient_cost norm: 2401.96
+
+lambda_square = 15.1498
+step_direction norm: 2401.96
+
+step size = 4.16327e-08
+
+Current time: Sun Apr 19 23:45:46 2020
+************ Iteration 2 (0-time step size shrinking) *************
+theta_sDDot.head(6) =            1 -3.57445e-07 -1.86008e-08 -3.18346e-07  -1.7455e-07  5.40656e-09
+sample# (rerun #) | stride | incline | init_file | Status | Solve time | Cost (tau cost)
+  1 (0) | 0.294141 | -0.070856 | 2_1_initial_guess.csv | SolutionFound | 52.788842 | 8.340120 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (1, 0, 1, 1)
+storing result...
+  2 (0) | 0.319138 | -0.033420 | 2_2_initial_guess.csv | SolutionFound | 64.102863 | 8.161346 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (2, 0, 1, 1)
+storing result...
+  3 (0) | 0.283228 | -0.009463 | 2_3_initial_guess.csv | SolutionFound | 80.175990 | 6.623307 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (3, 0, 1, 1)
+storing result...
+  5 (0) | 0.311286 | 0.013290 | 2_5_initial_guess.csv | SolutionFound | 17.400682 | 10.057585 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (5, 0, 1, 1)
+storing result...
+  0 (0) | 0.277628 | -0.063687 | 2_0_initial_guess.csv | SolutionFound | 86.326701 | 7.197357 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 1, 1)
+storing result...
+  4 (0) | 0.306934 | -0.009314 | 2_4_initial_guess.csv | SolutionFound | 115.075003 | 7.830526 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (4, 0, 1, 1)
+storing result...
+  6 (0) | 0.290856 | 0.053083 | 2_6_initial_guess.csv | SolutionFound | 87.391891 | 9.756471 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (6, 0, 1, 1)
+storing result...
+  1 (1) | 0.294141 | -0.070856 | 2_1_w.csv | SolutionFound | 3.235116 | 8.340101 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (1, 1, 1, 1)
+storing result...
+  2 (1) | 0.319138 | -0.033420 | 2_2_w.csv | SolutionFound | 3.194300 | 8.161050 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (2, 1, 1, 1)
+storing result...
+  3 (1) | 0.283228 | -0.009463 | 2_3_w.csv | SolutionFound | 3.177918 | 6.623206 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (3, 1, 1, 1)
+storing result...
+  8 (0) | 0.307631 | 0.039427 | 2_8_initial_guess.csv | SolutionFound | 100.138589 | 10.219530 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (8, 0, 1, 1)
+storing result...
+  0 (1) | 0.277628 | -0.063687 | 2_0_w.csv | SolutionFound | 3.151785 | 7.197248 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 1, 1, 1)
+storing result...
+  6 (1) | 0.290856 | 0.053083 | 2_6_w.csv | SolutionFound | 3.120735 | 9.755819 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (6, 1, 1, 1)
+storing result...
+  4 (1) | 0.306934 | -0.009314 | 2_4_w.csv | SolutionFound | 3.164433 | 7.830391 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (4, 1, 1, 1)
+storing result...
+  5 (1) | 0.311286 | 0.013290 | 2_5_w.csv | SolutionFound | 19.333893 | 8.767474 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (5, 1, 1, 1)
+storing result...
+  8 (1) | 0.307631 | 0.039427 | 2_8_w.csv | SolutionFound | 2.709473 | 10.219194 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (8, 1, 1, 1)
+storing result...
+  7 (0) | 0.304801 | 0.073834 | 2_7_initial_guess.csv | SolutionFound | 130.211698 | 11.655549 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (7, 0, 1, 1)
+storing result...
+  7 (1) | 0.304801 | 0.073834 | 2_7_w.csv | SolutionFound | 1.630483 | 11.655160 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (7, 1, 1, 1)
+storing result...
+
+Time spent on reading files of sample evaluation: 0 seconds
+
+total_cost = 8.72774 (min so far: 8.72774)
+
+Cost #0 went up by 8.28713%.
+Cost #1 went up by 14.8167%.
+Cost #6 went up by 2.42073%.
+Cost #7 went up by 19.8892%.
+
+Extracting active (and independent rows) of A...
+
+ (After extracting active constraints) Run traj opt to check if your quadratic approximation is correct
+sample# | Solve Status | Cost | w_sol norm | (this should be 0 if w=0 is optimal)
+1 | SolutionFound | -0.463743 | 18.451 | -0.590118
+0 | SolutionFound | -0.539853 | 20.9268 | -0.694466
+2 | SolutionFound | -1.17001 | 33.0416 | -1.6109
+3 | SolutionFound | -1.80579 | 45.4472 | -2.67761
+6 | SolutionFound | -1.50662 | 46.1835 | -2.23399
+4 | SolutionFound | -2.02892 | 47.4089 | -2.96762
+7 | SolutionFound | -0.444245 | 14.5268 | -0.520327
+5 | SolutionFound | -1.35579 | 35.1696 | -1.74498
+8 | SolutionFound | -1.71739 | 45.6777 | -2.45936
+Time spent on extracting active (and independent rows) of A: 5 seconds
+
+sample # | max element of abs-Pi | qi norm (this number should be close to 0)
+0 | 13603.884223 | 0.096689
+2 | 11918.528506 | 0.493178
+3 | 12606.699574 | 0.415640
+1 | 13087.254851 | 0.264650
+4 | 13957.611940 | 0.256860
+7 | 22891.159985 | 0.451645
+5 | 24126.617431 | 0.600177
+6 | 23595.264091 | 0.365202
+8 | 21676.249247 | 0.640413
+Time spent on getting w in terms of theta: 13 seconds
+
+Calculating gradient
+gradient_cost norm: 2501.61
+
+lambda_square = 14.5108
+step_direction norm: 4416.49
+
+step size = 2.26424e-08
+
+Current time: Sun Apr 19 23:49:48 2020
+************ Iteration 3 (0-time step size shrinking) *************
+theta_sDDot.head(6) =            1 -8.03269e-07 -3.75345e-08  -7.1547e-07 -3.83278e-07  1.48393e-08
+sample# (rerun #) | stride | incline | init_file | Status | Solve time | Cost (tau cost)
+  0 (0) | 0.291785 | -0.065108 | 3_0_initial_guess.csv | SolutionFound | 53.239468 | 7.746204 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 1, 1)
+storing result...
+  4 (0) | 0.303163 | -0.008556 | 3_4_initial_guess.csv | SolutionFound | 53.672474 | 7.474956 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (4, 0, 1, 1)
+storing result...
+  2 (0) | 0.317916 | -0.052319 | 3_2_initial_guess.csv | SolutionFound | 118.913671 | 8.206190 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (2, 0, 1, 1)
+storing result...
+  3 (0) | 0.280556 | -0.004805 | 3_3_initial_guess.csv | SolutionFound | 145.402561 | 6.308874 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (3, 0, 1, 1)
+storing result...
+  1 (0) | 0.301693 | -0.027043 | 3_1_initial_guess.csv | SolutionFound | 147.916262 | 6.923636 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (1, 0, 1, 1)
+storing result...
+  6 (0) | 0.282517 | 0.028873 | 3_6_initial_guess.csv | SolutionFound | 79.307351 | 7.794604 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (6, 0, 1, 1)
+storing result...
+  0 (1) | 0.291785 | -0.065108 | 3_0_w.csv | SolutionFound | 3.321117 | 7.745427 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 1, 1, 1)
+storing result...
+  4 (1) | 0.303163 | -0.008556 | 3_4_w.csv | SolutionFound | 3.092838 | 7.474610 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (4, 1, 1, 1)
+storing result...
+  2 (1) | 0.317916 | -0.052319 | 3_2_w.csv | SolutionFound | 3.178881 | 8.206089 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (2, 1, 1, 1)
+storing result...
+  8 (0) | 0.307607 | 0.039549 | 3_8_initial_guess.csv | SolutionFound | 74.196079 | 9.963326 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (8, 0, 1, 1)
+storing result...
+  5 (0) | 0.309197 | -0.002323 | 3_5_initial_guess.csv | SolutionFound | 113.637628 | 7.753416 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (5, 0, 1, 1)
+storing result...
+  3 (1) | 0.280556 | -0.004805 | 3_3_w.csv | SolutionFound | 2.930237 | 6.308565 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (3, 1, 1, 1)
+storing result...
+  1 (1) | 0.301693 | -0.027043 | 3_1_w.csv | SolutionFound | 3.234806 | 6.923324 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (1, 1, 1, 1)
+storing result...
+  6 (1) | 0.282517 | 0.028873 | 3_6_w.csv | SolutionFound | 3.214929 | 7.793481 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (6, 1, 1, 1)
+storing result...
+  8 (1) | 0.307607 | 0.039549 | 3_8_w.csv | SolutionFound | 2.711468 | 9.963207 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (8, 1, 1, 1)
+storing result...
+  5 (1) | 0.309197 | -0.002323 | 3_5_w.csv | SolutionFound | 2.874575 | 7.752990 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (5, 1, 1, 1)
+storing result...
+  7 (0) | 0.293272 | 0.033463 | 3_7_initial_guess.csv | SolutionFound | 93.782319 | 8.534283 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (7, 0, 1, 1)
+storing result...
+  7 (1) | 0.293272 | 0.033463 | 3_7_w.csv | SolutionFound | 1.632900 | 8.534110 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (7, 1, 1, 1)
+storing result...
+
+Time spent on reading files of sample evaluation: 0 seconds
+
+total_cost = 7.85576 (min so far: 7.85576)
+
+Cost #0 went up by 16.5348%.
+Cost #2 went up by 0.55189%.
+
+Extracting active (and independent rows) of A...
+
+ (After extracting active constraints) Run traj opt to check if your quadratic approximation is correct
+sample# | Solve Status | Cost | w_sol norm | (this should be 0 if w=0 is optimal)
+3 | SolutionFound | -1.27025 | 34.0055 | -1.76635
+0 | SolutionFound | -0.118158 | 7.01064 | -0.133633
+1 | SolutionFound | -0.346129 | 11.5693 | -0.400099
+2 | SolutionFound | -0.0207088 | 4.15412 | -0.0288417
+6 | SolutionFound | -0.984163 | 36.0726 | -1.36793
+7 | SolutionFound | -0.950919 | 36.5714 | -1.30663
+5 | SolutionFound | -1.2776 | 30.958 | -1.67183
+4 | SolutionFound | -1.06455 | 28.1143 | -1.38108
+8 | SolutionFound | -1.39331 | 42.0079 | -1.98431
+Time spent on extracting active (and independent rows) of A: 6 seconds
+
+sample # | max element of abs-Pi | qi norm (this number should be close to 0)
+2 | 13160.568895 | 0.139968
+1 | 13887.383575 | 0.276504
+0 | 12877.227941 | 0.111945
+3 | 15967.710552 | 0.273133
+7 | 23923.414954 | 0.224252
+5 | 19872.686498 | 0.368716
+6 | 23217.864166 | 0.554534
+4 | 14852.574911 | 0.342487
+8 | 22491.615745 | 0.512248
+Time spent on getting w in terms of theta: 13 seconds
+
+Calculating gradient
+gradient_cost norm: 2031.68
+
+lambda_square = 13.0863
+step_direction norm: 5553.76
+
+step size = 1.80058e-08
+
+Current time: Sun Apr 19 23:54:18 2020
+************ Iteration 4 (0-time step size shrinking) *************
+theta_sDDot.head(6) =     0.999999 -1.19666e-06 -5.84832e-08 -1.06611e-06 -5.72078e-07  2.40827e-08
+sample# (rerun #) | stride | incline | init_file | Status | Solve time | Cost (tau cost)
+  0 (0) | 0.281032 | -0.045831 | 4_0_initial_guess.csv | SolutionFound | 11.999384 | 6.740840 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 1, 1)
+storing result...
+  2 (0) | 0.319297 | -0.035986 | 4_2_initial_guess.csv | SolutionFound | 53.966954 | 7.636002 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (2, 0, 1, 1)
+storing result...
+  3 (0) | 0.279577 | 0.018543 | 4_3_initial_guess.csv | SolutionFound | 53.980976 | 6.953931 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (3, 0, 1, 1)
+storing result...
+  6 (0) | 0.288972 | 0.032228 | 4_6_initial_guess.csv | SolutionFound | 53.098038 | 8.073171 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (6, 0, 1, 1)
+storing result...
+  4 (0) | 0.305992 | 0.014376 | 4_4_initial_guess.csv | SolutionFound | 97.273170 | 8.141012 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (4, 0, 1, 1)
+storing result...
+  1 (0) | 0.298009 | -0.072604 | 4_1_initial_guess.csv | SolutionFound | 150.805373 | 8.274796 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (1, 0, 1, 1)
+storing result...
+  0 (1) | 0.281032 | -0.045831 | 4_0_w.csv | SolutionFound | 13.589928 | 6.214309 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 1, 1, 1)
+storing result...
+  2 (1) | 0.319297 | -0.035986 | 4_2_w.csv | SolutionFound | 3.213527 | 7.635930 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (2, 1, 1, 1)
+storing result...
+  5 (0) | 0.319917 | 0.016274 | 4_5_initial_guess.csv | SolutionFound | 119.145494 | 8.972627 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (5, 0, 1, 1)
+storing result...
+  3 (1) | 0.279577 | 0.018543 | 4_3_w.csv | SolutionFound | 3.545436 | 6.953864 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (3, 1, 1, 1)
+storing result...
+  6 (1) | 0.288972 | 0.032228 | 4_6_w.csv | SolutionFound | 3.239538 | 8.072245 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (6, 1, 1, 1)
+storing result...
+  4 (1) | 0.305992 | 0.014376 | 4_4_w.csv | SolutionFound | 3.225865 | 8.140056 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (4, 1, 1, 1)
+storing result...
+  1 (1) | 0.298009 | -0.072604 | 4_1_w.csv | SolutionFound | 3.228083 | 8.274424 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (1, 1, 1, 1)
+storing result...
+  7 (0) | 0.302148 | 0.056459 | 4_7_initial_guess.csv | SolutionFound | 76.761744 | 10.014444 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (7, 0, 1, 1)
+storing result...
+  5 (1) | 0.319917 | 0.016274 | 4_5_w.csv | SolutionFound | 2.944355 | 8.972489 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (5, 1, 1, 1)
+storing result...
+  7 (1) | 0.302148 | 0.056459 | 4_7_w.csv | SolutionFound | 3.071851 | 10.014020 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (7, 1, 1, 1)
+storing result...
+  8 (0) | 0.314022 | 0.058720 | 4_8_initial_guess.csv | SolutionFound | 82.402887 | 11.440752 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (8, 0, 1, 1)
+storing result...
+  8 (1) | 0.314022 | 0.058720 | 4_8_w.csv | SolutionFound | 1.649909 | 11.440160 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (8, 1, 1, 1)
+storing result...
+
+Time spent on reading files of sample evaluation: 0 seconds
+
+total_cost = 8.41306 (min so far: 7.85576)
+
+Average cost went up by 7.09416%.
+Cost #1 went up by 19.5152%.
+Cost #3 went up by 10.2288%.
+Cost #4 went up by 8.90281%.
+Cost #5 went up by 15.7294%.
+Cost #6 went up by 3.57684%.
+Cost #7 went up by 17.3409%.
+Cost #8 went up by 14.8244%.
+
+Extracting active (and independent rows) of A...
+
+ (After extracting active constraints) Run traj opt to check if your quadratic approximation is correct
+sample# | Solve Status | Cost | w_sol norm | (this should be 0 if w=0 is optimal)
+3 | SolutionFound | -1.36276 | 35.5001 | -1.99538
+2 | SolutionFound | -0.130889 | 5.90678 | -0.147177
+0 | SolutionFound | -0.120922 | 7.28712 | -0.139577
+1 | SolutionFound | -0.0498527 | 4.28196 | -0.0557653
+6 | SolutionFound | -1.11163 | 40.2253 | -1.6087
+4 | SolutionFound | -2.07325 | 47.3616 | -3.10232
+7 | SolutionFound | -0.629145 | 24.8319 | -0.812281
+5 | SolutionFound | -1.24156 | 26.4465 | -1.55676
+8 | SolutionFound | -0.43634 | 12.0297 | -0.491239
+Time spent on extracting active (and independent rows) of A: 6 seconds
+
+sample # | max element of abs-Pi | qi norm (this number should be close to 0)
+2 | 13843.940387 | 0.104032
+3 | 18272.023571 | 0.304842
+0 | 13785.364133 | 0.804074
+1 | 13770.487641 | 0.190310
+4 | 21896.298927 | 0.324166
+7 | 25851.980137 | 0.209388
+5 | 23550.771417 | 0.336866
+6 | 23399.610417 | 0.167794
+8 | 27381.927041 | 0.310111
+Time spent on getting w in terms of theta: 13 seconds
+
+Calculating gradient
+gradient_cost norm: 1383.52
+
+lambda_square = 14.2152
+step_direction norm: 5756.33
+
+step size = 1.73722e-08
+
+Current time: Sun Apr 19 23:58:00 2020
+************ Iteration 5 (0-time step size shrinking) *************
+theta_sDDot.head(6) =     0.999999  -1.6153e-06 -8.37377e-08 -1.43921e-06 -7.76543e-07  3.70301e-08
+sample# (rerun #) | stride | incline | init_file | Status | Solve time | Cost (tau cost)
+  2 (0) | 0.308073 | -0.030516 | 5_2_initial_guess.csv | SolutionFound | 35.439737 | 6.931953 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (2, 0, 1, 1)
+storing result...
+  3 (0) | 0.287650 | -0.012141 | 5_3_initial_guess.csv | SolutionFound | 39.779502 | 6.099311 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (3, 0, 1, 1)
+storing result...
+  0 (0) | 0.286298 | -0.053007 | 5_0_initial_guess.csv | SolutionFound | 45.411264 | 6.588263 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 1, 1)
+storing result...
+  1 (0) | 0.305237 | -0.072716 | 5_1_initial_guess.csv | SolutionFound | 56.417080 | 8.468755 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (1, 0, 1, 1)
+storing result...
+  5 (0) | 0.315786 | -0.003737 | 5_5_initial_guess.csv | SolutionFound | 57.537951 | 7.594078 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (5, 0, 1, 1)
+storing result...
+  7 (0) | 0.296134 | 0.043702 | 5_7_initial_guess.csv | SolutionFound | 48.786440 | 8.907625 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (7, 0, 1, 1)
+storing result...
+  2 (1) | 0.308073 | -0.030516 | 5_2_w.csv | SolutionFound | 3.156926 | 6.931435 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (2, 1, 1, 1)
+storing result...
+  3 (1) | 0.287650 | -0.012141 | 5_3_w.csv | SolutionFound | 3.253264 | 6.098856 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (3, 1, 1, 1)
+storing result...
+  0 (1) | 0.286298 | -0.053007 | 5_0_w.csv | SolutionFound | 3.295146 | 6.587916 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 1, 1, 1)
+storing result...
+  6 (0) | 0.288591 | 0.057664 | 5_6_initial_guess.csv | SolutionFound | 82.502892 | 9.260366 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (6, 0, 1, 1)
+storing result...
+  1 (1) | 0.305237 | -0.072716 | 5_1_w.csv | SolutionFound | 3.173151 | 8.468696 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (1, 1, 1, 1)
+storing result...
+  5 (1) | 0.315786 | -0.003737 | 5_5_w.csv | SolutionFound | 3.167384 | 7.593871 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (5, 1, 1, 1)
+storing result...
+  7 (1) | 0.296134 | 0.043702 | 5_7_w.csv | SolutionFound | 2.808507 | 8.907490 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (7, 1, 1, 1)
+storing result...
+  6 (1) | 0.288591 | 0.057664 | 5_6_w.csv | SolutionFound | 3.183940 | 9.259886 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (6, 1, 1, 1)
+storing result...
+  4 (0) | 0.301446 | 0.011256 | 5_4_initial_guess.csv | SolutionFound | 145.272141 | 7.428917 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (4, 0, 1, 1)
+storing result...
+  4 (1) | 0.301446 | 0.011256 | 5_4_w.csv | SolutionFound | 1.798447 | 7.428770 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (4, 1, 1, 1)
+storing result...
+  8 (0) | 0.308555 | 0.039473 | 5_8_initial_guess.csv | SolutionFound | 91.174001 | 9.305015 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (8, 0, 1, 1)
+storing result...
+  8 (1) | 0.308555 | 0.039473 | 5_8_w.csv | SolutionFound | 1.631508 | 9.304791 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (8, 1, 1, 1)
+storing result...
+
+Time spent on reading files of sample evaluation: 0 seconds
+
+total_cost = 7.84241 (min so far: 7.84241)
+
+Cost #0 went up by 6.01209%.
+Cost #1 went up by 22.3214%.
+Cost #6 went up by 18.8159%.
+Cost #7 went up by 4.37515%.
+
+Extracting active (and independent rows) of A...
+
+ (After extracting active constraints) Run traj opt to check if your quadratic approximation is correct
+sample# | Solve Status | Cost | w_sol norm | (this should be 0 if w=0 is optimal)
+0 | SolutionFound | -0.336002 | 16.1276 | -0.447997
+1 | SolutionFound | -0.208384 | 12.2095 | -0.270966
+3 | SolutionFound | -0.670443 | 20.1749 | -0.864809
+2 | SolutionFound | -0.249541 | 8.379 | -0.277569
+6 | SolutionFound | -0.859859 | 32.7309 | -1.21121
+4 | SolutionFound | -0.680027 | 20.2181 | -0.835976
+5 | SolutionFound | -0.919956 | 21.0259 | -1.14373
+7 | SolutionFound | -0.531887 | 25.4924 | -0.704068
+8 | SolutionFound | -1.27699 | 43.0922 | -1.84311
+Time spent on extracting active (and independent rows) of A: 6 seconds
+
+sample # | max element of abs-Pi | qi norm (this number should be close to 0)
+1 | 14754.634705 | 0.127857
+0 | 13607.788581 | 0.123313
+2 | 13715.654851 | 0.288456
+3 | 14817.481051 | 0.330285
+5 | 17876.219455 | 0.439222
+6 | 25405.533274 | 0.226134
+4 | 18407.074380 | 0.291885
+7 | 25125.685444 | 0.400107
+8 | 23772.868053 | 0.207832
+Time spent on getting w in terms of theta: 13 seconds
+
+Calculating gradient
+gradient_cost norm: 939.161
+
+lambda_square = 12.8439
+step_direction norm: 5406.12
+
+step size = 1.84975e-08
+
+Current time: Mon Apr 20 00:01:41 2020
+************ Iteration 6 (0-time step size shrinking) *************
+theta_sDDot.head(6) =     0.999999 -2.05971e-06 -1.15785e-07 -1.83533e-06 -9.98185e-07  5.42641e-08
+sample# (rerun #) | stride | incline | init_file | Status | Solve time | Cost (tau cost)
+  1 (0) | 0.298159 | -0.038367 | 6_1_initial_guess.csv | SolutionFound | 44.099706 | 6.544532 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (1, 0, 1, 1)
+storing result...
+  0 (0) | 0.290649 | -0.063604 | 6_0_initial_guess.csv | SolutionFound | 47.076748 | 7.233426 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 1, 1)
+storing result...
+  2 (0) | 0.307772 | -0.062637 | 6_2_initial_guess.csv | SolutionFound | 54.878189 | 7.879584 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (2, 0, 1, 1)
+storing result...
+  4 (0) | 0.305705 | 0.000910 | 6_4_initial_guess.csv | SolutionFound | 22.950241 | 7.188489 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (4, 0, 1, 1)
+storing result...
+  3 (0) | 0.285379 | 0.001574 | 6_3_initial_guess.csv | SolutionFound | 84.113502 | 6.328272 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (3, 0, 1, 1)
+storing result...
+  6 (0) | 0.281298 | 0.054317 | 6_6_initial_guess.csv | SolutionFound | 49.895935 | 8.700817 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (6, 0, 1, 1)
+storing result...
+  1 (1) | 0.298159 | -0.038367 | 6_1_w.csv | SolutionFound | 3.231960 | 6.544339 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (1, 1, 1, 1)
+storing result...
+  0 (1) | 0.290649 | -0.063604 | 6_0_w.csv | SolutionFound | 3.305094 | 7.233027 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 1, 1, 1)
+storing result...
+  5 (0) | 0.316784 | 0.017282 | 6_5_initial_guess.csv | SolutionFound | 77.224903 | 8.307008 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (5, 0, 1, 1)
+storing result...
+  2 (1) | 0.307772 | -0.062637 | 6_2_w.csv | SolutionFound | 3.273258 | 7.879152 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (2, 1, 1, 1)
+storing result...
+  3 (1) | 0.285379 | 0.001574 | 6_3_w.csv | SolutionFound | 3.256455 | 6.327658 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (3, 1, 1, 1)
+storing result...
+  4 (1) | 0.305705 | 0.000910 | 6_4_w.csv | SolutionFound | 11.521667 | 7.188488 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (4, 1, 1, 1)
+storing result...
+  6 (1) | 0.281298 | 0.054317 | 6_6_w.csv | SolutionFound | 3.214897 | 8.700479 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (6, 1, 1, 1)
+storing result...
+  5 (1) | 0.316784 | 0.017282 | 6_5_w.csv | SolutionFound | 7.832422 | 8.307007 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (5, 1, 1, 1)
+storing result...
+  7 (0) | 0.306982 | 0.066610 | 6_7_initial_guess.csv | SolutionFound | 83.260031 | 10.725940 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (7, 0, 1, 1)
+storing result...
+  7 (1) | 0.306982 | 0.066610 | 6_7_w.csv | SolutionFound | 1.841466 | 10.725715 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (7, 1, 1, 1)
+storing result...
+  8 (0) | 0.319122 | 0.064191 | 6_8_initial_guess.csv | SolutionFound | 91.703848 | 11.308607 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (8, 0, 1, 1)
+storing result...
+  8 (1) | 0.319122 | 0.064191 | 6_8_w.csv | SolutionFound | 1.633359 | 11.308044 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (8, 1, 1, 1)
+storing result...
+
+Time spent on reading files of sample evaluation: 0 seconds
+
+total_cost = 8.24598 (min so far: 7.84241)
+
+Average cost went up by 5.14599%.
+Cost #0 went up by 16.3931%.
+Cost #2 went up by 13.6726%.
+Cost #3 went up by 3.75152%.
+Cost #5 went up by 9.391%.
+Cost #6 went up by 11.6379%.
+Cost #7 went up by 25.6804%.
+Cost #8 went up by 21.5288%.
+
+Extracting active (and independent rows) of A...
+
+ (After extracting active constraints) Run traj opt to check if your quadratic approximation is correct
+sample# | Solve Status | Cost | w_sol norm | (this should be 0 if w=0 is optimal)
+1 | SolutionFound | -0.620105 | 22.0591 | -0.852358
+3 | SolutionFound | -0.849904 | 23.8402 | -1.12561
+0 | SolutionFound | -0.081236 | 6.03433 | -0.092642
+2 | SolutionFound | -0.0625957 | 4.33867 | -0.0694898
+4 | SolutionFound | -0.70205 | 18.6999 | -0.86641
+7 | SolutionFound | -0.708902 | 22.2305 | -0.925715
+6 | SolutionFound | -0.116643 | 6.97553 | -0.143736
+5 | SolutionFound | -0.483185 | 13.9347 | -0.568083
+8 | SolutionFound | -0.667275 | 22.1076 | -0.859362
+Time spent on extracting active (and independent rows) of A: 6 seconds
+
+sample # | max element of abs-Pi | qi norm (this number should be close to 0)
+0 | 14175.758087 | 0.092087
+2 | 14614.324109 | 0.117391
+3 | 16558.833483 | 0.286344
+1 | 13398.476835 | 0.191615
+6 | 25056.804315 | 0.531081
+5 | 20338.746094 | 0.511921
+4 | 17092.904229 | 0.392265
+7 | 26068.481312 | 0.334374
+8 | 27169.452496 | 0.377528
+Time spent on getting w in terms of theta: 13 seconds
+
+Calculating gradient
+gradient_cost norm: 883.786
+
+lambda_square = 13.4564
+step_direction norm: 4688.95
+
+step size = 2.13267e-08
+
+Current time: Mon Apr 20 00:05:05 2020
+************ Iteration 7 (0-time step size shrinking) *************
+theta_sDDot.head(6) =     0.999998 -2.60627e-06 -1.58301e-07 -2.32237e-06 -1.27382e-06  7.96623e-08
+sample# (rerun #) | stride | incline | init_file | Status | Solve time | Cost (tau cost)
+  2 (0) | 0.312153 | -0.058437 | 7_2_initial_guess.csv | SolutionFound | 35.603647 | 7.821777 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (2, 0, 1, 1)
+storing result...
+  1 (0) | 0.304046 | -0.054359 | 7_1_initial_guess.csv | SolutionFound | 38.780342 | 7.285297 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (1, 0, 1, 1)
+storing result...
+  3 (0) | 0.279873 | -0.021730 | 7_3_initial_guess.csv | SolutionFound | 53.022393 | 5.643342 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (3, 0, 1, 1)
+storing result...
+  4 (0) | 0.303678 | -0.014687 | 7_4_initial_guess.csv | SolutionFound | 42.338936 | 6.811607 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (4, 0, 1, 1)
+storing result...
+  5 (0) | 0.318572 | 0.021842 | 7_5_initial_guess.csv | SolutionFound | 51.693571 | 8.557030 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (5, 0, 1, 1)
+storing result...
+  0 (0) | 0.282663 | -0.033220 | 7_0_initial_guess.csv | SolutionFound | 99.192640 | 5.797149 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 1, 1)
+storing result...
+  2 (1) | 0.312153 | -0.058437 | 7_2_w.csv | SolutionFound | 3.209067 | 7.821704 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (2, 1, 1, 1)
+storing result...
+  1 (1) | 0.304046 | -0.054359 | 7_1_w.csv | SolutionFound | 3.248282 | 7.284456 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (1, 1, 1, 1)
+storing result...
+  6 (0) | 0.288726 | 0.042300 | 7_6_initial_guess.csv | SolutionFound | 60.072027 | 8.445065 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (6, 0, 1, 1)
+storing result...
+  3 (1) | 0.279873 | -0.021730 | 7_3_w.csv | SolutionFound | 3.246145 | 5.643160 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (3, 1, 1, 1)
+storing result...
+  4 (1) | 0.303678 | -0.014687 | 7_4_w.csv | SolutionFound | 3.193201 | 6.811186 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (4, 1, 1, 1)
+storing result...
+  8 (0) | 0.307651 | 0.056673 | 7_8_initial_guess.csv | SolutionFound | 34.202015 | 10.210764 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (8, 0, 1, 1)
+storing result...
+  6 (1) | 0.288726 | 0.042300 | 7_6_w.csv | SolutionFound | 3.564760 | 8.444369 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (6, 1, 1, 1)
+storing result...
+  7 (0) | 0.294776 | 0.044950 | 7_7_initial_guess.csv | SolutionFound | 55.204029 | 8.882326 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (7, 0, 1, 1)
+storing result...
+  8 (1) | 0.307651 | 0.056673 | 7_8_w.csv | SolutionFound | 3.437186 | 10.210279 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (8, 1, 1, 1)
+storing result...
+  5 (1) | 0.318572 | 0.021842 | 7_5_w.csv | SolutionFound | 22.700558 | 8.557014 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (5, 1, 1, 1)
+storing result...
+  7 (1) | 0.294776 | 0.044950 | 7_7_w.csv | SolutionFound | 3.366778 | 8.882045 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (7, 1, 1, 1)
+storing result...
+  0 (1) | 0.282663 | -0.033220 | 7_0_w.csv | SolutionFound | 26.381261 | 5.797144 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 1, 1, 1)
+storing result...
+
+Time spent on reading files of sample evaluation: 0 seconds
+
+total_cost = 7.71682 (min so far: 7.71682)
+
+Cost #1 went up by 11.3093%.
+Cost #2 went up by 12.8438%.
+Cost #5 went up by 12.6831%.
+Cost #6 went up by 8.35172%.
+Cost #7 went up by 4.07705%.
+Cost #8 went up by 9.73165%.
+
+Extracting active (and independent rows) of A...
+
+ (After extracting active constraints) Run traj opt to check if your quadratic approximation is correct
+sample# | Solve Status | Cost | w_sol norm | (this should be 0 if w=0 is optimal)
+1 | SolutionFound | -0.401158 | 18.672 | -0.532594
+2 | SolutionFound | -0.119951 | 5.39083 | -0.130434
+0 | SolutionFound | -0.323133 | 12.8492 | -0.396717
+3 | SolutionFound | -0.502894 | 16.9607 | -0.639108
+6 | SolutionFound | -0.73813 | 26.9057 | -0.98068
+4 | SolutionFound | -0.66802 | 19.9345 | -0.839245
+7 | SolutionFound | -0.261605 | 11.8612 | -0.31716
+5 | SolutionFound | -0.497923 | 13.9133 | -0.577189
+8 | SolutionFound | -1.07621 | 33.8732 | -1.46407
+Time spent on extracting active (and independent rows) of A: 6 seconds
+
+sample # | max element of abs-Pi | qi norm (this number should be close to 0)
+0 | 13391.262617 | 0.133760
+1 | 14494.617521 | 0.127536
+2 | 14887.530689 | 0.164930
+3 | 14914.200945 | 0.210174
+7 | 24680.232523 | 0.276643
+4 | 16311.848576 | 0.372861
+6 | 24058.271520 | 0.443787
+5 | 21569.005220 | 0.196306
+8 | 26154.423510 | 0.413638
+Time spent on getting w in terms of theta: 13 seconds
+
+Calculating gradient
+gradient_cost norm: 1033.75
+
+lambda_square = 12.4351
+step_direction norm: 3850.75
+
+step size = 2.59689e-08
+
+Current time: Mon Apr 20 00:08:00 2020
+************ Iteration 8 (0-time step size shrinking) *************
+theta_sDDot.head(6) =     0.999998  -3.2131e-06 -2.15389e-07 -2.86314e-06  -1.5902e-06   1.1369e-07
+sample# (rerun #) | stride | incline | init_file | Status | Solve time | Cost (tau cost)
+  1 (0) | 0.299926 | -0.053896 | 8_1_initial_guess.csv | SolutionFound | 38.559791 | 7.081961 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (1, 0, 1, 1)
+storing result...
+  0 (0) | 0.291141 | -0.044244 | 8_0_initial_guess.csv | SolutionFound | 44.294184 | 6.369770 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 1, 1)
+storing result...
+  3 (0) | 0.287378 | -0.004811 | 8_3_initial_guess.csv | SolutionFound | 65.622866 | 6.222994 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (3, 0, 1, 1)
+storing result...
+  2 (0) | 0.313956 | -0.072056 | 8_2_initial_guess.csv | SolutionFound | 66.887023 | 8.688321 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (2, 0, 1, 1)
+storing result...
+  4 (0) | 0.301873 | -0.013126 | 8_4_initial_guess.csv | SolutionFound | 35.986981 | 6.738414 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (4, 0, 1, 1)
+storing result...
+  7 (0) | 0.295020 | 0.049116 | 8_7_initial_guess.csv | SolutionFound | 40.835562 | 9.115373 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (7, 0, 1, 1)
+storing result...
+  6 (0) | 0.284419 | 0.050425 | 8_6_initial_guess.csv | SolutionFound | 44.402588 | 8.662233 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (6, 0, 1, 1)
+storing result...
+  1 (1) | 0.299926 | -0.053896 | 8_1_w.csv | SolutionFound | 2.747048 | 7.081776 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (1, 1, 1, 1)
+storing result...
+  0 (1) | 0.291141 | -0.044244 | 8_0_w.csv | SolutionFound | 2.950829 | 6.369502 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 1, 1, 1)
+storing result...
+  3 (1) | 0.287378 | -0.004811 | 8_3_w.csv | SolutionFound | 3.069027 | 6.222412 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (3, 1, 1, 1)
+storing result...
+  4 (1) | 0.301873 | -0.013126 | 8_4_w.csv | SolutionFound | 3.270260 | 6.737848 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (4, 1, 1, 1)
+storing result...
+  2 (1) | 0.313956 | -0.072056 | 8_2_w.csv | SolutionFound | 8.234980 | 8.688317 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (2, 1, 1, 1)
+storing result...
+  7 (1) | 0.295020 | 0.049116 | 8_7_w.csv | SolutionFound | 2.805748 | 9.114926 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (7, 1, 1, 1)
+storing result...
+  6 (1) | 0.284419 | 0.050425 | 8_6_w.csv | SolutionFound | 3.199513 | 8.661617 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (6, 1, 1, 1)
+storing result...
+  5 (0) | 0.320212 | 0.019405 | 8_5_initial_guess.csv | SolutionFound | 96.688088 | 8.440789 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (5, 0, 1, 1)
+storing result...
+  5 (1) | 0.320212 | 0.019405 | 8_5_w.csv | SolutionFound | 1.753593 | 8.440444 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (5, 1, 1, 1)
+storing result...
+  8 (0) | 0.312012 | 0.034943 | 8_8_initial_guess.csv | SolutionFound | 83.511398 | 9.042347 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (8, 0, 1, 1)
+storing result...
+  8 (1) | 0.312012 | 0.034943 | 8_8_w.csv | SolutionFound | 1.660987 | 9.041385 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (8, 1, 1, 1)
+storing result...
+
+Time spent on reading files of sample evaluation: 0 seconds
+
+total_cost = 7.81758 (min so far: 7.71682)
+
+Average cost went up by 1.30575%.
+Cost #0 went up by 9.87314%.
+Cost #1 went up by 8.21229%.
+Cost #2 went up by 25.3465%.
+Cost #3 went up by 10.2646%.
+Cost #5 went up by 11.1481%.
+Cost #6 went up by 11.1393%.
+Cost #7 went up by 6.80586%.
+
+Extracting active (and independent rows) of A...
+
+ (After extracting active constraints) Run traj opt to check if your quadratic approximation is correct
+sample# | Solve Status | Cost | w_sol norm | (this should be 0 if w=0 is optimal)
+2 | SolutionFound | -0.0450247 | 3.13396 | -0.0487661
+0 | SolutionFound | -0.172912 | 8.9086 | -0.201762
+3 | SolutionFound | -0.0865664 | 4.23782 | -0.0985042
+1 | SolutionFound | -0.125195 | 6.48292 | -0.138493
+5 | SolutionFound | -0.687446 | 16.1338 | -0.818239
+6 | SolutionFound | -0.15665 | 6.48211 | -0.177693
+4 | SolutionFound | -0.0250818 | 3.35811 | -0.0311514
+7 | SolutionFound | -0.2038 | 8.83297 | -0.240774
+8 | SolutionFound | -1.42192 | 36.5023 | -1.99664
+Time spent on extracting active (and independent rows) of A: 6 seconds
+
+sample # | max element of abs-Pi | qi norm (this number should be close to 0)
+2 | 15768.691344 | 0.161476
+1 | 14614.888865 | 0.213984
+3 | 16274.319100 | 0.273947
+0 | 13972.026417 | 0.231481
+6 | 24678.453281 | 0.344973
+7 | 25028.015863 | 0.219707
+4 | 16961.227149 | 0.396419
+5 | 21950.040095 | 0.474076
+8 | 23219.912452 | 0.284420
+Time spent on getting w in terms of theta: 12 seconds
+
+Calculating gradient
+gradient_cost norm: 1100.18
+
+lambda_square = 12.4512
+step_direction norm: 3375.19
+
+step size = 2.9628e-08
+
+Current time: Mon Apr 20 00:11:10 2020
+************ Iteration 9 (0-time step size shrinking) *************
+theta_sDDot.head(6) =     0.999997 -3.79827e-06 -2.85923e-07 -3.38461e-06 -1.91097e-06  1.54182e-07
+sample# (rerun #) | stride | incline | init_file | Status | Solve time | Cost (tau cost)
+  2 (0) | 0.314087 | -0.062378 | 9_2_initial_guess.csv | SolutionFound | 14.883165 | 8.071522 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (2, 0, 1, 1)
+storing result...
+  3 (0) | 0.289985 | -0.016517 | 9_3_initial_guess.csv | SolutionFound | 36.797910 | 6.202915 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (3, 0, 1, 1)
+storing result...
+  1 (0) | 0.293184 | -0.069307 | 9_1_initial_guess.csv | SolutionFound | 54.360339 | 7.626104 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (1, 0, 1, 1)
+storing result...
+  4 (0) | 0.295554 | -0.002208 | 9_4_initial_guess.csv | SolutionFound | 38.411796 | 6.589537 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (4, 0, 1, 1)
+storing result...
+  0 (0) | 0.283616 | -0.036904 | 9_0_initial_guess.csv | SolutionFound | 75.526342 | 5.869064 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 1, 1)
+storing result...
+  5 (0) | 0.311848 | -0.013532 | 9_5_initial_guess.csv | SolutionFound | 49.209615 | 7.159369 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (5, 0, 1, 1)
+storing result...
+  2 (1) | 0.314087 | -0.062378 | 9_2_w.csv | SolutionFound | 3.252666 | 8.071362 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (2, 1, 1, 1)
+storing result...
+  3 (1) | 0.289985 | -0.016517 | 9_3_w.csv | SolutionFound | 3.204171 | 6.202738 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (3, 1, 1, 1)
+storing result...
+  1 (1) | 0.293184 | -0.069307 | 9_1_w.csv | SolutionFound | 3.190902 | 7.625979 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (1, 1, 1, 1)
+storing result...
+  4 (1) | 0.295554 | -0.002208 | 9_4_w.csv | SolutionFound | 3.182858 | 6.588817 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (4, 1, 1, 1)
+storing result...
+  6 (0) | 0.278923 | 0.056792 | 9_6_initial_guess.csv | SolutionFound | 61.311107 | 8.672402 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (6, 0, 1, 1)
+storing result...
+  0 (1) | 0.283616 | -0.036904 | 9_0_w.csv | SolutionFound | 2.983234 | 5.868883 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 1, 1, 1)
+storing result...
+  5 (1) | 0.311848 | -0.013532 | 9_5_w.csv | SolutionFound | 3.278249 | 7.159054 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (5, 1, 1, 1)
+storing result...
+  6 (1) | 0.278923 | 0.056792 | 9_6_w.csv | SolutionFound | 2.724858 | 8.672078 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (6, 1, 1, 1)
+storing result...
+  8 (0) | 0.311070 | 0.037214 | 9_8_initial_guess.csv | SolutionFound | 71.136035 | 9.077621 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (8, 0, 1, 1)
+storing result...
+  7 (0) | 0.306731 | 0.043361 | 9_7_initial_guess.csv | SolutionFound | 90.511486 | 9.319820 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (7, 0, 1, 1)
+storing result...
+  7 (1) | 0.306731 | 0.043361 | 9_7_w.csv | SolutionFound | 1.783343 | 9.319662 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (7, 1, 1, 1)
+storing result...
+  8 (1) | 0.311070 | 0.037214 | 9_8_w.csv | SolutionFound | 4.146181 | 9.077607 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (8, 1, 1, 1)
+storing result...
+
+Time spent on reading files of sample evaluation: 0 seconds
+
+total_cost = 7.62069 (min so far: 7.62069)
+
+Cost #0 went up by 1.23751%.
+Cost #1 went up by 16.5279%.
+Cost #2 went up by 16.4456%.
+Cost #3 went up by 9.91608%.
+Cost #6 went up by 11.2735%.
+Cost #7 went up by 9.20483%.
+Cost #8 went up by 0.400602%.
+
+Extracting active (and independent rows) of A...
+
+ (After extracting active constraints) Run traj opt to check if your quadratic approximation is correct
+sample# | Solve Status | Cost | w_sol norm | (this should be 0 if w=0 is optimal)
+3 | SolutionFound | -0.197788 | 6.06241 | -0.217644
+1 | SolutionFound | -0.0802086 | 6.95284 | -0.0986762
+2 | SolutionFound | -0.0905606 | 5.05365 | -0.0995088
+0 | SolutionFound | -0.31713 | 12.6217 | -0.389608
+7 | SolutionFound | -0.697677 | 23.6171 | -0.913608
+6 | SolutionFound | -0.0994882 | 4.53641 | -0.108044
+4 | SolutionFound | -0.42585 | 11.3053 | -0.489204
+5 | SolutionFound | -0.452269 | 12.7911 | -0.523641
+8 | SolutionFound | -1.35781 | 35.3971 | -1.89732
+Time spent on extracting active (and independent rows) of A: 6 seconds
+
+sample # | max element of abs-Pi | qi norm (this number should be close to 0)
+1 | 18167.102526 | 0.220988
+0 | 13635.469253 | 0.280685
+3 | 15573.409354 | 0.460304
+2 | 18476.334791 | 0.222931
+4 | 18062.387105 | 0.172923
+7 | 25351.770042 | 0.426512
+6 | 24815.764390 | 0.244973
+5 | 17658.782480 | 0.185681
+8 | 23551.073934 | 0.372805
+Time spent on getting w in terms of theta: 13 seconds
+
+Calculating gradient
+gradient_cost norm: 1247.43
+
+lambda_square = 11.8093
+step_direction norm: 3267.2
+
+step size = 3.06073e-08
+
+Current time: Mon Apr 20 00:14:09 2020
+************ Iteration 10 (0-time step size shrinking) *************
+theta_sDDot.head(6) =     0.999996 -4.28359e-06 -3.63167e-07 -3.81712e-06 -2.19627e-06  1.97224e-07
+sample# (rerun #) | stride | incline | init_file | Status | Solve time | Cost (tau cost)
+  2 (0) | 0.320861 | -0.064998 | 10_2_initial_guess.csv | SolutionFound | 17.880410 | 8.460733 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (2, 0, 1, 1)
+storing result...
+  4 (0) | 0.298135 | -0.017244 | 10_4_initial_guess.csv | SolutionFound | 19.534077 | 6.498235 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (4, 0, 1, 1)
+storing result...
+  1 (0) | 0.307288 | -0.044042 | 10_1_initial_guess.csv | SolutionFound | 43.392842 | 6.970187 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (1, 0, 1, 1)
+storing result...
+  3 (0) | 0.289073 | 0.017770 | 10_3_initial_guess.csv | SolutionFound | 50.916152 | 6.889024 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (3, 0, 1, 1)
+storing result...
+  0 (0) | 0.281408 | -0.040745 | 10_0_initial_guess.csv | SolutionFound | 57.621259 | 5.824217 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 1, 1)
+storing result...
+  6 (0) | 0.288067 | 0.047704 | 10_6_initial_guess.csv | SolutionFound | 60.913028 | 8.521641 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (6, 0, 1, 1)
+storing result...
+  2 (1) | 0.320861 | -0.064998 | 10_2_w.csv | SolutionFound | 3.251431 | 8.460177 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (2, 1, 1, 1)
+storing result...
+  4 (1) | 0.298135 | -0.017244 | 10_4_w.csv | SolutionFound | 3.166419 | 6.497512 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (4, 1, 1, 1)
+storing result...
+  7 (0) | 0.305169 | 0.031680 | 10_7_initial_guess.csv | SolutionFound | 70.715072 | 8.315726 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (7, 0, 1, 1)
+storing result...
+  1 (1) | 0.307288 | -0.044042 | 10_1_w.csv | SolutionFound | 2.851477 | 6.970088 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (1, 1, 1, 1)
+storing result...
+  3 (1) | 0.289073 | 0.017770 | 10_3_w.csv | SolutionFound | 3.148540 | 6.888727 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (3, 1, 1, 1)
+storing result...
+  0 (1) | 0.281408 | -0.040745 | 10_0_w.csv | SolutionFound | 3.168974 | 5.823913 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 1, 1, 1)
+storing result...
+  6 (1) | 0.288067 | 0.047704 | 10_6_w.csv | SolutionFound | 3.261735 | 8.520208 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (6, 1, 1, 1)
+storing result...
+  7 (1) | 0.305169 | 0.031680 | 10_7_w.csv | SolutionFound | 3.231104 | 8.315581 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (7, 1, 1, 1)
+storing result...
+  8 (0) | 0.314573 | 0.050391 | 10_8_initial_guess.csv | SolutionFound | 100.268405 | 9.988422 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (8, 0, 1, 1)
+storing result...
+  8 (1) | 0.314573 | 0.050391 | 10_8_w.csv | SolutionFound | 1.817786 | 9.988241 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (8, 1, 1, 1)
+storing result...
+  5 (0) | 0.316749 | -0.022850 | 10_5_initial_guess.csv | SolutionFound | 128.129724 | 7.167937 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (5, 0, 1, 1)
+storing result...
+  5 (1) | 0.316749 | -0.022850 | 10_5_w.csv | SolutionFound | 1.683105 | 7.167903 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (5, 1, 1, 1)
+storing result...
+
+Time spent on reading files of sample evaluation: 0 seconds
+
+total_cost = 7.62582 (min so far: 7.62069)
+
+Average cost went up by 0.0673168%.
+Cost #0 went up by 0.461779%.
+Cost #1 went up by 6.50562%.
+Cost #2 went up by 22.0552%.
+Cost #3 went up by 22.0722%.
+Cost #5 went up by 0.12362%.
+Cost #6 went up by 9.32485%.
+Cost #8 went up by 10.4724%.
+
+Extracting active (and independent rows) of A...
+
+ (After extracting active constraints) Run traj opt to check if your quadratic approximation is correct
+sample# | Solve Status | Cost | w_sol norm | (this should be 0 if w=0 is optimal)
+0 | SolutionFound | -0.265067 | 11.8824 | -0.32548
+2 | SolutionFound | -0.0281131 | 3.69308 | -0.0319557
+1 | SolutionFound | -0.214377 | 7.98556 | -0.244078
+3 | SolutionFound | -0.294815 | 9.20143 | -0.333489
+4 | SolutionFound | -0.549251 | 16.9363 | -0.673736
+6 | SolutionFound | -0.0275133 | 4.39182 | -0.0376386
+5 | SolutionFound | -0.852737 | 25.0195 | -1.14746
+7 | SolutionFound | -0.365571 | 12.1635 | -0.435236
+8 | SolutionFound | -0.828176 | 27.7146 | -1.08925
+Time spent on extracting active (and independent rows) of A: 6 seconds
+
+sample # | max element of abs-Pi | qi norm (this number should be close to 0)
+3 | 19877.166599 | 0.158550
+2 | 15940.666981 | 0.653546
+1 | 14681.983769 | 0.254219
+0 | 13819.647441 | 0.177711
+6 | 24871.524649 | 0.396952
+5 | 21927.762002 | 0.384984
+4 | 15996.031715 | 0.215082
+7 | 22317.286691 | 0.247684
+8 | 26861.489939 | 0.562362
+Time spent on getting w in terms of theta: 13 seconds
+
+Calculating gradient
+gradient_cost norm: 1232.6
+
+lambda_square = 12.0617
+step_direction norm: 3497.1
+
+step size = 2.85952e-08
+
