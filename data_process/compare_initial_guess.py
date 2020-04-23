@@ -77,7 +77,7 @@ def average_cost(dir, line_type, label_name):
         solve_time = []
         j = 0
         while os.path.isfile(dir+str(i)+'_'+str(j)+'_c.csv'):
-            if np.genfromtxt(dir+str(i)+'_'+str(i)+'_is_success.csv', delimiter=","):
+            if np.genfromtxt(dir+str(i)+'_'+str(j)+'_is_success.csv', delimiter=","):
                 solve_time.append(np.genfromtxt(dir+str(i)+'_'+str(j)+'_c.csv', delimiter=","))
                 j = j+1
         average_solve_time.append(np.array(solve_time).sum()/len(solve_time))
