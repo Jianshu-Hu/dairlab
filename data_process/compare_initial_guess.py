@@ -7,14 +7,15 @@ import time
 import sys
 
 # setting of program
-iter_start = 2
-iter_end = 20
+iter_start = 1
+iter_end = 500
 robot_option = 0
 sample_num = 25
 
 # plot setting
 task_space1 = 'uniform_grid'
 task_space2 = 'random_sample'
+task_space3 = 'cassie'
 
 dir1 = '../dairlib_data/'+task_space1+'/robot_' + str(robot_option) + \
 '_original/'
@@ -33,13 +34,23 @@ line_type3 = 'k:'
 
 dir4 = '../dairlib_data/'+task_space2+'/robot_' + str(robot_option) + \
 '_new_2/'
-label4 = 'without uniform grid using new initial guess 2'
+label4 = 'using new initial guess 2 without uniform grid '
 line_type4 = 'k--'
 
 dir5 = '../dairlib_data/'+task_space2+'/robot_' + str(robot_option) + \
 '_restricted_number/'
 label5 = 'restricted number of sample using new initial guess 2 '
 line_type5 = 'k:'
+
+dir6 = '../dairlib_data/'+task_space2+'/robot_' + str(robot_option) + \
+'_iter500/'
+label6 = 'restricted number of sample using new initial guess 2 '
+line_type6 = 'k:'
+
+dir7 = '../dairlib_data/'+task_space1+'/robot_' + str(robot_option) + \
+'_100iter/'
+label7 = 'uniform grid with original initial guess'
+line_type7 = 'k-'
 
 
 def distance(is_new_initial_guess, dir, line_type, label_name):
@@ -65,23 +76,39 @@ def average_time(dir, line_type, label_name):
         j = 0
         while os.path.isfile(dir+str(i)+'_'+str(j)+'_solve_time.csv'):
             solve_time.append(np.genfromtxt(dir+str(i)+'_'+str(j)+'_solve_time.csv', delimiter=","))
-            j=j+1
+            j = j+1
         average_solve_time.append(np.array(solve_time).sum()/len(solve_time))
         # total solve time
         # average_solve_time.append(np.array(solve_time).sum())
     ax1.plot(range(iter_start, iter_end+1), average_solve_time, line_type, linewidth=3.0, label=label_name)
 
-def average_cost(dir, line_type, label_name):
-    average_solve_time = []
+
+def average_cost(dir, line_type, label_name, normalized, dir_nominal):
+    # get nominal cost from iteration 0
+    if normalized == 1:
+        nominal_cost = []
+        j = 0
+        while os.path.isfile(dir_nominal+str(0)+'_'+str(j)+'_c.csv'):
+            if np.genfromtxt(dir_nominal+str(0)+'_'+str(j)+'_is_success.csv', delimiter=","):
+                nominal_cost.append(np.genfromtxt(dir_nominal+str(0)+'_'+str(j)+'_c.csv', delimiter=","))
+                j = j+1
+        nominal_cost = np.array(nominal_cost).sum()/len(nominal_cost)
+        print("normalize the cost by nominal cost:", nominal_cost)
+    else:
+        nominal_cost = 1
+        print("without normalizing the cost by nominal cost")
+
+    aver_cost = []
     for i in range(iter_start, iter_end+1):
-        solve_time = []
+        cost = []
         j = 0
         while os.path.isfile(dir+str(i)+'_'+str(j)+'_c.csv'):
             if np.genfromtxt(dir+str(i)+'_'+str(j)+'_is_success.csv', delimiter=","):
-                solve_time.append(np.genfromtxt(dir+str(i)+'_'+str(j)+'_c.csv', delimiter=","))
+                cost.append(np.genfromtxt(dir+str(i)+'_'+str(j)+'_c.csv', delimiter=","))
                 j = j+1
-        average_solve_time.append(np.array(solve_time).sum()/len(solve_time))
-    ax1.plot(range(iter_start, iter_end+1), average_solve_time, line_type, linewidth=3.0, label=label_name)
+        aver_cost.append(np.array(cost).sum()/len(cost)/nominal_cost)
+
+    ax1.plot(range(iter_start, iter_end + 1), aver_cost, line_type, linewidth=3.0, label=label_name)
 
 
 def solve_weight(num):
@@ -129,25 +156,31 @@ def plot_distance():
 def plot_average_time():
     # plot average solve time
     average_time(dir1, line_type1, label1)
-    average_time(dir2, line_type2, label2)
-    average_time(dir3, line_type3, label3)
+    average_time(dir4, line_type4, label4)
+    average_time(dir5, line_type5, label5)
+    # average_time(dir6, line_type6, label6)
     plt.xlabel('Iteration')
-    plt.ylabel('Average solve time for trajectory optimization in one iteration')
+    plt.ylabel('Average solve time for trajectory optimizations in one iteration')
     plt.legend()
     plt.show()
 
 def plot_average_cost():
     # plot average cost
-    average_cost(dir1, line_type1, label1)
-    average_cost(dir2, line_type2, label2)
-    average_cost(dir3, line_type3, label3)
+    normalized_with_norminal_cost = 1
+    average_cost(dir1, line_type1, label1, normalized_with_norminal_cost, dir1)
+    average_cost(dir4, line_type4, label4, normalized_with_norminal_cost, dir4)
+    average_cost(dir5, line_type5, label5, normalized_with_norminal_cost, dir1)
+    # average_cost(dir6, line_type6, label6, normalized_with_norminal_cost)
     plt.xlabel('Iteration')
-    plt.ylabel('Average cost of samples')
+    if normalized_with_norminal_cost == 1:
+        plt.ylabel('Normalized average cost of samples')
+    else:
+        plt.ylabel('Average cost of samples')
     plt.legend()
     plt.show()
 
 fig1 = plt.figure(num=1, figsize=(6.4, 4.8))
 ax1 = fig1.gca()
 # plot_distance()
-plot_average_time()
-# plot_average_cost()
+# plot_average_time()
+plot_average_cost()
