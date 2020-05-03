@@ -12,46 +12,55 @@ iter_end = 500
 robot_option = 0
 sample_num = 25
 
+if robot_option == 0:
+    robot = 'five_link/'
+else:
+    if robot_option == 1:
+        robot = 'cassie/'
+
+
 # plot setting
 task_space1 = 'uniform_grid'
 task_space2 = 'random_sample'
-task_space3 = 'cassie'
+task_space3 = '2d'
+task_space4 = '3d'
 
-dir1 = '../dairlib_data/'+task_space1+'/robot_' + str(robot_option) + \
+dir1 = '../dairlib_data/'+robot+task_space1+'/robot_' + str(robot_option) + \
 '_original/'
 label1 = 'uniform grid with original initial guess'
 line_type1 = 'k-'
 
-dir2 = '../dairlib_data/'+task_space1+'/robot_' + str(robot_option) + \
+dir2 = '../dairlib_data/'+robot+task_space1+'/robot_' + str(robot_option) + \
 '_new_1/'
 label2 = 'uniform grid with new initial guess 1'
 line_type2 = 'k--'
 
-dir3 = '../dairlib_data/'+task_space1+'/robot_' + str(robot_option) + \
+dir3 = '../dairlib_data/'+robot+task_space1+'/robot_' + str(robot_option) + \
 '_new_2/'
 label3 = 'uniform grid with new initial guess 2'
 line_type3 = 'k:'
 
-dir4 = '../dairlib_data/'+task_space2+'/robot_' + str(robot_option) + \
+dir4 = '../dairlib_data/'+robot+task_space2+'/robot_' + str(robot_option) + \
 '_new_2/'
 label4 = 'using new initial guess 2 without uniform grid '
 line_type4 = 'k--'
 
-dir5 = '../dairlib_data/'+task_space2+'/robot_' + str(robot_option) + \
+dir5 = '../dairlib_data/'+robot+task_space2+'/robot_' + str(robot_option) + \
 '_restricted_number/'
 label5 = 'restricted number of sample using new initial guess 2 '
 line_type5 = 'k:'
 
-dir6 = '../dairlib_data/'+task_space2+'/robot_' + str(robot_option) + \
+dir6 = '../dairlib_data/'+robot+task_space2+'/robot_' + str(robot_option) + \
 '_iter500/'
 label6 = 'restricted number of sample using new initial guess 2 '
 line_type6 = 'k:'
 
-dir7 = '../dairlib_data/'+task_space1+'/robot_' + str(robot_option) + \
+dir7 = '../dairlib_data/'+robot+task_space1+'/robot_' + str(robot_option) + \
 '_100iter/'
 label7 = 'uniform grid with original initial guess'
 line_type7 = 'k-'
 
+print("check the dir name and plot setting carefully")
 
 def distance(is_new_initial_guess, dir, line_type, label_name):
     diff = []
@@ -91,7 +100,7 @@ def average_cost(dir, line_type, label_name, normalized, dir_nominal):
         while os.path.isfile(dir_nominal+str(0)+'_'+str(j)+'_c.csv'):
             if np.genfromtxt(dir_nominal+str(0)+'_'+str(j)+'_is_success.csv', delimiter=","):
                 nominal_cost.append(np.genfromtxt(dir_nominal+str(0)+'_'+str(j)+'_c.csv', delimiter=","))
-                j = j+1
+            j = j+1
         nominal_cost = np.array(nominal_cost).sum()/len(nominal_cost)
         print("normalize the cost by nominal cost:", nominal_cost)
     else:
@@ -105,7 +114,7 @@ def average_cost(dir, line_type, label_name, normalized, dir_nominal):
         while os.path.isfile(dir+str(i)+'_'+str(j)+'_c.csv'):
             if np.genfromtxt(dir+str(i)+'_'+str(j)+'_is_success.csv', delimiter=","):
                 cost.append(np.genfromtxt(dir+str(i)+'_'+str(j)+'_c.csv', delimiter=","))
-                j = j+1
+            j = j+1
         aver_cost.append(np.array(cost).sum()/len(cost)/nominal_cost)
 
     ax1.plot(range(iter_start, iter_end + 1), aver_cost, line_type, linewidth=3.0, label=label_name)
