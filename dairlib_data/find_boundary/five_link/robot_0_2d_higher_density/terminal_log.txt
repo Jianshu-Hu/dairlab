@@ -1,0 +1,1361 @@
+Trail name: 
+Git commit hash: 
+c784e9cc2ab5e4ed05e860f46b17b0df015a6df0
+Result of "git diff-index HEAD":
+
+../dairlib_data/goldilocks_models/find_boundary/robot_0/ is a directory
+
+Initialize task space:
+initial stride length 0.2
+delta stride length 0.01
+initial ground incline 0
+delta ground incline 0.01
+initial turning rate 0
+delta turning rate 0
+
+Calculate Central Point Cost:
+sample# (rerun #) | stride | incline | turning | init_file | Status | Solve time | Cost (tau cost)
+
+  0 (0) | 0.200000 | 0.000000 | 0.000000 |  | SolutionFound | 97.667540 | 4.097590 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | 0.000000 | 0.000000 | 0_0_w.csv | SolutionFound | 0.829025 | 4.091282 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+Start searching along direction: [0,-1,0]
+sample# (rerun #) | stride | incline | turning | init_file | Status | Solve time | Cost (tau cost)
+
+  0 (0) | 0.200000 | -0.010000 | 0.000000 | 1_0_initial_guess.csv | SolutionFound | 6.573919 | 3.260297 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | -0.020000 | 0.000000 | 2_0_initial_guess.csv | SolutionFound | 7.656115 | 3.209690 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | -0.030000 | 0.000000 | 3_0_initial_guess.csv | SolutionFound | 13.664454 | 3.309129 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | -0.040000 | 0.000000 | 4_0_initial_guess.csv | SolutionFound | 1.848086 | 3.604821 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | -0.050000 | 0.000000 | 5_0_initial_guess.csv | SolutionFound | 16.367124 | 3.913435 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | -0.060000 | 0.000000 | 6_0_initial_guess.csv | SolutionFound | 3.298390 | 4.407145 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | -0.070000 | 0.000000 | 7_0_initial_guess.csv | SolutionFound | 7.683136 | 4.733354 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | -0.080000 | 0.000000 | 8_0_initial_guess.csv | SolutionFound | 9.567148 | 5.145567 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | -0.090000 | 0.000000 | 9_0_initial_guess.csv | SolutionFound | 5.350893 | 5.574309 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | -0.100000 | 0.000000 | 10_0_initial_guess.csv | SolutionFound | 14.859443 | 6.018543 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | -0.110000 | 0.000000 | 11_0_initial_guess.csv | SolutionFound | 3.212892 | 6.478659 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | -0.120000 | 0.000000 | 12_0_initial_guess.csv | SolutionFound | 7.138338 | 6.953993 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | -0.130000 | 0.000000 | 13_0_initial_guess.csv | SolutionFound | 2.945295 | 7.444512 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | -0.140000 | 0.000000 | 14_0_initial_guess.csv | SolutionFound | 3.226241 | 7.949201 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | -0.150000 | 0.000000 | 15_0_initial_guess.csv | SolutionFound | 2.999872 | 8.467548 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | -0.160000 | 0.000000 | 16_0_initial_guess.csv | SolutionFound | 3.398943 | 8.998164 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | -0.170000 | 0.000000 | 17_0_initial_guess.csv | SolutionFound | 6.472897 | 9.540226 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | -0.180000 | 0.000000 | 18_0_initial_guess.csv | SolutionFound | 3.137787 | 10.093281 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | -0.190000 | 0.000000 | 19_0_initial_guess.csv | SolutionFound | 5.394397 | 10.656537 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | -0.200000 | 0.000000 | 20_0_initial_guess.csv | SolutionFound | 3.478496 | 11.229867 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | -0.210000 | 0.000000 | 21_0_initial_guess.csv | SolutionFound | 5.434520 | 11.813373 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | -0.220000 | 0.000000 | 22_0_initial_guess.csv | SolutionFound | 5.733178 | 12.411359 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | -0.230000 | 0.000000 | 23_0_initial_guess.csv | SolutionFound | 7.567090 | 13.017634 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | -0.240000 | 0.000000 | 24_0_initial_guess.csv | SolutionFound | 10.020386 | 13.630395 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | -0.250000 | 0.000000 | 25_0_initial_guess.csv | SolutionFound | 3.019947 | 14.248853 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | -0.260000 | 0.000000 | 26_0_initial_guess.csv | SolutionFound | 12.315724 | 14.871939 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | -0.270000 | 0.000000 | 27_0_initial_guess.csv | SolutionFound | 5.942927 | 15.499399 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+boundary point index | stride length | ground incline | turning rate
+ 	 1	 | 	0.2	 | 	-0.26	 | 	0
+Start searching along direction: [0,1,0]
+sample# (rerun #) | stride | incline | turning | init_file | Status | Solve time | Cost (tau cost)
+
+  0 (0) | 0.200000 | 0.010000 | 0.000000 | 28_0_initial_guess.csv | SolutionFound | 20.908877 | 3.867897 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | 0.020000 | 0.000000 | 29_0_initial_guess.csv | SolutionFound | 20.040963 | 4.418734 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | 0.030000 | 0.000000 | 30_0_initial_guess.csv | SolutionFound | 3.758259 | 5.069879 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | 0.040000 | 0.000000 | 31_0_initial_guess.csv | SolutionFound | 23.644852 | 5.715000 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | 0.050000 | 0.000000 | 32_0_initial_guess.csv | SolutionFound | 20.437434 | 6.327382 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | 0.060000 | 0.000000 | 33_0_initial_guess.csv | SolutionFound | 15.687906 | 6.914134 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | 0.070000 | 0.000000 | 34_0_initial_guess.csv | SolutionFound | 3.308553 | 7.496341 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | 0.080000 | 0.000000 | 35_0_initial_guess.csv | SolutionFound | 4.169343 | 8.061732 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | 0.090000 | 0.000000 | 36_0_initial_guess.csv | SolutionFound | 15.119554 | 8.579795 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | 0.100000 | 0.000000 | 37_0_initial_guess.csv | SolutionFound | 4.085411 | 9.130120 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | 0.110000 | 0.000000 | 38_0_initial_guess.csv | SolutionFound | 3.486369 | 9.692005 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | 0.120000 | 0.000000 | 39_0_initial_guess.csv | SolutionFound | 16.342152 | 10.258667 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | 0.130000 | 0.000000 | 40_0_initial_guess.csv | SolutionFound | 16.172541 | 10.838377 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | 0.140000 | 0.000000 | 41_0_initial_guess.csv | SolutionFound | 5.751780 | 11.424865 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | 0.150000 | 0.000000 | 42_0_initial_guess.csv | SolutionFound | 3.152467 | 12.017846 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | 0.160000 | 0.000000 | 43_0_initial_guess.csv | SolutionFound | 5.354392 | 12.615727 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | 0.170000 | 0.000000 | 44_0_initial_guess.csv | SolutionFound | 3.114231 | 13.219151 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | 0.180000 | 0.000000 | 45_0_initial_guess.csv | SolutionFound | 3.186096 | 13.885042 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | 0.190000 | 0.000000 | 46_0_initial_guess.csv | SolutionFound | 18.548557 | 14.633420 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | 0.200000 | 0.000000 | 47_0_initial_guess.csv | SolutionFound | 32.054280 | 13.793021 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.200000 | 0.210000 | 0.000000 | 48_0_initial_guess.csv | SolutionFound | 24.014881 | 15.142793 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+boundary point index | stride length | ground incline | turning rate
+ 	 2	 | 	0.2	 | 	0.2	 | 	0
+Start searching along direction: [-1,0,0]
+sample# (rerun #) | stride | incline | turning | init_file | Status | Solve time | Cost (tau cost)
+
+  0 (0) | 0.190000 | 0.000000 | 0.000000 | 49_0_initial_guess.csv | SolutionFound | 4.913799 | 3.134694 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.180000 | 0.000000 | 0.000000 | 50_0_initial_guess.csv | SolutionFound | 9.133823 | 2.813663 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.170000 | 0.000000 | 0.000000 | 51_0_initial_guess.csv | SolutionFound | 3.885829 | 2.517979 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.160000 | 0.000000 | 0.000000 | 52_0_initial_guess.csv | SolutionFound | 3.283064 | 2.249131 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.150000 | 0.000000 | 0.000000 | 53_0_initial_guess.csv | SolutionFound | 5.216977 | 2.005584 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.140000 | 0.000000 | 0.000000 | 54_0_initial_guess.csv | SolutionFound | 5.287490 | 1.785757 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.130000 | 0.000000 | 0.000000 | 55_0_initial_guess.csv | SolutionFound | 3.408612 | 1.588623 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.120000 | 0.000000 | 0.000000 | 56_0_initial_guess.csv | SolutionFound | 7.238844 | 1.411069 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.110000 | 0.000000 | 0.000000 | 57_0_initial_guess.csv | SolutionFound | 7.197663 | 1.253208 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.100000 | 0.000000 | 0.000000 | 58_0_initial_guess.csv | SolutionFound | 5.289371 | 1.112895 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.090000 | 0.000000 | 0.000000 | 59_0_initial_guess.csv | SolutionFound | 5.031440 | 0.988676 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.080000 | 0.000000 | 0.000000 | 60_0_initial_guess.csv | SolutionFound | 9.127450 | 0.879589 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.070000 | 0.000000 | 0.000000 | 61_0_initial_guess.csv | SolutionFound | 3.240828 | 0.784913 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.060000 | 0.000000 | 0.000000 | 62_0_initial_guess.csv | SolutionFound | 5.379253 | 0.702640 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.050000 | 0.000000 | 0.000000 | 63_0_initial_guess.csv | SolutionFound | 3.007047 | 0.633662 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.040000 | 0.000000 | 0.000000 | 64_0_initial_guess.csv | SolutionFound | 6.757582 | 0.577204 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.030000 | 0.000000 | 0.000000 | 65_0_initial_guess.csv | SolutionFound | 5.092130 | 0.540997 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.020000 | 0.000000 | 0.000000 | 66_0_initial_guess.csv | SolutionFound | 6.446201 | 0.523697 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.010000 | 0.000000 | 0.000000 | 67_0_initial_guess.csv | SolutionFound | 4.721195 | 0.532241 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.000000 | 0.000000 | 0.000000 | 68_0_initial_guess.csv | SolutionFound | 2.428937 | 0.563662 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+boundary point index | stride length | ground incline | turning rate
+ 	 3	 | 	1.9082e-17	 | 	0	 | 	0
+Start searching along direction: [-1,-1,0]
+sample# (rerun #) | stride | incline | turning | init_file | Status | Solve time | Cost (tau cost)
+
+  0 (0) | 0.190000 | -0.010000 | 0.000000 | 69_0_initial_guess.csv | SolutionFound | 2.003968 | 2.937698 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.180000 | -0.020000 | 0.000000 | 70_0_initial_guess.csv | SolutionFound | 5.102510 | 2.617913 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.170000 | -0.030000 | 0.000000 | 71_0_initial_guess.csv | SolutionFound | 7.185043 | 2.494373 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.160000 | -0.040000 | 0.000000 | 72_0_initial_guess.csv | SolutionFound | 14.679198 | 2.554703 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.150000 | -0.050000 | 0.000000 | 73_0_initial_guess.csv | SolutionFound | 18.786982 | 2.722417 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.140000 | -0.060000 | 0.000000 | 74_0_initial_guess.csv | SolutionFound | 9.710106 | 2.823010 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.130000 | -0.070000 | 0.000000 | 75_0_initial_guess.csv | SolutionFound | 3.412244 | 2.905787 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.120000 | -0.080000 | 0.000000 | 76_0_initial_guess.csv | SolutionFound | 3.291743 | 2.945096 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.110000 | -0.090000 | 0.000000 | 77_0_initial_guess.csv | SolutionFound | 6.192834 | 2.942262 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.100000 | -0.100000 | 0.000000 | 78_0_initial_guess.csv | SolutionFound | 3.156421 | 2.929646 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.090000 | -0.110000 | 0.000000 | 79_0_initial_guess.csv | SolutionFound | 5.446354 | 2.875731 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.080000 | -0.120000 | 0.000000 | 80_0_initial_guess.csv | SolutionFound | 6.996124 | 2.798244 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.070000 | -0.130000 | 0.000000 | 81_0_initial_guess.csv | SolutionFound | 8.166482 | 2.690388 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.060000 | -0.140000 | 0.000000 | 82_0_initial_guess.csv | SolutionFound | 10.502293 | 2.550680 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.050000 | -0.150000 | 0.000000 | 83_0_initial_guess.csv | SolutionFound | 7.811681 | 2.375874 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.040000 | -0.160000 | 0.000000 | 84_0_initial_guess.csv | SolutionFound | 11.982070 | 2.159836 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.030000 | -0.170000 | 0.000000 | 85_0_initial_guess.csv | SolutionFound | 3.356215 | 1.908881 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.020000 | -0.180000 | 0.000000 | 86_0_initial_guess.csv | SolutionFound | 8.176672 | 1.549953 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.010000 | -0.190000 | 0.000000 | 87_0_initial_guess.csv | SolutionFound | 12.895987 | 1.100461 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.000000 | -0.200000 | 0.000000 | 88_0_initial_guess.csv | SolutionFound | 8.174480 | 0.573461 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+boundary point index | stride length | ground incline | turning rate
+ 	 4	 | 	1.9082e-17	 | 	-0.2	 | 	0
+Start searching along direction: [-1,-0.5,0]
+sample# (rerun #) | stride | incline | turning | init_file | Status | Solve time | Cost (tau cost)
+
+  0 (0) | 0.190000 | -0.005000 | 0.000000 | 89_0_initial_guess.csv | SolutionFound | 2.228798 | 3.014524 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.180000 | -0.010000 | 0.000000 | 90_0_initial_guess.csv | SolutionFound | 2.007803 | 2.635575 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.170000 | -0.015000 | 0.000000 | 91_0_initial_guess.csv | SolutionFound | 2.875977 | 2.333392 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.160000 | -0.020000 | 0.000000 | 92_0_initial_guess.csv | SolutionFound | 5.458844 | 2.103369 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.150000 | -0.025000 | 0.000000 | 93_0_initial_guess.csv | SolutionFound | 7.717469 | 1.952739 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.140000 | -0.030000 | 0.000000 | 94_0_initial_guess.csv | SolutionFound | 7.951944 | 1.874143 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.130000 | -0.035000 | 0.000000 | 95_0_initial_guess.csv | SolutionFound | 10.513987 | 1.849270 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.120000 | -0.040000 | 0.000000 | 96_0_initial_guess.csv | SolutionFound | 17.353837 | 1.858457 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.110000 | -0.045000 | 0.000000 | 97_0_initial_guess.csv | SolutionFound | 27.600867 | 1.856953 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.100000 | -0.050000 | 0.000000 | 98_0_initial_guess.csv | SolutionFound | 9.687288 | 1.832962 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.090000 | -0.055000 | 0.000000 | 99_0_initial_guess.csv | SolutionFound | 5.349996 | 1.794943 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.080000 | -0.060000 | 0.000000 | 100_0_initial_guess.csv | SolutionFound | 6.044002 | 1.743011 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.070000 | -0.065000 | 0.000000 | 101_0_initial_guess.csv | SolutionFound | 2.530818 | 1.677113 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.060000 | -0.070000 | 0.000000 | 102_0_initial_guess.csv | SolutionFound | 3.129506 | 1.595917 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.050000 | -0.075000 | 0.000000 | 103_0_initial_guess.csv | SolutionFound | 3.821786 | 1.491227 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.040000 | -0.080000 | 0.000000 | 104_0_initial_guess.csv | SolutionFound | 5.146414 | 1.366447 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.030000 | -0.085000 | 0.000000 | 105_0_initial_guess.csv | SolutionFound | 5.092710 | 1.213854 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.020000 | -0.090000 | 0.000000 | 106_0_initial_guess.csv | SolutionFound | 4.809111 | 1.026997 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.010000 | -0.095000 | 0.000000 | 107_0_initial_guess.csv | SolutionFound | 5.974195 | 0.803116 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.000000 | -0.100000 | 0.000000 | 108_0_initial_guess.csv | SolutionFound | 12.501303 | 0.583219 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+boundary point index | stride length | ground incline | turning rate
+ 	 5	 | 	1.9082e-17	 | 	-0.1	 | 	0
+Start searching along direction: [-1,0.5,0]
+sample# (rerun #) | stride | incline | turning | init_file | Status | Solve time | Cost (tau cost)
+
+  0 (0) | 0.190000 | 0.005000 | 0.000000 | 109_0_initial_guess.csv | SolutionFound | 3.078494 | 3.302739 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.180000 | 0.010000 | 0.000000 | 110_0_initial_guess.csv | SolutionFound | 11.858214 | 3.181331 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.170000 | 0.015000 | 0.000000 | 111_0_initial_guess.csv | SolutionFound | 11.976088 | 3.119613 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.160000 | 0.020000 | 0.000000 | 112_0_initial_guess.csv | SolutionFound | 5.314485 | 3.080999 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.150000 | 0.025000 | 0.000000 | 113_0_initial_guess.csv | SolutionFound | 2.940543 | 3.043286 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.140000 | 0.030000 | 0.000000 | 114_0_initial_guess.csv | SolutionFound | 3.310471 | 2.994107 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.130000 | 0.035000 | 0.000000 | 115_0_initial_guess.csv | SolutionFound | 6.993159 | 2.925879 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.120000 | 0.040000 | 0.000000 | 116_0_initial_guess.csv | SolutionFound | 3.286310 | 2.843715 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.110000 | 0.045000 | 0.000000 | 117_0_initial_guess.csv | SolutionFound | 3.127861 | 2.744050 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.100000 | 0.050000 | 0.000000 | 118_0_initial_guess.csv | SolutionFound | 6.862716 | 2.629121 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.090000 | 0.055000 | 0.000000 | 119_0_initial_guess.csv | SolutionFound | 3.182029 | 2.499734 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.080000 | 0.060000 | 0.000000 | 120_0_initial_guess.csv | SolutionFound | 3.188892 | 2.357160 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.070000 | 0.065000 | 0.000000 | 121_0_initial_guess.csv | SolutionFound | 3.121074 | 2.201221 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.060000 | 0.070000 | 0.000000 | 122_0_initial_guess.csv | SolutionFound | 3.365160 | 2.116670 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.050000 | 0.075000 | 0.000000 | 123_0_initial_guess.csv | SolutionFound | 8.462855 | 2.127547 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.040000 | 0.080000 | 0.000000 | 124_0_initial_guess.csv | SolutionFound | 10.642068 | 2.204826 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.030000 | 0.085000 | 0.000000 | 125_0_initial_guess.csv | SolutionFound | 3.725886 | 2.339743 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.020000 | 0.090000 | 0.000000 | 126_0_initial_guess.csv | SolutionFound | 12.274068 | 2.527988 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.010000 | 0.095000 | 0.000000 | 127_0_initial_guess.csv | SolutionFound | 3.143623 | 2.778171 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.000000 | 0.100000 | 0.000000 | 128_0_initial_guess.csv | SolutionFound | 35.129656 | 0.960795 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+boundary point index | stride length | ground incline | turning rate
+ 	 6	 | 	1.9082e-17	 | 	0.1	 | 	0
+Start searching along direction: [-1,1,0]
+sample# (rerun #) | stride | incline | turning | init_file | Status | Solve time | Cost (tau cost)
+
+  0 (0) | 0.190000 | 0.010000 | 0.000000 | 129_0_initial_guess.csv | SolutionFound | 1.030311 | 3.513960 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.180000 | 0.020000 | 0.000000 | 130_0_initial_guess.csv | SolutionFound | 11.463104 | 3.701108 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.170000 | 0.030000 | 0.000000 | 131_0_initial_guess.csv | SolutionFound | 5.351600 | 3.938187 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.160000 | 0.040000 | 0.000000 | 132_0_initial_guess.csv | SolutionFound | 3.204430 | 4.135502 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.150000 | 0.050000 | 0.000000 | 133_0_initial_guess.csv | SolutionFound | 3.427875 | 4.269109 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.140000 | 0.060000 | 0.000000 | 134_0_initial_guess.csv | SolutionFound | 3.302678 | 4.340723 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.130000 | 0.070000 | 0.000000 | 135_0_initial_guess.csv | SolutionFound | 15.185367 | 4.324218 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.120000 | 0.080000 | 0.000000 | 136_0_initial_guess.csv | SolutionFound | 9.106399 | 4.291800 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.110000 | 0.090000 | 0.000000 | 137_0_initial_guess.csv | SolutionFound | 3.144832 | 4.243368 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.100000 | 0.100000 | 0.000000 | 138_0_initial_guess.csv | SolutionFound | 3.215623 | 4.320158 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.090000 | 0.110000 | 0.000000 | 139_0_initial_guess.csv | SolutionFound | 14.130107 | 4.565886 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.080000 | 0.120000 | 0.000000 | 140_0_initial_guess.csv | SolutionFound | 3.231225 | 4.965538 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.070000 | 0.130000 | 0.000000 | 141_0_initial_guess.csv | SolutionFound | 3.491896 | 5.479179 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.060000 | 0.140000 | 0.000000 | 142_0_initial_guess.csv | SolutionFound | 29.080273 | 5.967413 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.050000 | 0.150000 | 0.000000 | 143_0_initial_guess.csv | SolutionFound | 3.345575 | 6.662564 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.040000 | 0.160000 | 0.000000 | 144_0_initial_guess.csv | SolutionFound | 3.208986 | 7.440459 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.030000 | 0.170000 | 0.000000 | 145_0_initial_guess.csv | SolutionFound | 13.159554 | 8.297327 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.020000 | 0.180000 | 0.000000 | 146_0_initial_guess.csv | SolutionFound | 11.568603 | 9.249298 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.010000 | 0.190000 | 0.000000 | 147_0_initial_guess.csv | SolutionFound | 12.319039 | 10.291145 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.000000 | 0.200000 | 0.000000 | 148_0_initial_guess.csv | SolutionFound | 27.647199 | 1.417985 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+boundary point index | stride length | ground incline | turning rate
+ 	 7	 | 	1.9082e-17	 | 	0.2	 | 	0
+Start searching along direction: [-0.5,-1,0]
+sample# (rerun #) | stride | incline | turning | init_file | Status | Solve time | Cost (tau cost)
+
+  0 (0) | 0.195000 | -0.010000 | 0.000000 | 149_0_initial_guess.csv | SolutionFound | 0.844605 | 3.096398 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.190000 | -0.020000 | 0.000000 | 150_0_initial_guess.csv | SolutionFound | 1.168618 | 2.904343 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.185000 | -0.030000 | 0.000000 | 151_0_initial_guess.csv | SolutionFound | 2.516205 | 2.879385 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.180000 | -0.040000 | 0.000000 | 152_0_initial_guess.csv | SolutionFound | 4.698917 | 3.009387 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.175000 | -0.050000 | 0.000000 | 153_0_initial_guess.csv | SolutionFound | 21.887174 | 3.285321 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.170000 | -0.060000 | 0.000000 | 154_0_initial_guess.csv | SolutionFound | 5.162003 | 3.513599 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.165000 | -0.070000 | 0.000000 | 155_0_initial_guess.csv | SolutionFound | 9.612430 | 3.725729 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.160000 | -0.080000 | 0.000000 | 156_0_initial_guess.csv | SolutionFound | 9.992451 | 3.925227 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.155000 | -0.090000 | 0.000000 | 157_0_initial_guess.csv | SolutionFound | 7.468091 | 4.111607 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.150000 | -0.100000 | 0.000000 | 158_0_initial_guess.csv | SolutionFound | 3.141684 | 4.286488 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.145000 | -0.110000 | 0.000000 | 159_0_initial_guess.csv | SolutionFound | 7.925733 | 4.441540 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.140000 | -0.120000 | 0.000000 | 160_0_initial_guess.csv | SolutionFound | 9.281109 | 4.582967 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.135000 | -0.130000 | 0.000000 | 161_0_initial_guess.csv | SolutionFound | 8.055089 | 4.707706 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.130000 | -0.140000 | 0.000000 | 162_0_initial_guess.csv | SolutionFound | 10.008967 | 4.815007 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.125000 | -0.150000 | 0.000000 | 163_0_initial_guess.csv | SolutionFound | 3.171986 | 4.906607 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.120000 | -0.160000 | 0.000000 | 164_0_initial_guess.csv | SolutionFound | 10.318789 | 4.974865 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.115000 | -0.170000 | 0.000000 | 165_0_initial_guess.csv | SolutionFound | 11.865188 | 5.026542 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.110000 | -0.180000 | 0.000000 | 166_0_initial_guess.csv | SolutionFound | 7.412122 | 5.058986 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.105000 | -0.190000 | 0.000000 | 167_0_initial_guess.csv | SolutionFound | 10.413076 | 5.071878 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.100000 | -0.200000 | 0.000000 | 168_0_initial_guess.csv | SolutionFound | 6.386953 | 5.065284 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.095000 | -0.210000 | 0.000000 | 169_0_initial_guess.csv | SolutionFound | 9.008059 | 5.039188 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.090000 | -0.220000 | 0.000000 | 170_0_initial_guess.csv | SolutionFound | 10.794960 | 4.993610 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.085000 | -0.230000 | 0.000000 | 171_0_initial_guess.csv | SolutionFound | 11.231544 | 4.928862 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.080000 | -0.240000 | 0.000000 | 172_0_initial_guess.csv | SolutionFound | 7.789018 | 4.845349 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.075000 | -0.250000 | 0.000000 | 173_0_initial_guess.csv | SolutionFound | 3.570574 | 4.753853 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.070000 | -0.260000 | 0.000000 | 174_0_initial_guess.csv | SolutionFound | 8.929671 | 4.623959 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.065000 | -0.270000 | 0.000000 | 175_0_initial_guess.csv | SolutionFound | 10.154108 | 4.487175 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.060000 | -0.280000 | 0.000000 | 176_0_initial_guess.csv | SolutionFound | 7.681913 | 4.333816 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.055000 | -0.290000 | 0.000000 | 177_0_initial_guess.csv | SolutionFound | 1.778273 | 4.211648 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.050000 | -0.300000 | 0.000000 | 178_0_initial_guess.csv | SolutionFound | 8.727220 | 3.978920 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.045000 | -0.310000 | 0.000000 | 179_0_initial_guess.csv | SolutionFound | 10.895668 | 3.777421 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.040000 | -0.320000 | 0.000000 | 180_0_initial_guess.csv | SolutionFound | 3.271260 | 3.564427 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.035000 | -0.330000 | 0.000000 | 181_0_initial_guess.csv | SolutionFound | 2.231723 | 3.339485 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.030000 | -0.340000 | 0.000000 | 182_0_initial_guess.csv | SolutionFound | 6.298876 | 3.066802 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.025000 | -0.350000 | 0.000000 | 183_0_initial_guess.csv | SolutionFound | 8.028400 | 2.785481 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.020000 | -0.360000 | 0.000000 | 184_0_initial_guess.csv | SolutionFound | 15.487863 | 2.472430 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.015000 | -0.370000 | 0.000000 | 185_0_initial_guess.csv | SolutionFound | 3.653335 | 2.123513 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.010000 | -0.380000 | 0.000000 | 186_0_initial_guess.csv | SolutionFound | 10.945552 | 1.690483 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.005000 | -0.390000 | 0.000000 | 187_0_initial_guess.csv | SolutionFound | 18.351135 | 1.162001 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.000000 | -0.400000 | 0.000000 | 188_0_initial_guess.csv | SolutionFound | 15.716053 | 0.565207 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+boundary point index | stride length | ground incline | turning rate
+ 	 8	 | 	-4.33681e-18	 | 	-0.4	 | 	0
+Start searching along direction: [-0.5,1,0]
+sample# (rerun #) | stride | incline | turning | init_file | Status | Solve time | Cost (tau cost)
+
+  0 (0) | 0.195000 | 0.010000 | 0.000000 | 189_0_initial_guess.csv | SolutionFound | 0.990983 | 3.688225 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.190000 | 0.020000 | 0.000000 | 190_0_initial_guess.csv | SolutionFound | 1.026708 | 4.049110 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.185000 | 0.030000 | 0.000000 | 191_0_initial_guess.csv | SolutionFound | 1.005757 | 4.483687 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.180000 | 0.040000 | 0.000000 | 192_0_initial_guess.csv | SolutionFound | 5.937232 | 4.887125 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.175000 | 0.050000 | 0.000000 | 193_0_initial_guess.csv | SolutionFound | 3.334613 | 5.237506 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.170000 | 0.060000 | 0.000000 | 194_0_initial_guess.csv | SolutionFound | 3.199167 | 5.534717 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.165000 | 0.070000 | 0.000000 | 195_0_initial_guess.csv | SolutionFound | 3.193408 | 5.794302 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.160000 | 0.080000 | 0.000000 | 196_0_initial_guess.csv | SolutionFound | 3.270928 | 6.018946 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.155000 | 0.090000 | 0.000000 | 197_0_initial_guess.csv | SolutionFound | 3.347415 | 6.212006 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.150000 | 0.100000 | 0.000000 | 198_0_initial_guess.csv | SolutionFound | 13.764608 | 6.370642 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.145000 | 0.110000 | 0.000000 | 199_0_initial_guess.csv | SolutionFound | 13.476733 | 6.511474 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.140000 | 0.120000 | 0.000000 | 200_0_initial_guess.csv | SolutionFound | 3.033264 | 6.716636 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.135000 | 0.130000 | 0.000000 | 201_0_initial_guess.csv | SolutionFound | 3.149928 | 7.050358 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.130000 | 0.140000 | 0.000000 | 202_0_initial_guess.csv | SolutionFound | 23.302632 | 6.924452 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.125000 | 0.150000 | 0.000000 | 203_0_initial_guess.csv | SolutionFound | 18.162728 | 7.599769 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.120000 | 0.160000 | 0.000000 | 204_0_initial_guess.csv | SolutionFound | 14.690362 | 8.386403 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.115000 | 0.170000 | 0.000000 | 205_0_initial_guess.csv | SolutionFound | 18.006762 | 9.238876 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.110000 | 0.180000 | 0.000000 | 206_0_initial_guess.csv | SolutionFound | 3.333317 | 10.188960 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.105000 | 0.190000 | 0.000000 | 207_0_initial_guess.csv | SolutionFound | 15.111569 | 11.180544 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.100000 | 0.200000 | 0.000000 | 208_0_initial_guess.csv | SolutionFound | 23.685237 | 12.209025 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.095000 | 0.210000 | 0.000000 | 209_0_initial_guess.csv | SolutionFound | 20.721028 | 13.265578 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.090000 | 0.220000 | 0.000000 | 210_0_initial_guess.csv | SolutionFound | 27.429801 | 14.379070 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.085000 | 0.230000 | 0.000000 | 211_0_initial_guess.csv | SolutionFound | 16.342276 | 15.555359 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+boundary point index | stride length | ground incline | turning rate
+ 	 9	 | 	0.09	 | 	0.22	 | 	0
+Start searching along direction: [0.5,-1,0]
+sample# (rerun #) | stride | incline | turning | init_file | Status | Solve time | Cost (tau cost)
+
+  0 (0) | 0.205000 | -0.010000 | 0.000000 | 212_0_initial_guess.csv | SolutionFound | 1.550325 | 3.429260 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.210000 | -0.020000 | 0.000000 | 213_0_initial_guess.csv | SolutionFound | 3.207286 | 3.535335 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.215000 | -0.030000 | 0.000000 | 214_0_initial_guess.csv | SolutionFound | 9.131054 | 3.782479 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.220000 | -0.040000 | 0.000000 | 215_0_initial_guess.csv | SolutionFound | 10.059822 | 4.163719 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.225000 | -0.050000 | 0.000000 | 216_0_initial_guess.csv | SolutionFound | 17.811260 | 4.676738 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.230000 | -0.060000 | 0.000000 | 217_0_initial_guess.csv | SolutionFound | 21.190596 | 5.313522 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.235000 | -0.070000 | 0.000000 | 218_0_initial_guess.csv | SolutionFound | 3.689849 | 5.957737 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.240000 | -0.080000 | 0.000000 | 219_0_initial_guess.csv | SolutionFound | 16.187286 | 6.619714 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.245000 | -0.090000 | 0.000000 | 220_0_initial_guess.csv | SolutionFound | 20.195588 | 7.354218 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.250000 | -0.100000 | 0.000000 | 221_0_initial_guess.csv | SolutionFound | 19.402614 | 8.143859 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.255000 | -0.110000 | 0.000000 | 222_0_initial_guess.csv | SolutionFound | 22.088878 | 8.988213 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.260000 | -0.120000 | 0.000000 | 223_0_initial_guess.csv | SolutionFound | 23.327644 | 9.886966 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.265000 | -0.130000 | 0.000000 | 224_0_initial_guess.csv | SolutionFound | 22.101572 | 10.840012 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.270000 | -0.140000 | 0.000000 | 225_0_initial_guess.csv | SolutionFound | 20.760281 | 11.847061 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.275000 | -0.150000 | 0.000000 | 226_0_initial_guess.csv | SolutionFound | 17.516905 | 12.908046 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.280000 | -0.160000 | 0.000000 | 227_0_initial_guess.csv | SolutionFound | 16.186289 | 14.022764 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.285000 | -0.170000 | 0.000000 | 228_0_initial_guess.csv | SolutionFound | 19.420281 | 15.189269 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+boundary point index | stride length | ground incline | turning rate
+ 	 10	 | 	0.28	 | 	-0.16	 | 	0
+Start searching along direction: [0.5,1,0]
+sample# (rerun #) | stride | incline | turning | init_file | Status | Solve time | Cost (tau cost)
+
+  0 (0) | 0.205000 | 0.010000 | 0.000000 | 229_0_initial_guess.csv | SolutionFound | 1.002873 | 4.054142 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.210000 | 0.020000 | 0.000000 | 230_0_initial_guess.csv | SolutionFound | 5.433762 | 4.810673 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.215000 | 0.030000 | 0.000000 | 231_0_initial_guess.csv | SolutionFound | 7.821131 | 5.694839 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.220000 | 0.040000 | 0.000000 | 232_0_initial_guess.csv | SolutionFound | 13.449899 | 6.615379 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.225000 | 0.050000 | 0.000000 | 233_0_initial_guess.csv | SolutionFound | 13.354035 | 7.535748 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.230000 | 0.060000 | 0.000000 | 234_0_initial_guess.csv | SolutionFound | 12.717236 | 8.464016 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.235000 | 0.070000 | 0.000000 | 235_0_initial_guess.csv | SolutionFound | 12.523165 | 9.408230 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.240000 | 0.080000 | 0.000000 | 236_0_initial_guess.csv | SolutionFound | 18.776658 | 10.373170 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.245000 | 0.090000 | 0.000000 | 237_0_initial_guess.csv | SolutionFound | 13.477002 | 11.366987 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.250000 | 0.100000 | 0.000000 | 238_0_initial_guess.csv | SolutionFound | 16.558131 | 12.414252 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.255000 | 0.110000 | 0.000000 | 239_0_initial_guess.csv | SolutionFound | 18.525683 | 13.512360 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.260000 | 0.120000 | 0.000000 | 240_0_initial_guess.csv | SolutionFound | 8.312587 | 14.656652 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.265000 | 0.130000 | 0.000000 | 241_0_initial_guess.csv | SolutionFound | 10.120960 | 15.843979 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+boundary point index | stride length | ground incline | turning rate
+ 	 11	 | 	0.26	 | 	0.12	 | 	0
+Start searching along direction: [1,0,0]
+sample# (rerun #) | stride | incline | turning | init_file | Status | Solve time | Cost (tau cost)
+
+  0 (0) | 0.210000 | 0.000000 | 0.000000 | 242_0_initial_guess.csv | SolutionFound | 19.885243 | 3.835353 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.220000 | 0.000000 | 0.000000 | 243_0_initial_guess.csv | SolutionFound | 3.159451 | 4.216535 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.230000 | 0.000000 | 0.000000 | 244_0_initial_guess.csv | SolutionFound | 5.044938 | 4.612879 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.240000 | 0.000000 | 0.000000 | 245_0_initial_guess.csv | SolutionFound | 9.261022 | 5.031388 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.250000 | 0.000000 | 0.000000 | 246_0_initial_guess.csv | SolutionFound | 3.195760 | 5.471929 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.260000 | 0.000000 | 0.000000 | 247_0_initial_guess.csv | SolutionFound | 3.958944 | 5.932176 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.270000 | 0.000000 | 0.000000 | 248_0_initial_guess.csv | SolutionFound | 7.953326 | 6.412272 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.280000 | 0.000000 | 0.000000 | 249_0_initial_guess.csv | SolutionFound | 4.033894 | 6.916241 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.290000 | 0.000000 | 0.000000 | 250_0_initial_guess.csv | SolutionFound | 6.887278 | 7.441489 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.300000 | 0.000000 | 0.000000 | 251_0_initial_guess.csv | SolutionFound | 6.666081 | 7.990241 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.310000 | 0.000000 | 0.000000 | 252_0_initial_guess.csv | SolutionFound | 5.925238 | 8.562131 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.320000 | 0.000000 | 0.000000 | 253_0_initial_guess.csv | SolutionFound | 3.438894 | 9.158148 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.330000 | 0.000000 | 0.000000 | 254_0_initial_guess.csv | SolutionFound | 3.908443 | 9.778154 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.340000 | 0.000000 | 0.000000 | 255_0_initial_guess.csv | SolutionFound | 12.308556 | 10.421186 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.350000 | 0.000000 | 0.000000 | 256_0_initial_guess.csv | SolutionFound | 3.729548 | 11.090903 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.360000 | 0.000000 | 0.000000 | 257_0_initial_guess.csv | SolutionFound | 5.966941 | 11.785569 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.370000 | 0.000000 | 0.000000 | 258_0_initial_guess.csv | SolutionFound | 4.000676 | 12.506247 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.380000 | 0.000000 | 0.000000 | 259_0_initial_guess.csv | SolutionFound | 3.796938 | 13.253339 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.390000 | 0.000000 | 0.000000 | 260_0_initial_guess.csv | SolutionFound | 4.140287 | 14.025846 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.400000 | 0.000000 | 0.000000 | 261_0_initial_guess.csv | SolutionFound | 3.900098 | 14.825738 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.410000 | 0.000000 | 0.000000 | 262_0_initial_guess.csv | SolutionFound | 6.544944 | 15.651516 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+boundary point index | stride length | ground incline | turning rate
+ 	 12	 | 	0.4	 | 	0	 | 	0
+Start searching along direction: [1,-1,0]
+sample# (rerun #) | stride | incline | turning | init_file | Status | Solve time | Cost (tau cost)
+
+  0 (0) | 0.210000 | -0.010000 | 0.000000 | 263_0_initial_guess.csv | SolutionFound | 1.194030 | 3.603795 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.220000 | -0.020000 | 0.000000 | 264_0_initial_guess.csv | SolutionFound | 2.958314 | 3.881217 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.230000 | -0.030000 | 0.000000 | 265_0_initial_guess.csv | SolutionFound | 11.140209 | 4.300779 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.240000 | -0.040000 | 0.000000 | 266_0_initial_guess.csv | SolutionFound | 16.157538 | 4.858229 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.250000 | -0.050000 | 0.000000 | 267_0_initial_guess.csv | SolutionFound | 15.582612 | 5.559301 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.260000 | -0.060000 | 0.000000 | 268_0_initial_guess.csv | SolutionFound | 15.374579 | 6.452701 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.270000 | -0.070000 | 0.000000 | 269_0_initial_guess.csv | SolutionFound | 10.749361 | 7.372203 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.280000 | -0.080000 | 0.000000 | 270_0_initial_guess.csv | SolutionFound | 15.566427 | 8.377928 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.290000 | -0.090000 | 0.000000 | 271_0_initial_guess.csv | SolutionFound | 25.200205 | 9.479744 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.300000 | -0.100000 | 0.000000 | 272_0_initial_guess.csv | SolutionFound | 18.979492 | 10.677600 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.310000 | -0.110000 | 0.000000 | 273_0_initial_guess.csv | SolutionFound | 15.254222 | 11.973593 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.320000 | -0.120000 | 0.000000 | 274_0_initial_guess.csv | SolutionFound | 17.158847 | 13.367971 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.330000 | -0.130000 | 0.000000 | 275_0_initial_guess.csv | SolutionFound | 19.455168 | 14.862341 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.340000 | -0.140000 | 0.000000 | 276_0_initial_guess.csv | SolutionFound | 33.130692 | 16.455066 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+boundary point index | stride length | ground incline | turning rate
+ 	 13	 | 	0.33	 | 	-0.13	 | 	0
+Start searching along direction: [1,-0.5,0]
+sample# (rerun #) | stride | incline | turning | init_file | Status | Solve time | Cost (tau cost)
+
+  0 (0) | 0.210000 | -0.005000 | 0.000000 | 277_0_initial_guess.csv | SolutionFound | 1.032006 | 3.705305 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.220000 | -0.010000 | 0.000000 | 278_0_initial_guess.csv | SolutionFound | 5.365181 | 3.966298 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.230000 | -0.015000 | 0.000000 | 279_0_initial_guess.csv | SolutionFound | 7.954395 | 4.278718 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.240000 | -0.020000 | 0.000000 | 280_0_initial_guess.csv | SolutionFound | 14.554479 | 4.634994 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.250000 | -0.025000 | 0.000000 | 281_0_initial_guess.csv | SolutionFound | 11.596758 | 5.034733 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.260000 | -0.030000 | 0.000000 | 282_0_initial_guess.csv | SolutionFound | 28.354498 | 5.472390 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.270000 | -0.035000 | 0.000000 | 283_0_initial_guess.csv | SolutionFound | 11.846876 | 5.956352 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.280000 | -0.040000 | 0.000000 | 284_0_initial_guess.csv | SolutionFound | 10.854228 | 6.489574 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.290000 | -0.045000 | 0.000000 | 285_0_initial_guess.csv | SolutionFound | 10.705296 | 7.072631 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.300000 | -0.050000 | 0.000000 | 286_0_initial_guess.csv | SolutionFound | 9.221953 | 7.705822 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.310000 | -0.055000 | 0.000000 | 287_0_initial_guess.csv | SolutionFound | 10.626293 | 8.387783 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.320000 | -0.060000 | 0.000000 | 288_0_initial_guess.csv | SolutionFound | 3.542781 | 9.135249 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.330000 | -0.065000 | 0.000000 | 289_0_initial_guess.csv | SolutionFound | 19.745112 | 9.902057 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.340000 | -0.070000 | 0.000000 | 290_0_initial_guess.csv | SolutionFound | 12.812316 | 10.735592 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.350000 | -0.075000 | 0.000000 | 291_0_initial_guess.csv | SolutionFound | 9.179174 | 11.620575 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.360000 | -0.080000 | 0.000000 | 292_0_initial_guess.csv | SolutionFound | 13.478973 | 12.557939 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.370000 | -0.085000 | 0.000000 | 293_0_initial_guess.csv | SolutionFound | 7.673052 | 13.548434 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.380000 | -0.090000 | 0.000000 | 294_0_initial_guess.csv | SolutionFound | 9.845078 | 14.591093 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.390000 | -0.095000 | 0.000000 | 295_0_initial_guess.csv | SolutionFound | 14.076605 | 15.687940 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+boundary point index | stride length | ground incline | turning rate
+ 	 14	 | 	0.38	 | 	-0.09	 | 	0
+Start searching along direction: [1,0.5,0]
+sample# (rerun #) | stride | incline | turning | init_file | Status | Solve time | Cost (tau cost)
+
+  0 (0) | 0.210000 | 0.005000 | 0.000000 | 296_0_initial_guess.csv | SolutionFound | 2.913642 | 4.017312 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.220000 | 0.010000 | 0.000000 | 297_0_initial_guess.csv | SolutionFound | 13.416045 | 4.637690 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.230000 | 0.015000 | 0.000000 | 298_0_initial_guess.csv | SolutionFound | 11.959719 | 5.334640 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.240000 | 0.020000 | 0.000000 | 299_0_initial_guess.csv | SolutionFound | 15.336116 | 6.103504 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.250000 | 0.025000 | 0.000000 | 300_0_initial_guess.csv | SolutionFound | 26.737851 | 6.940626 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.260000 | 0.030000 | 0.000000 | 301_0_initial_guess.csv | SolutionFound | 19.180040 | 7.836621 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.270000 | 0.035000 | 0.000000 | 302_0_initial_guess.csv | SolutionFound | 23.684660 | 8.782873 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.280000 | 0.040000 | 0.000000 | 303_0_initial_guess.csv | SolutionFound | 14.434709 | 9.775509 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.290000 | 0.045000 | 0.000000 | 304_0_initial_guess.csv | SolutionFound | 3.198507 | 10.841952 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.300000 | 0.050000 | 0.000000 | 305_0_initial_guess.csv | SolutionFound | 21.513995 | 11.890375 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.310000 | 0.055000 | 0.000000 | 306_0_initial_guess.csv | SolutionFound | 3.296722 | 13.039122 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.320000 | 0.060000 | 0.000000 | 307_0_initial_guess.csv | SolutionFound | 21.320731 | 14.189478 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.330000 | 0.065000 | 0.000000 | 308_0_initial_guess.csv | SolutionFound | 17.809046 | 15.412256 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+boundary point index | stride length | ground incline | turning rate
+ 	 15	 | 	0.32	 | 	0.06	 | 	0
+Start searching along direction: [1,1,0]
+sample# (rerun #) | stride | incline | turning | init_file | Status | Solve time | Cost (tau cost)
+
+  0 (0) | 0.210000 | 0.010000 | 0.000000 | 309_0_initial_guess.csv | SolutionFound | 1.171796 | 4.244580 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.220000 | 0.020000 | 0.000000 | 310_0_initial_guess.csv | SolutionFound | 1.415049 | 5.224138 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.230000 | 0.030000 | 0.000000 | 311_0_initial_guess.csv | SolutionFound | 12.230950 | 6.364511 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.240000 | 0.040000 | 0.000000 | 312_0_initial_guess.csv | SolutionFound | 3.033203 | 7.591532 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.250000 | 0.050000 | 0.000000 | 313_0_initial_guess.csv | SolutionFound | 3.580191 | 8.875358 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.260000 | 0.060000 | 0.000000 | 314_0_initial_guess.csv | SolutionFound | 8.222470 | 10.192592 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.270000 | 0.070000 | 0.000000 | 315_0_initial_guess.csv | SolutionFound | 18.302753 | 11.579288 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.280000 | 0.080000 | 0.000000 | 316_0_initial_guess.csv | SolutionFound | 15.189465 | 13.041069 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.290000 | 0.090000 | 0.000000 | 317_0_initial_guess.csv | SolutionFound | 17.143907 | 14.580458 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+
+  0 (0) | 0.300000 | 0.100000 | 0.000000 | 318_0_initial_guess.csv | SolutionFound | 13.711161 | 16.224185 (0.000000)
+(sample_idx, n_rerun, N_rerun, is_success) = (0, 0, 0, 1)
+storing result...
+boundary point index | stride length | ground incline | turning rate
+ 	 16	 | 	0.29	 | 	0.09	 | 	0
