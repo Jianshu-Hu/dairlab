@@ -12,12 +12,12 @@ max_gi1 = 0.275
 min_sl1 = 0.0925
 max_sl1 = 0.3925
 # small range
-min_gi2 = -0.175
-max_gi2 = 0.125
-min_sl2 = 0.1675
-max_sl2 = 0.3175
+min_gi2 = -0.1875
+max_gi2 = 0.0625
+min_sl2 = 0.2775
+max_sl2 = 0.3075
 plot_large_range = 0
-plot_small_range = 0
+plot_small_range = 1
 
 if robot_option == 0:
     robot = 'five_link/'
@@ -29,13 +29,13 @@ if robot_option == 0:
            '_large_task_space_iter1000/'
     dir4 = file_dir+'dairlib_data/find_boundary/' + robot + 'robot_' + str(robot_option) + \
            '_large_task_space_iter2000/'
-    dir5 = file_dir+'dairlib_data/find_boundary/' + robot + 'robot_' + str(robot_option) + \
+    dir5 = file_dir+'dairlib_data/find_boundary/' + robot + 'large_task_space/'+'robot_' + str(robot_option) + \
            '_large_task_space_iter3000_with_scaling/'
     dir6 = file_dir+'dairlib_data/find_boundary/' + robot + 'robot_' + str(robot_option) + \
            '_small_task_space_iter500/'
     dir7 = file_dir+'dairlib_data/find_boundary/' + robot + 'robot_' + str(robot_option) + \
            '_small_task_space_iter1000/'
-    dir8 = file_dir+'dairlib_data/find_boundary/' + robot + 'robot_' + str(robot_option) + \
+    dir8 = file_dir+'dairlib_data/find_boundary/' + robot + 'small_task_space/'+'robot_' + str(robot_option) + \
            '_small_task_space_iter2000_with_scaling/'
 if robot_option == 1:
     robot = 'cassie/'
@@ -63,7 +63,7 @@ i = 0
 x = []
 y = []
 z = []
-dir = dir9
+dir = dir8
 while os.path.isfile(dir+str(i)+'_'+str(0)+'_task.csv'):
     gamma = np.genfromtxt(dir + str(i) + '_' + str(0) + '_task.csv', delimiter=",")
     cost = float(np.genfromtxt(dir + str(i) + '_' + str(0) + '_c.csv', delimiter=","))
