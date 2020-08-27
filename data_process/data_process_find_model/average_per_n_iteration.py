@@ -6,7 +6,7 @@ import os
 
 # setting of program
 robot_option = 1
-normalized_cost = 1
+normalized_cost = 0
 use_landscape_for_nominal = 0
 plot_successful_sample = 1
 item_to_plot = 0
@@ -27,8 +27,9 @@ rom1 = '1D_rom/'
 rom2 = '2D_rom/'
 task_space1 = '2D_task_space/'
 task_space2 = '3D_task_space/'
-task_space3 = 'large_task_space'
-task_space4 = 'small_task_space'
+task_space5 = '4D_task_space/'
+task_space3 = 'large_task_space/'
+task_space4 = 'small_task_space/'
 
 # task space
 large_task_space = 1
@@ -44,17 +45,17 @@ else:
     max_sl1 = 0.3175
 
 file_dir = '/Users/jason-hu/'
-dir1 = file_dir+'dairlib_data/find_model/'+robot+rom2+task_space2+'/robot_' + str(robot_option)+\
-       '_grid_iter100/'
-label1 = 'optimizing 2D ROM over grid 3D task space'
+dir1 = file_dir+'dairlib_data/find_model/'+robot+rom2+task_space5+'robot_' + str(robot_option)+\
+       '_range_2_iter400/'
+label1 = 'optimizing 2D ROM over large task space'
 line_type1 = 'k-'
 
-dir2 = file_dir+'dairlib_data/find_model/'+robot+rom2+task_space1+task_space3+'/robot_' + str(robot_option)+\
-       '_large_iter100/'
-label2 = 'optimizing 2D ROM over large task space'
+dir2 = file_dir+'dairlib_data/find_model/'+robot+task_space4+'robot_' + str(robot_option)+\
+       '_iter2000/'
+label2 = 'optimizing 2D ROM over small task space'
 line_type2 = 'k--'
 
-dir3 = file_dir+'dairlib_data/find_model/'+robot+rom1+task_space1+task_space3+'/robot_' + str(robot_option)+\
+dir3 = file_dir+'dairlib_data/find_model/'+robot+rom1+task_space1+task_space3+'robot_' + str(robot_option)+\
        '_large_iter100_more_samples/'
 label3 = 'optimizing 1D ROM over large task space with more samples'
 line_type3 = 'k:'
@@ -66,8 +67,8 @@ def calculate_nominal_cost_from_cost_landscape(dir_find_boundary):
     i = 0
     nominal_cost = 0
     num = 0
-    while os.path.isfile(dir_find_boundary + str(i) + '_' + str(0) + '_gamma.csv'):
-        gamma = np.genfromtxt(dir_find_boundary + str(i) + '_' + str(0) + '_gamma.csv', delimiter=",")
+    while os.path.isfile(dir_find_boundary + str(i) + '_' + str(0) + '_task.csv'):
+        gamma = np.genfromtxt(dir_find_boundary + str(i) + '_' + str(0) + '_task.csv', delimiter=",")
         cost = float(np.genfromtxt(dir_find_boundary + str(i) + '_' + str(0) + '_c.csv', delimiter=","))
         if np.genfromtxt(dir_find_boundary + str(i) + '_' + str(0) + '_is_success.csv', delimiter=",") == 1:
             # within the optimization range
@@ -105,8 +106,9 @@ def average_cost_several_iter(iter_start, iter_end, n, dir, line_type, label_nam
         j = 0
         while os.path.isfile(dir+str(i)+'_'+str(j)+'_'+item+'.csv'):
             if plot_successful_sample:
-                if np.genfromtxt(dir+str(i)+'_'+str(j)+'_is_success.csv', delimiter=","):
-                    cost.append(np.genfromtxt(dir+str(i)+'_'+str(j)+'_'+item+'.csv', delimiter=","))
+                if float(np.genfromtxt(dir+str(i)+'_'+str(j)+'_is_success.csv', delimiter=","))==1:
+                    if float(np.genfromtxt(dir+str(i)+'_'+str(j)+'_'+item+'.csv', delimiter=","))<15:
+                        cost.append(np.genfromtxt(dir+str(i)+'_'+str(j)+'_'+item+'.csv', delimiter=","))
             else:
                 cost.append(np.genfromtxt(dir + str(i) + '_' + str(j) + '_' + item + '.csv', delimiter=","))
             j = j+1
@@ -127,9 +129,8 @@ def average_cost_several_iter(iter_start, iter_end, n, dir, line_type, label_nam
 
 fig1 = plt.figure(num=1, figsize=(6.4, 4.8))
 ax1 = fig1.gca()
-calculate_nominal_cost_from_cost_landscape(dir_landscape)
-average_cost_several_iter(1, 100, 1, dir1, line_type1, label1, normalized_cost, use_landscape_for_nominal, dir1)
-# average_cost_several_iter(1, 100, 10, dir2, line_type2, label2, normalized_cost, use_landscape_for_nominal, dir_landscape)
+average_cost_several_iter(1, 400, 1, dir1, line_type1, label1, normalized_cost, use_landscape_for_nominal, dir1)
+# average_cost_several_iter(1, 2000, 20, dir2, line_type2, label2, normalized_cost, use_landscape_for_nominal, dir2)
 # average_cost_several_iter(1, 100, 10, dir3, line_type3, label3, normalized_cost, use_landscape_for_nominal, dir_landscape)
 plt.xlabel('Iteration')
 if normalized_cost:
